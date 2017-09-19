@@ -1,0 +1,48 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#f4f4f4",
+    "navigationBarTitleText": "武汉•光谷（国际）外国语学校",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+      "backgroundColor": "#ffffff",
+      "color": "#888888",
+      "selectedColor": "#313680",
+      "borderStyle": "white",
+      "list": [
+        {
+          "pagePath": "pages/index/index",
+          "text": "首页",
+          "iconPath": "common/image/header/icon_home_off.png",
+          "selectedIconPath": "common/image/header/icon_home_on.png"
+        },
+        {
+          "pagePath": "pages/logs/logs",
+          "text": "同学",
+          "iconPath": "common/image/header/icon_group_off.png",
+          "selectedIconPath": "common/image/header/icon_group_on.png"
+        },
+        {
+          "pagePath": "pages/logs/logs",
+          "iconPath": "common/image/header/icon_add.png"
+        },
+        {
+          "pagePath": "pages/logs/logs",
+          "text": "消息",
+          "iconPath": "common/image/header/icon_msg_off.png",
+          "selectedIconPath": "common/image/header/icon_msg_on.png"
+        },
+        {
+          "pagePath": "pages/logs/logs",
+          "text": "我的",
+          "iconPath": "common/image/header/icon_user_off.png",
+          "selectedIconPath": "common/image/header/icon_user_on.png"
+        }
+      ]
+  }
+}
