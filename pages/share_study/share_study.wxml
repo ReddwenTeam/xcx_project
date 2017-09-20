@@ -1,0 +1,70 @@
+<view class="slider-img box-img"></view>
+<view class="box box-ver box-ae">
+    <view class="img-width box box-ver box-ac">
+        <view class="img-head box-img" style="background-image: url(../../static/image/temp/head.png)"></view>
+        <p class="fs-34 color-0 fs-bold">Selina</p>
+    </view>
+</view>
+<view class="msg-box">
+    <view class="one-msg">
+        <view class="box">
+            <view class="friend-img box-img" style="background-image: url(../../static/image/temp/head.png)"></view>
+            <view class="box box-f1 box-ver">
+                <p class="color-blue fs-34">Selina</p>
+                <view class="color-0 fs-28 ta-justify mg-t12 mg-b25">所有事情都是一起来的呀！！！</view>
+                <view class="msg-img box-img" style="background-image: url(../../static/image/temp/friend_1.png)"></view>
+                <view class="box box-ac mg-t2">
+                    <view class="fs-24 color-9 box box-f1">5分钟前</view>
+                    <view class="btn-chat box-img"></view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="one-msg">
+        <view class="box">
+            <view class="friend-img box-img" style="background-image: url(../../static/image/temp/head.jpg)"></view>
+            <view class="box box-f1 box-ver">
+                <p class="color-blue fs-34">Selina哈哈哈</p>
+                <view class="color-0 fs-28 ta-justify mg-t12 mg-b25">想来一场说走就走的旅行</view>
+                <view class="div-after">
+                    <view class="more-msg-img box-img fl-l" style="background-image: url(../../static/image/temp/friend_2.png)"></view>
+                    <view class="more-msg-img box-img fl-l" style="background-image: url(../../static/image/temp/friend_3.png)"></view>
+                    <view class="more-msg-img box-img fl-l" style="background-image: url(../../static/image/temp/friend_4.png)"></view>
+                    <view class="more-msg-img box-img fl-l" style="background-image: url(../../static/image/temp/friend_5.png)"></view>
+                    <view class="more-msg-img box-img fl-l" style="background-image: url(../../static/image/temp/friend_6.png)"></view>
+                    <view class="more-msg-img box-img fl-l" style="background-image: url(../../static/image/temp/friend_7.png)"></view>
+                    <view class="more-msg-img box-img fl-l" style="background-image: url(../../static/image/temp/friend_4.png)"></view>
+                    <view class="more-msg-img box-img fl-l" style="background-image: url(../../static/image/temp/friend_2.png)"></view>
+                    <view class="more-msg-img box-img fl-l" style="background-image: url(../../static/image/temp/friend_5.png)"></view>
+                </view>
+                <view class="box box-ac mg-t2">
+                    <view class="fs-24 color-9 box box-f1">1小时前</view>
+                    <view class="btn-chat box-img"></view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="one-msg">
+        <view class="box">
+            <view class="friend-img box-img" style="background-image: url(../../static/image/temp/head.png)"></view>
+            <view class="box box-f1 box-ver">
+                <p class="color-blue fs-34">Selina</p>
+                <view class="color-0 fs-28 ta-justify mg-t12 mg-b25">
+                    <p>家人带我出来吃大餐！！！</p>
+                    <p>高兴！！</p>
+                    <p>有人来的不!!!!!!!!!</p>
+                </view>
+                <view class="div-after">
+                    <view class="more-msg-img box-img fl-l" style="background-image: url(../../static/image/temp/friend_01.png)"></view>
+                    <view class="more-msg-img box-img fl-l" style="background-image: url(../../static/image/temp/friend_02.png)"></view>
+                    <view class="more-msg-img box-img fl-l" style="background-image: url(../../static/image/temp/friend_03.png)"></view>
+                    <view class="more-msg-img box-img fl-l" style="background-image: url(../../static/image/temp/friend_04.png)"></view>
+                </view>
+                <view class="box box-ac mg-t2">
+                    <view class="fs-24 color-9 box box-f1">1小时前</view>
+                    <view class="btn-chat box-img"></view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
