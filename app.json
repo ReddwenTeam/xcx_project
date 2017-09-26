@@ -23,7 +23,7 @@
         },
         {
           "pagePath": "pages/logs/logs",
-          "text": "同学",
+          "text": "同学圈",
           "iconPath": "common/image/header/icon_group_off.png",
           "selectedIconPath": "common/image/header/icon_group_on.png"
         },
