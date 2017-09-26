@@ -5,9 +5,9 @@
   ],
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#f4f4f4",
+    "navigationBarBackgroundColor": "#7f1d1e",
     "navigationBarTitleText": "武汉•光谷（国际）外国语学校",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle":"white"
   },
   "tabBar": {
       "backgroundColor": "#ffffff",
@@ -22,7 +22,7 @@
           "selectedIconPath": "common/image/header/icon_home_on.png"
         },
         {
-          "pagePath": "pages/logs/logs",
+          "pagePath": "pages/share_study/share_study",
           "text": "同学圈",
           "iconPath": "common/image/header/icon_group_off.png",
           "selectedIconPath": "common/image/header/icon_group_on.png"
