@@ -1,0 +1,65 @@
+<view class="pd-t7 pd-b1">
+    <view class="one-video">
+         <view id="v1"></view>
+          <view class="pop-box box box-ae">
+              <view class="pop-info box box-ver box-ac">
+                  <p class="color-w fs-30">好学生必是好创意者</p>
+                  <p class="color-w fs-30">创意无处不在宣传片</p>
+                  <p class="color-w fs-22 info-time">  | 创意 |  #10'45''</p>
+              </view>
+          </view>
+    </view>
+    <view class="box list-content">
+        <view class="width-3 fs-28 box box-ac box-pc list-on">
+            <text class="color-3">详情</text>
+            <view class="triangle-up tu-back display"><view class="triangle-up tu-in"></view></view>
+        </view>
+        <view class="width-3 fs-28 box box-ac box-pc">
+            <text class="color-3">目录</text>
+            <view class="triangle-up tu-back display"><view class="triangle-up tu-in"></view></view>
+        </view>
+        <view class="width-3 fs-28 box box-ac box-pc">
+            <text class="color-3">相关课程</text>
+            <view class="triangle-up tu-back display"><view class="triangle-up tu-in"></view></view>
+        </view>
+    </view>
+    <view class="list-info">
+        <p class="fs-32 color-0">零基础2小时搞定韩语发音全套（包括音变和常用语）【小鹿韩语】</p>
+        <view class="box mg-t2">
+            <text class="color-7 fs-26 buy-num">购买人数</text>
+            <text class="color-7 fs-26 pd-l4">好评度</text>
+            <text class="color-7 fs-26 pd-l4">8人评论</text>
+        </view>
+        <view class="fs-40 color-money mg-t2">19.9</view>
+    </view>
+    <view class="one-info box box-ac color-7">
+        <text class="icon-word fs-24">保</text>
+        <text class="fs-26 pd-r4">支付保障</text>
+        <text class="icon-word fs-24">退</text>
+        <text class="fs-26">课前随时退</text>
+        <view class="box box-pe box-f1">
+            <view class="icon-right box-img"></view>
+        </view>
+    </view>
+    <view class="one-info box box-ver color-7">
+        <p class="fs-30 color-0">老师介绍<text class="fs-26 color-7">（1）</text></p>
+        <view class="info-box box box-pc">
+            <view class="box info-detail">
+                <view class="img-teacher box-img" style="background-image: url(../../temp/head.png)"></view>
+                <view>
+                    <view class="color-0 fs-32">Selina老师</view>
+                    <view class="color-7 fs-26">好评度 100%</view>
+                    <view class="color-7 fs-26">课程数 14</view>
+                    <view class="color-7 fs-26">学生数 4万</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="footer-fixed box box-ac">
+    <image class="btn-msg box-img" src=''></image> 
+    <text class="fs-30 color-b">咨询</text>
+    <view class="box box-f1 box-pe">
+        <view class="btn-submit color-w fs-26">立即购买</view>
+    </view>
+</view>

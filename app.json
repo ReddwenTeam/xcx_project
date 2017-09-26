@@ -1,7 +1,8 @@
 {
   "pages":[
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/share_study/share_study"
   ],
   "window":{
     "backgroundTextStyle":"light",
