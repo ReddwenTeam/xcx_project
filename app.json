@@ -2,7 +2,8 @@
   "pages":[
     "pages/index/index",
     "pages/logs/logs",
-    "pages/share_study/share_study"
+    "pages/share_study/share_study",
+    "pages/home/home"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -33,7 +34,7 @@
           "iconPath": "common/image/header/icon_add.png"
         },
         {
-          "pagePath": "pages/logs/logs",
+          "pagePath": "pages/home/home",
           "text": "消息",
           "iconPath": "common/image/header/icon_msg_off.png",
           "selectedIconPath": "common/image/header/icon_msg_on.png"
