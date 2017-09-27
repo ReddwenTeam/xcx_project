@@ -1,5 +1,5 @@
 @import "../../common/wxss/common";
-.slider-img { width: 100%; height: 250rpx; }
+.slider-img { width: 100%; height: 350rpx; }
 .img-width { width: 250rpx; margin-top: -71rpx; }
 .img-head { width: 142rpx; height: 142rpx; margin-bottom: 10rpx; border: 5rpx solid #fff; border-radius: 50%; }
 .one-msg { border-bottom: dashed 1px #9fa0a0; padding: 35rpx 35rpx 24rpx 35rpx; }
