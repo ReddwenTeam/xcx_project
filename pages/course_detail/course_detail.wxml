@@ -57,8 +57,8 @@
     </view>
 </view>
 <view class="footer-fixed box box-ac">
-    <image class="btn-msg box-img" src=''></image> 
-    <text class="fs-30 color-b">咨询</text>
+    <image class="box btn-msg box-img" src='image/message.png'></image> 
+    <text class="fs-30 color-b zixun">咨询</text>
     <view class="box box-f1 box-pe">
         <view class="btn-submit color-w fs-26">立即购买</view>
     </view>
