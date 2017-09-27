@@ -1,13 +1,7 @@
 <view class="pd-t7 pd-b1">
     <view class="one-video">
-         <view id="v1"></view>
-          <view class="pop-box box box-ae">
-              <view class="pop-info box box-ver box-ac">
-                  <p class="color-w fs-30">好学生必是好创意者</p>
-                  <p class="color-w fs-30">创意无处不在宣传片</p>
-                  <p class="color-w fs-22 info-time">  | 创意 |  #10'45''</p>
-              </view>
-          </view>
+      <video id="myVideo" src="http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400" danmu-list="{{danmuList}}" enable-danmu danmu-btn controls></video>
+     
     </view>
     <view class="box list-content">
         <view class="width-3 fs-28 box box-ac box-pc list-on">
@@ -58,7 +52,7 @@
 </view>
 <view class="footer-fixed box box-ac">
     <image class="box btn-msg box-img" src='image/message.png'></image> 
-    <text class="fs-30 color-b zixun">咨询</text>
+    <text class="fs-30 color-b">咨询</text>
     <view class="box box-f1 box-pe">
         <view class="btn-submit color-w fs-26">立即购买</view>
     </view>
