@@ -2,7 +2,7 @@
 
 page { background-color: #efefef; }
 /*video*/
-.one-video { position: relative; height: 300rpx; }
+.one-video { position: relative; height: 350rpx; }
 .one-video video{width: 100%;height: 100%; }
 .display { display: none; } 
 /*list-content*/
