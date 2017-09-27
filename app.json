@@ -3,7 +3,8 @@
     "pages/index/index",
     "pages/logs/logs",
     "pages/share_study/share_study",
-    "pages/home/home"
+    "pages/home/home",
+    "pages/course_detail/course_detail"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -34,7 +35,7 @@
           "iconPath": "common/image/header/icon_add.png"
         },
         {
-          "pagePath": "pages/home/home",
+          "pagePath": "pages/course_detail/course_detail",
           "text": "消息",
           "iconPath": "common/image/header/icon_msg_off.png",
           "selectedIconPath": "common/image/header/icon_msg_on.png"
