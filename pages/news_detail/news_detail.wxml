@@ -1,0 +1,22 @@
+<view class="pd-t7">
+    <!--slider start-->
+    <image class="slider-content" mode="scaleToFill" src="../../temp/news_1.png"></image>
+    <!--slider end-->
+    <!--article start-->
+    <view class="pd-lr2">
+        <view class="article-content">
+            <view class="fs-42 color-blue">专家团队视导光谷外校</view>
+            <view class="fs-16 color-9 mg-t1">发布时间：2017-07-05</view>
+            <view class="fs-26 color-0 p-paragraph">
+                光谷外校热情接待了美国BASIS School国际生项目总监Beata Mickevic（贝亚特·米可科维奇）女士。国际校长Thomas（托马斯）、中方校长徐涛陪同贝亚特女士参观了校园。她走进供学生社团使用的功能教室，了解我校丰富多彩的社团文化。徐涛校长邀请贝亚特女士走进课堂，观摩我校中国传统课程和国际课程。
+            </view>
+            <view class="fs-26 color-0 p-paragraph">
+                在我校阅览室，贝亚特女士与我校七年级同学用英文畅谈校园生活。贝亚特女士询问同学们的课程安排、兴趣爱好和学习理想，同学们也热情询问了美国高中生的相关学习情况。交谈过程轻松、愉快，贝亚特女士对我校初中生的表现频频点头称赞。
+            </view>
+            <view class="fs-26 color-0 p-paragraph">
+                参观结束后，贝亚特女士与Thomas校长、徐涛校长在北楼会客室就国际教育合作交换了意见。贝亚特女士对我校一流的教学条件、先进的国际化办学模式和学生较强的综合素质给予了高度肯定，并表示愿意在时机成熟时与我校开展国际教育合作，欢迎我校具有国际竞争力的学生考入美国BASIS School深造。
+            </view>
+        </view>
+    </view>
+    <!--article end-->
+</view>
