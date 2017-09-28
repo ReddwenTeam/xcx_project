@@ -1,0 +1,16 @@
+@import "../../common/wxss/common";
+
+/*search*/
+.search-box { background-color: #efefef; height: 70rpx; padding: 0 20rpx; border-radius: 20rpx; margin: 15rpx auto; }
+.search-img { width: 30rpx; height: 30rpx; margin-right: 10rpx; }
+input{width: 100%;}
+.input-style { background-color: #efefef; }
+.one-record { height: 105rpx; margin-bottom: 20rpx; padding: 0 20rpx; border-top: solid 1rpx rgba(0, 0, 0, .1); border-left: solid 1rpx rgba(0, 0, 0, .1); box-shadow: 2rpx 2rpx 5rpx rgba(0, 0, 0, .2); }
+.head-img { width: 85rpx; height: 85rpx; margin-right: 30rpx;border-radius: 50%; }
+.mg-l2 { margin-left: 20rpx; }
+.mg-t1 { margin-top: 10rpx; }
+.msg-title { padding: 15rpx 0 15rpx 20rpx; }
+.btn-msg { width: 31rpx; height: 31rpx;}
+.part { margin: 15rpx; padding: .03rem 0; border-right: dashed 1px #9fa0a0; }
+.pd-lr2 { padding-left: 20rpx; padding-right: 20rpx; }
+.msg-down{ width: 10rpx;height: 10rpx; margin-right: 15rpx; }

@@ -5,7 +5,9 @@
     "pages/share_study/share_study",
     "pages/home/home",
     "pages/course_detail/course_detail",
-    "pages/my_course/my_course"
+    "pages/my_course/my_course",
+    "pages/msg/msg",
+    "pages/test/test"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -32,7 +34,7 @@
           "selectedIconPath": "common/image/header/icon_group_on.png"
         },
         {
-          "pagePath": "pages/logs/logs",
+          "pagePath": "pages/test/test",
           "iconPath": "common/image/header/icon_add.png"
         },
         {

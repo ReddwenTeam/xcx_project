@@ -1,0 +1,102 @@
+<view class="pd-t7 pd-lr2 pd-bf">
+    <view class="search-box box box-ac">        
+        <image class="search-img box-img" src='../../common/image/btn_search.png'></image>
+        <input type="text" class="input-style color-9 fs-30 box box-f1" placeholder="搜索" />
+    </view>
+    <view class="msg-box">
+        <view class="msg-title color-7 fs-24 box box-ac">
+          <image src='image/msg_down.png' class='box box-img msg-down'></image>
+          <text> 老师（2人）</text>
+        </view>
+        <view class="one-record box box-ac">
+            <image class="head-img box box-img" src="../../temp/album_2.png"></image>
+            <view class="box box-f1 box-ver">
+                <view class="box"><text class="box box-f1 color-0 fs-32">余老师</text><text class="fs-24 color-9">2017-05-26   10:20</text></view>
+                <view class="box">
+                    <text class="box box-f1 color-7 fs-26">今天作业好多啊！！！</text>
+                    <view class="box box-ac">
+                      <image class="btn-msg box box-img" src="image/msg_chat.png" ></image>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="one-record box box-ac">
+            <image class="head-img box box-img" src="../../temp/album_2.png"></image>
+            <view class="box box-f1 box-ver">
+                <view class="box"><text class="box box-f1 color-0 fs-32">周老师</text><text class="fs-24 color-9">2017-05-26   10:20</text></view>
+                <view class="box">
+                    <text class="box box-f1 color-7 fs-26">做完作业一起踢球?</text>
+                    <view class="box box-ac">
+                        <image class="btn-msg box box-img" src="image/msg_chat.png" ></image>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="msg-box">
+        <view class="msg-title color-7 fs-24 box box-ac">
+          <image src='image/msg_down.png' class='box box-img msg-down'></image>
+          <text>同学（2人）</text>
+        </view>
+        <view class="one-record box box-ac">
+            <image class="head-img box box-img" src="../../temp/album_2.png"></image>
+            <view class="box box-f1 box-ver">
+                <view class="box"><text class="box box-f1 color-0 fs-32">王思</text><text class="fs-24 color-9">2017-05-26   10:20</text></view>
+                <view class="box">
+                    <text class="box box-f1 color-7 fs-26">今天作业好多啊！！！</text>
+                    <view class="box box-ac">
+                        <image class="btn-msg box box-img" src="image/msg_chat.png" ></image>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="one-record box box-ac">
+            <view class="head-img box-img"></view>
+            <view class="box box-f1 box-ver">
+                <view class="box"><text class="box box-f1 color-0 fs-32">鹏仔</text><text class="fs-24 color-9">2017-05-26   10:20</text></view>
+                <view class="box">
+                    <text class="box box-f1 color-7 fs-26">做完作业一起踢球?</text>
+                    <view class="box box-ac">
+                      <image class="btn-msg box box-img" src="image/msg_chat.png" ></image>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="one-record box box-ac">
+            <view class="head-img box-img"></view>
+            <view class="box box-f1 box-ver">
+                <view class="box"><text class="box box-f1 color-0 fs-32">鹏仔</text><text class="fs-24 color-9">2017-05-26   10:20</text></view>
+                <view class="box">
+                    <text class="box box-f1 color-7 fs-26">做完作业一起踢球?</text>
+                    <view class="box box-ac">
+                       <image class="btn-msg box box-img" src="image/msg_chat.png" ></image>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="one-record box box-ac">
+            <view class="head-img box-img"></view>
+            <view class="box box-f1 box-ver">
+                <view class="box"><text class="box box-f1 color-0 fs-32">鹏仔</text><text class="fs-24 color-9">2017-05-26   10:20</text></view>
+                <view class="box">
+                    <text class="box box-f1 color-7 fs-26">做完作业一起踢球?</text>
+                    <view class="box box-ac">
+                       <image class="btn-msg box box-img" src="image/msg_chat.png" ></image>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="one-record box box-ac">
+            <view class="head-img box-img"></view>
+            <view class="box box-f1 box-ver">
+                <view class="box"><text class="box box-f1 color-0 fs-32">鹏仔</text><text class="fs-24 color-9">2017-05-26   10:20</text></view>
+                <view class="box">
+                    <text class="box box-f1 color-7 fs-26">做完作业一起踢球?</text>
+                    <view class="box box-ac">
+                      <image class="btn-msg box box-img" src="image/msg_chat.png" ></image>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
