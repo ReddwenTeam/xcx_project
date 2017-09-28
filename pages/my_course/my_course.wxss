@@ -1,0 +1,13 @@
+@import "../../common/wxss/common";
+
+.pd-lr2 { padding-left: 20rpx; padding-right: 20rpx; }
+.schedule-box { padding: 0 20rpx; height: 72rpx; margin: 21rpx auto 10rpx; border-radius: 20rpx; background-color: #efefef; text-align: center; }
+.one-day { width: 33.3333%; height: 60rpx; border-radius: 60rpx; color: #2b3579; }
+.one-day.on { background-color: #2b3579; color: #ffffff; }
+.one-video { position: relative;  }
+.pop-box { width: 100%; height: 440rpx; position: absolute; left: 0; bottom: 0; z-index: 99;  }
+.pop-info { width: 100%; height: 170rpx; }
+.info-time { opacity: 0.5; margin-top: 10rpx; }
+.one-class { background-color: #ffffff; margin-top: 170rpx; padding: 150rpx 10rpx; border-top: solid 10rpx rgba(0, 0, 0, .1); border-left: solid 10rpx rgba(0, 0, 0, .1); box-shadow: 2rpx 2rpx 50rpx rgba(0, 0, 0, .2); }
+.img-msg { width: 255rpx; height: 144rpx; margin-right: 20rpx; }
+.mg-t1 { margin-top: 10rpx; }
