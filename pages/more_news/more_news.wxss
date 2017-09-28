@@ -1,0 +1,13 @@
+@import "../../common/wxss/common";
+
+/*slider*/
+.slider-content { width: 100%; height: 350rpx; position: relative }
+.slider-info { width: 100%; height: 55rpx; background-color: rgba(49, 54, 128, .8); line-height: 55rpx; position: absolute; bottom: 0; left: 0 }
+.pd-l4 { padding-left: 40rpx; }
+.pd-r4 { padding-right: 40rpx; }
+/*article*/
+.pd-lr2 { padding: 0 20rpx 40rpx; }
+.one-new { background-color: #ffffff; margin-top: 30rpx; border-top: solid 1rpx rgba(0, 0, 0, .1); border-left: solid 1rpx rgba(0, 0, 0, .1); box-shadow: 2rpx 2rpx 5rpx rgba(0, 0, 0, .2); }
+.pd-left { padding: 18rpx 30rpx 18rpx 12rpx; text-align: justify; }
+.img-news { width: 336rpx; height: 189rpx; position: relative; }
+.img-shadow { width: 16rpx; height: 19rpx; position: absolute; left: 0; bottom: 22rpx; }
