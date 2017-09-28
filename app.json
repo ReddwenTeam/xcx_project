@@ -42,7 +42,7 @@
           "selectedIconPath": "common/image/header/icon_msg_on.png"
         },
         {
-          "pagePath": "pages/logs/logs",
+          "pagePath": "pages/my_course/my_course",
           "text": "我的",
           "iconPath": "common/image/header/icon_user_off.png",
           "selectedIconPath": "common/image/header/icon_user_on.png"

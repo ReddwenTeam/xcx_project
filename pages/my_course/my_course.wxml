@@ -4,40 +4,61 @@
         <view class="one-day box box-ac box-pc fs-30">网校</view>
         <view class="one-day box box-ac box-pc fs-30">限时观看</view>
     </view>
-    <view class="one-video">
-        <view id="v1"></view>
-        <view class="pop-box box box-ae">
+    <view class="video-content">
+        <view class="one-video">
+          <video id="myVideo" class=" mainVideo {{videoPlayer == 'show'?'active':''}} " src="{{_posterInfo.video_url}}" controls></video>
+        </view>
+        <view class="pop-box box box-ac  {{ videoPoster == 'show' ? '':'nodisplay'}}" bindtap='showVideo' data-poster-src="123456" >
+           <image class="img-poster box-img" src="{{_posterInfo.poster_url}}" ></image>
             <view class="pop-info box box-ver box-ac">
-                <view class="color-w fs-30">全方位呵护您孩子的营养健康</view>
-                <view class="color-w fs-30">生活专家 每周食谱</view>
-                <view class="color-w fs-22 info-time">| 健康 |  #05'45''</view>
+                <view class='play-btn'>
+                  <image src='../../common/image/btn_play.png'></image>
+                </view>
+                <view class="color-w fs-30 poster-title"> <text>{{_posterInfo.poster_title}}</text> </view>
+                <view class="color-w fs-22 info-time">| {{_posterInfo.poster_tag}} |  {{_posterInfo.poster_duration}}</view>
             </view>
         </view>
     </view>
-    <view class="class-box">
-        <view class="one-class box">
-            <view class="img-msg box-img" style="background-image: url(../../static/image/temp/course_1.png);"></view>
+    <view class="class-box" wx:for="{{videoList}}" wx:key="{{index}}">
+    
+        <view class="one-class box" 
+          bindtap='setVideoSrc' 
+          data-video-src="{{item.video_src}}" 
+          data-video-poster="{{item.img_src}}"
+          data-video-title = "{{item.title}}"
+          data-video-tag="{{item.tag}}"
+          data-video-duration="{{item.duration}}"
+        >
+            <image class="img-msg box-img" src="{{item.img_src}}" ></image> 
             <view class="box box-ver box-f1">
-                <view class="fs-30 color-b">Develop a plan vest line </view>
-                <view class="fs-20 color-9 mg-t1">| 独特 |  #45'00''共24节</view>
-                <view class="box box-f1 box-ae box-pe fs-20 color-9">主讲：Saleri</view>
+                <view class="fs-30 color-b">{{item.title}}</view>
+                <view class="fs-26 color-9 mg-t1">| {{item.tag}} |  {{item.duration}} 共{{item.coursesNumber}}节</view>
+                <view class="box box-f1 box-ae box-pe fs-26 color-9">主讲：{{item.teacher}}</view>
             </view>
         </view>
-        <view class="one-class box">
-            <view class="img-msg box-img" style="background-image: url(../../static/image/temp/course_2.png);"></view>
+        <!-- <view class="one-class box">
+            <image class="img-msg box-img" src="../../temp/course_2.png"></image> 
             <view class="box box-ver box-f1">
                 <view class="fs-30 color-b">English courses revolution</view>
-                <view class="fs-20 color-9 mg-t1">| 创新 |  #35'00''共48节</view>
-                <view class="box box-f1 box-ae box-pe fs-20 color-9">主讲：Jack</view>
+                <view class="fs-26 color-9 mg-t1">| 创新 |  #35'00''共48节</view>
+                <view class="box box-f1 box-ae box-pe fs-26 color-9">主讲：Jack</view>
             </view>
         </view>
         <view class="one-class box">
-            <view class="img-msg box-img" style="background-image: url(../../static/image/temp/course_3.png);"></view>
+            <image class="img-msg box-img" src="../../temp/course_3.png"></image>
             <view class="box box-ver box-f1">
                 <view class="fs-30 color-b">180天速成！快速学好口语！</view>
-                <view class="fs-20 color-9 mg-t1">| 唯一 |  #35'00''共48节</view>
-                <view class="box box-f1 box-ae box-pe fs-20 color-9">主讲：李样</view>
+                <view class="fs-26 color-9 mg-t1">| 唯一 |  #35'00''共48节</view>
+                <view class="box box-f1 box-ae box-pe fs-26 color-9">主讲：李样</view>
             </view>
         </view>
+        <view class="one-class box">
+            <image class="img-msg box-img" src="../../temp/course_3.png"></image>
+            <view class="box box-ver box-f1">
+                <view class="fs-30 color-b">180天速成！快速学好口语！</view>
+                <view class="fs-26 color-9 mg-t1">| 唯一 |  #35'00''共48节</view>
+                <view class="box box-f1 box-ae box-pe fs-26 color-9">主讲：李样</view>
+            </view>
+        </view> -->
     </view>
 </view>
