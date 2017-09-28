@@ -6,8 +6,7 @@
     "pages/home/home",
     "pages/course_detail/course_detail",
     "pages/my_course/my_course",
-    "pages/msg/msg",
-    "pages/test/test"
+    "pages/msg/msg"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -38,7 +37,7 @@
           "iconPath": "common/image/header/icon_add.png"
         },
         {
-          "pagePath": "pages/course_detail/course_detail",
+          "pagePath": "pages/msg/msg",
           "text": "消息",
           "iconPath": "common/image/header/icon_msg_off.png",
           "selectedIconPath": "common/image/header/icon_msg_on.png"
