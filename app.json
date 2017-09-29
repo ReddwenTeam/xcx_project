@@ -17,7 +17,8 @@
     "pages/teacher_detail/teacher_detail",
     "pages/msg_examine/msg_examine",
     "pages/supply_detail/supply_detail",
-    "pages/news_detail/news_detail"
+    "pages/news_detail/news_detail",
+    "pages/user/user"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -55,7 +56,7 @@
           "selectedIconPath": "common/image/header/icon_msg_on.png"
         },
         {
-          "pagePath": "pages/teacher_detail/teacher_detail",
+          "pagePath": "pages/user/user",
           "text": "我的",
           "iconPath": "common/image/header/icon_user_off.png",
           "selectedIconPath": "common/image/header/icon_user_on.png"
