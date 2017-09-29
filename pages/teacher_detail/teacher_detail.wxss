@@ -1,0 +1,14 @@
+@import "../../common/wxss/common";
+
+.teacher-img { width: 100%; height: 800rpx; }
+.one-info { border-bottom: solid 1rpx #eaeaea; padding: 30rpx 20rpx; }
+.one-info:last-child { border-bottom: none; padding: 30rpx 0; }
+.mg-t15 { margin-top: 15rpx; }
+.cn-flag { width: 40rpx; height: 40rpx; margin-right: 15rpx; border-radius: 50%; }
+.img-id { width: 70rpx; height: 70rpx; margin-top: 40rpx; }
+.width-90 { width: 90%; }
+.p-paragraph { text-indent: 50rpx; line-height: 50rpx; text-align: justify; margin-top: 30rpx }
+.one-class { width: 100%; margin: 15rpx auto; }
+.one-class text { margin-right: 20rpx }
+.img-class { width: 100%; height: 300rpx; margin-bottom: 15rpx; }
+.pd-lr2 { padding: 0 20rpx; }
