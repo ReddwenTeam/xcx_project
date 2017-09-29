@@ -7,7 +7,11 @@
     "pages/course_detail/course_detail",
     "pages/my_course/my_course",
     "pages/msg/msg",
+    "pages/video_list/video_list",
+    "pages/apply_record/apply_record",
     "pages/more_news/more_news",
+    "pages/msg_examine/msg_examine",
+    "pages/supply_detail/supply_detail",
     "pages/news_detail/news_detail"
   ],
   "window":{
@@ -35,8 +39,9 @@
           "selectedIconPath": "common/image/header/icon_group_on.png"
         },
         {
-          "pagePath": "pages/test/test",
-          "iconPath": "common/image/header/icon_add.png"
+          "pagePath": "pages/supply_detail/supply_detail",
+          "iconPath": "common/image/header/icon_add.png",
+          "selectedIconPath": "common/image/header/icon_add.png"
         },
         {
           "pagePath": "pages/msg/msg",

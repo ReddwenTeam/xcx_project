@@ -1,0 +1,22 @@
+<view class="pd-t7 pd-lr2">
+    <view class="search-box box box-ac">        
+        <image class="search-img box-img" src='../../common/image/btn_search.png'></image>
+        <input type="text" class="input-style color-9 fs-30 box box-f1" placeholder="搜索" />
+    </view>
+    <view class='msg-box' wx:for="{{record_list}}" wx:key="{{item.index}}" >
+      <view class="one-record box box-ac">
+        <image class="head-img box box-img" src="{{item.student_avatar}}"></image>
+        <view class="box box-f1 box-ver">
+            <view class="color-7 fs-30">学生：
+              <text class="color-b">{{item.student_name}}</text> 的报名申请
+            </view>
+            <view class="color-7 fs-26 mg-t1 box box-ae">{{item.status}}
+              <text class="mg-l2">{{item.grade}}年级</text>
+              <text class="box box-f1 box-pe color-7 fs-20">提交时间：{{item.time}}</text>
+            </view>
+        </view>
+    </view>
+        
+    </view>
+    
+</view>
