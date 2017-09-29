@@ -10,7 +10,6 @@
     "pages/video_list/video_list",
     "pages/apply_record/apply_record",
     "pages/more_news/more_news",
-    "pages/news_detail/news_detail",
     "pages/teacher_list/teacher_list",
     "pages/notice_list/notice_list",
     "pages/publish_work/publish_work",
