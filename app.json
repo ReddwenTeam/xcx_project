@@ -13,7 +13,8 @@
     "pages/notice_list/notice_list",
     "pages/publish_work/publish_work",
     "pages/work_list/work_list",
-    "pages/teacher_detail/teacher_detail"
+    "pages/teacher_detail/teacher_detail",
+    "pages/user/user"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -50,7 +51,7 @@
           "selectedIconPath": "common/image/header/icon_msg_on.png"
         },
         {
-          "pagePath": "pages/teacher_detail/teacher_detail",
+          "pagePath": "pages/user/user",
           "text": "我的",
           "iconPath": "common/image/header/icon_user_off.png",
           "selectedIconPath": "common/image/header/icon_user_on.png"
