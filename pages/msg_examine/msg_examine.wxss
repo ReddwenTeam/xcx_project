@@ -1,0 +1,9 @@
+@import "../../common/wxss/common";
+
+/*msg*/
+.one-msg { height: 60rpx; margin-top: 20rpx; padding: 0 20rpx; border-top: solid .01rpx rgba(0, 0, 0, .1); border-left: solid 1rpx rgba(0, 0, 0, .1); box-shadow: 2rpx 2rpx 5rpx rgba(0, 0, 0, .2); }
+.title-justify {text-align: justify; height: 60rpx; line-height: 60rpx; min-width: 140rpx; margin-right: 10rpx; }
+.title-justify > span { display: inline-block; padding-left: 100%;}
+.input-box { height: 60rpx; padding: 0 20rpx; line-height: 60rpx; }
+.btn-down{ width: 18rpx;height:8rpx; } 
+

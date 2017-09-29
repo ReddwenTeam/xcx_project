@@ -1,0 +1,91 @@
+<view class="pd-t7">
+    <!--slider start-->
+    <view class="slider-content box-img2 box box-ae">
+        <swiper class='slider-box' indicator-dots="{{indicatorDots}}"
+          autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+          <block wx:for="{{imgUrls}}" wx:key="{{index}}">
+            <swiper-item>
+              <image src="{{item}}" class="slide-image"/>
+              <view class="slider-info">
+                  <text class="fs-30 color-w pd-l4">招生简章</text>
+              </view>
+            </swiper-item>
+          </block>
+        </swiper>        
+        
+    </view>
+    <!--slider end-->
+
+    <!--article start-->
+    <view class="pd-lr2">
+        <view class="article-content">
+            <image class="img-logo" src="../../common/image/img_logo.png" ></image>
+            <view class="fs-32 color-0 ta-center">武汉•光谷（国际）外国语学校</view>
+            <view class="fs-14 color-0 ta-center">Wuhan Optics Valley International Foreign Languages School</view>
+            <view class="fs-26 color-0 p-paragraph">
+                武汉·光谷（国际）外国语学校（后简称光谷外校）地处拥有“中国硅谷”之称的中国光谷，这是一片充满生机并不断创造奇迹的神奇土地。本着立足光谷，创办世界学校的愿景，光谷外校融合中国传统教育与国际精英教育的精粹，为学生提供一流的国际化教育，是一所创新型国际化民办学校。
+            </view>
+            <view class="fs-26 color-0 p-paragraph">
+                我们热情地拥抱这个充满活力、瞬息万变的世界，从奋发进取的人类社会中汲取营养，并为未来的世界做出贡献。学校提供了一种全新的教育模式，集现代化、国际化、信息化于一体，突出外语特色，在世界背景下培养学生跨文化沟通与对话的能力，培养拥有全球视野的人才。
+            </view>
+            <view class="fs-26 color-0 mg-t5">地址：武汉东湖高新区高新二路999号</view>
+            <view class="fs-26 color-0">电话：027-65523333</view>
+        </view>
+    </view>
+    <!--article end-->
+
+    <!--info start-->
+    <view class="info-content">
+        <view class="box one-info box-ac">
+            <view class="title-justify fs-26 color-7">学 生 姓 名<text></text></view>
+            <view class="input-box box box-ac box-f1">
+                <input type="text" class="input-style box box-f1 fs-26 color-0" />
+            </view>
+        </view>
+        <view class="box one-info box-ac">
+            <view class="title-justify fs-26 color-7">手 机 号 码<text></text></view>
+            <view class="input-box box box-ac box-f1">
+                <input type="number" class="input-style box box-f1 fs-26 color-0" />
+            </view>
+        </view>
+        <view class="box one-info box-ac">
+            <view class="title-justify fs-26 color-7">性 别<text></text></view>
+            <picker class="input-box box box-ac box-f1 fs-26 color-0 picker" bindchange="bindSexChange" value="{{Sex}}"  range="{{sex}}" range-key="name">
+              <view style='width:100%'>
+                {{sex[Sex].name}}
+              </view>
+            </picker>
+            <image class='box box-img btn-down' src='image/btn_msg.png'></image>
+        </view>
+        <view class="box one-info box-ac">
+            <view class="title-justify fs-26 color-7">年 龄<text></text></view>
+            <view class="input-box box box-ac box-f1 fs-26 color-0 icon-choose">请选择</view>
+        </view>
+        <view class="box one-info box-ac">
+            <view class="title-justify fs-26 color-7">班 级<text></text></view>
+            <picker class="input-box box box-ac box-f1 fs-26 color-0 picker" bindchange="bindClassesChange" value="{{Classes}}"  range="{{classes}}" range-key="name">
+              <view >
+                {{classes[Classes].name}}
+              </view>
+            </picker>
+        </view>
+        <view class="box one-info box-ac">
+            <view class="title-justify fs-26 color-7">选 择 关 系<text></text></view>
+            <picker class="input-box box box-ac box-f1 fs-26 color-0 picker" bindchange="bindParentChange" value="{{Parent}}"  range="{{parent}}" range-key="name">
+              <view >
+                {{parent[Parent].name}}
+              </view>
+            </picker>
+            <image class='box box-img btn-down' src='image/btn_msg.png'></image>
+        </view>
+
+    </view>
+    <view class="color-3 fs-26 box box-pc warning">
+      <image src="image/icon_warning.png" class='box box-img tip-msg'></image>
+      <text >报名时输入的手机号码是您绑定学生的重要依据</text> 
+    </view>
+    <view class="btn-submit box box-ac box-pc box-img color-w fs-30" style='background-image:url("image/icon_btn.png")'>
+      <text>提交</text>
+    </view>
+    <!--info end-->
+</view>

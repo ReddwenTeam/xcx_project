@@ -1,0 +1,62 @@
+<view class="pd-t7 pd-lr2">
+    <view class="one-msg box box-ac">
+        <view class="title-justify fs-26 color-7">状 态<text></text></view>
+        <view class="input-box fs-26 color-0">已通过</view>
+    </view>
+    <view class="one-msg box box-ac">
+        <view class="title-justify fs-26 color-7">姓 名<text></text></view>
+        <view class="input-box fs-26 color-0">于鹏</view>
+    </view>
+    <view class="one-msg box box-ac">
+        <view class="title-justify fs-26 color-7">学 号<text></text></view>
+        <view class="input-box fs-26 color-0">0002435</view>
+    </view>
+    <view class="one-msg box box-ac">
+        <view class="title-justify fs-26 color-7">预 留 手 机<text></text></view>
+        <view class="input-box fs-26 color-0">15801677338</view>
+    </view>
+    <view class="one-msg box box-ac">
+        <view class="title-justify fs-26 color-7">年 级<text></text></view>
+        <picker class="input-box box-f1 fs-26 color-0 picker" bindchange="bindGradeChange" value="{{Grade}}"  range="{{grade}}" range-key="name">
+          <view >
+            {{grade[Grade].name}}
+          </view>
+        </picker>
+        <image class='box box-img btn-down' src='image/btn_msg.png'></image>        
+    </view>
+    <view class="one-msg box box-ac">
+        <view class="title-justify fs-26 color-7">班 级<text></text></view>
+        <picker class="input-box box-f1 fs-26 color-0 picker" bindchange="bindClassesChange" value="{{Classes}}"  range="{{classes}}" range-key="name">
+          <view >
+            {{classes[Classes].name}}
+          </view>
+        </picker>
+        <image class='box box-img btn-down' src='image/btn_msg.png'></image>
+    </view>
+    <view class="one-msg box box-ac">
+        <view class="title-justify fs-26 color-7">性 别<text></text></view>
+        <picker class="input-box box-f1 fs-26 color-0 picker" bindchange="bindSexChange" value="{{Sex}}"  range="{{sex}}" range-key="name">
+          <view >
+            {{sex[Sex].name}}
+          </view>
+        </picker>
+        <image class='box box-img btn-down' src='image/btn_msg.png'></image>        
+    </view>
+    <view class="one-msg box box-ac">
+        <view class="title-justify fs-26 color-7">生 日<text></text></view>
+        <view class="input-box fs-26 color-0">2011年4月30日</view>
+    </view>
+    <view class="one-msg box box-ac">
+        <view class="title-justify fs-26 color-7">身 份 证 号<text></text></view>
+        <view class="input-box fs-26 color-0">421102201104301125</view>
+    </view>
+    <view class="one-msg box box-ac">
+        <view class="title-justify fs-26 color-7">报  名  者<text></text></view>
+        <picker class="input-box box-f1 fs-26 color-0 picker" bindchange="bindParentChange" value="{{Classes}}"  range="{{parent}}" range-key="name">
+          <view >
+            {{parent[Classes].name}}
+          </view>
+        </picker>
+        <image class='box box-img btn-down' src='image/btn_msg.png'></image>        
+    </view>
+</view>
