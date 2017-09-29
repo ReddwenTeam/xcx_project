@@ -8,7 +8,8 @@
     "pages/my_course/my_course",
     "pages/msg/msg",
     "pages/more_news/more_news",
-    "pages/news_detail/news_detail"
+    "pages/news_detail/news_detail",
+    "pages/teacher_list/teacher_list"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -45,7 +46,7 @@
           "selectedIconPath": "common/image/header/icon_msg_on.png"
         },
         {
-          "pagePath": "pages/news_detail/news_detail",
+          "pagePath": "pages/teacher_list/teacher_list",
           "text": "我的",
           "iconPath": "common/image/header/icon_user_off.png",
           "selectedIconPath": "common/image/header/icon_user_on.png"

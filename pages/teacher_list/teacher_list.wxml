@@ -1,0 +1,58 @@
+<view class="teacher-list div-after">
+    <view class="one-teacher">
+        <view class="img-teacher box-img2" style="background-image: url(../../temp/friend_1.png)"></view>
+        <view class="flag-box box box-ver box-ac">
+            <view class="cn-flag box-img" style="background-image: url(image/zhongguo.png)"></view>
+            <view class="fs-32 color-3">Selina</view>
+            <view class="fs-24 color-9">中国美少女</view>
+        </view>
+    </view>
+    <view class="one-teacher">
+        <view class="img-teacher box-img2" style="background-image: url(../../temp/friend_1.png)"></view>
+        <view class="flag-box box box-ver box-ac">
+            <view class="cn-flag box-img" style="background-image: url(image/meiguo.png)"></view>
+            <view class="fs-32 color-3">Selina</view>
+            <view class="fs-24 color-9">美国美少女</view>
+        </view>
+    </view>
+    <view class="one-teacher">
+        <view class="img-teacher box-img2" style="background-image: url(../../temp/friend_1.png)"></view>
+        <view class="flag-box box box-ver box-ac">
+            <view class="cn-flag box-img" style="background-image: url(image/yingguo.png)"></view>
+            <view class="fs-32 color-3">Selina</view>
+            <view class="fs-24 color-9">英国美少女</view>
+        </view>
+    </view>
+    <view class="one-teacher">
+        <view class="img-teacher box-img2" style="background-image: url(../../temp/friend_1.png)"></view>
+        <view class="flag-box box box-ver box-ac">
+            <view class="cn-flag box-img" style="background-image: url(image/hanguo.png)"></view>
+            <view class="fs-32 color-3">Selina</view>
+            <view class="fs-24 color-9">韩国美少女</view>
+        </view>
+    </view>
+    <view class="one-teacher">
+        <view class="img-teacher box-img2" style="background-image: url(../../temp/friend_1.png)"></view>
+        <view class="flag-box box box-ver box-ac">
+            <view class="cn-flag box-img" style="background-image: url(image/jianada.png)"></view>
+            <view class="fs-32 color-3">Selina</view>
+            <view class="fs-24 color-9">加拿大美少女</view>
+        </view>
+    </view>
+    <view class="one-teacher">
+        <view class="img-teacher box-img2" style="background-image: url(../../temp/friend_1.png)"></view>
+        <view class="flag-box box box-ver box-ac">
+            <view class="cn-flag box-img" style="background-image: url(image/putaoya.png)"></view>
+            <view class="fs-32 color-3">Selina</view>
+            <view class="fs-24 color-9">葡萄牙美少女</view>
+        </view>
+    </view>
+    <view class="one-teacher">
+        <view class="img-teacher box-img2" style="background-image: url(../../temp/friend_1.png)"></view>
+        <view class="flag-box box box-ver box-ac">
+            <view class="cn-flag box-img" style="background-image: url(image/riben.png)"></view>
+            <view class="fs-32 color-3">Selina</view>
+            <view class="fs-24 color-9">日本美少女</view>
+        </view>
+    </view>
+</view>
