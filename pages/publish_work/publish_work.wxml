@@ -1,0 +1,28 @@
+<view class="pd-lr2 pd-bf">
+    <picker bindchange="bindClassChange" value="{{classindex}}" range="{{class}}">
+        <view class="one-msg box box-ac">
+            <view class="fs-26 color-0 box box-f1">{{class[classindex]}}</view>
+            <view class="btn-down box-img" style='background-image: url(image/btn_msg.png);'></view>
+        </view>
+    </picker>
+    <picker bindchange="bindSubjectChange" value="{{subjectindex}}" range="{{subject}}">
+        <view class="one-msg box box-ac">
+            <view class="fs-26 color-0 box box-f1">{{subject[subjectindex]}}</view>
+            <view class="btn-down box-img" style='background-image: url(image/btn_msg.png);'></view>
+        </view>
+    </picker>
+    <view class="one-msg box box-ac">
+        <input class='class="fs-26 color-0 box box-f1"' placeholder="作业主题......"/>
+    </view>
+    <view class="one-text">
+        <textarea class="textarea-style fs-26 color-0" maxlength='200' bindblur="bindTextAreaBlur" auto-height placeholder="请输入文字......" />
+    </view>
+</view>
+<view class="footer-fixed box box-ac">
+    <view class="btn-smile box-img" style='background-image: url(image/icon_smile.png);'></view>
+    <view class="btn-img box-img" style='background-image: url(image/icon_img.png);'></view>
+    <view class="btn-video box-img" style='background-image: url(image/icon_video.png);'></view>
+    <view class="box box-f1 box-pe">
+        <view class="btn-submit color-w fs-26">提 交</view>
+    </view>
+</view>

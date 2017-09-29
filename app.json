@@ -10,7 +10,8 @@
     "pages/more_news/more_news",
     "pages/news_detail/news_detail",
     "pages/teacher_list/teacher_list",
-    "pages/notice_list/notice_list"
+    "pages/notice_list/notice_list",
+    "pages/publish_work/publish_work"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -47,7 +48,7 @@
           "selectedIconPath": "common/image/header/icon_msg_on.png"
         },
         {
-          "pagePath": "pages/notice_list/notice_list",
+          "pagePath": "pages/publish_work/publish_work",
           "text": "我的",
           "iconPath": "common/image/header/icon_user_off.png",
           "selectedIconPath": "common/image/header/icon_user_on.png"
