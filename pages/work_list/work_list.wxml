@@ -1,0 +1,44 @@
+<view>
+    <view class="one-info box box-ac">
+        <view class="class-math box-img" style='background-image: url(image/class3.png)'></view>
+        <view>
+            <p class="fs-32 color-0">数学题3道</p>
+            <view class="fs-20 color-9 box box-ac info-detail"><text>1小时前</text><text>五年级一班</text><text>余鹏老师</text><text>数学</text><view class="icon-new box-img" style='background-image: url(image/icon_new.png)'></view></view>
+        </view>
+    </view>
+    <view class="one-info box box-ac">
+        <view class="class-chinese box-img" style='background-image: url(image/class1.png)'></view>
+        <view>
+            <p class="fs-32 color-0">语文题2道</p>
+            <view class="fs-20 color-9 box box-ac info-detail"><text>1小时前</text><text>五年级一班</text><text>张晓兰老师</text><text>语文</text><view class="icon-new box-img" style='background-image: url(image/icon_new.png)'></view></view>
+        </view>
+    </view>
+    <view class="one-info box box-ac">
+        <view class="class-english box-img" style='background-image: url(image/class2.png)'></view>
+        <view>
+            <p class="fs-32 color-0">英语题5道</p>
+            <view class="fs-20 color-9 box box-ac info-detail"><text>1小时前</text><text>五年级一班</text><text>刘惠文老师</text><text>英语</text><view class="icon-new box-img" style='background-image: url(image/icon_new.png)'></view></view>
+        </view>
+    </view>
+    <view class="one-info box box-ac">
+        <view class="class-math box-img" style='background-image: url(image/class3.png)'></view>
+        <view>
+            <p class="fs-32 color-0">数学题3道</p>
+            <view class="fs-20 color-9 box box-ac info-detail"><text>1小时前</text><text>五年级一班</text><text>余鹏老师</text><text>数学</text></view>
+        </view>
+    </view>
+    <view class="one-info box box-ac">
+        <view class="class-chinese box-img" style='background-image: url(image/class1.png)'></view>
+        <view>
+            <p class="fs-32 color-0">语文题2道</p>
+            <view class="fs-20 color-9 box box-ac info-detail"><text>1小时前</text><text>五年级一班</text><text>张晓兰老师</text><text>语文</text></view>
+        </view>
+    </view>
+    <view class="one-info box box-ac">
+        <view class="class-english box-img" style='background-image: url(image/class2.png)'></view>
+        <view>
+            <p class="fs-32 color-0">英语题5道</p>
+            <view class="fs-20 color-9 box box-ac info-detail"><text>1小时前</text><text>五年级一班</text><text>刘惠文老师</text><text>英语</text></view>
+        </view>
+    </view>
+</view>

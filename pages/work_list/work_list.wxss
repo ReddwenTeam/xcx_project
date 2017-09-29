@@ -1,0 +1,7 @@
+@import "../../common/wxss/common";
+.one-info { background-color: #ffffff; margin-bottom: 5rpx; padding: 15rpx 30rpx; border-top: solid 1rpx rgba(0, 0, 0, .1); box-shadow: 2rpx 2rpx 5rpx rgba(0, 0, 0, .2); }
+.class-chinese { width: 68rpx; height: 59rpx; margin-right: 15rpx; background-image: url(../../image/msg/.png) }
+.class-english { width: 68rpx; height: 56rpx; margin-right: 15rpx; background-image: url(../../image/msg/class2.png) }
+.class-math { width: 68rpx; height: 54rpx; margin-right: 15rpx; background-image: url(../../image/msg/class3.png) }
+.icon-new { width: 31rpx; height: 15rpx; background-image: url(../../image/msg/icon_new.png) }
+.info-detail > text { margin-right: 20rpx; }
