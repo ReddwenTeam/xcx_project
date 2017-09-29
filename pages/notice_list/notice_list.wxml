@@ -1,0 +1,74 @@
+<view class="pd-lr2">
+    <view class="one-msg">
+        <view class="msg-box box">
+            <view class="img-msg box-img" style="background-image: url(../../temp/msg_3.png);"></view>
+            <view class="box box-ver box-f1 pd-right">
+                <view class="fs-30 color-0">电影院开放啦</view>
+                <view class="fs-18 color-8 mg-t1">每周三18：45开始将在北楼一楼电影院播放电影，请各位老师合理安排时间，前往观看。</view>
+            </view>
+        </view>
+        <view class="box box-pe">
+            <view class="fs-18 color-8 msg-time" style='background-image: url(image/icon_notice.png);'>发布时间：2016-12-26</view>
+        </view>
+    </view>
+    <view class="one-msg">
+        <view class="msg-box box">
+            <view class="img-msg box-img" style="background-image: url(../../temp/msg_1.png);"></view>
+            <view class="box box-ver box-f1 pd-right">
+                <view class="fs-30 color-0">推门听课活动今天启动</view>
+                <view class="fs-18 color-8 mg-t1">各位老师，推门听课活动今天启动，请各学科组负责人做好听课安排，老师们积极参与，互听互学，共同进步！</view>
+            </view>
+        </view>
+        <view class="box box-pe">
+            <view class="fs-18 color-8 msg-time" style='background-image: url(image/icon_notice.png);'>发布时间：2016-12-26</view>
+        </view>
+    </view>
+    <view class="one-msg">
+        <view class="msg-box box">
+            <view class="img-msg box-img" style="background-image: url(../../temp/msg_2.png);"></view>
+            <view class="box box-ver box-f1 pd-right">
+                <view class="fs-30 color-0">招聘公告</view>
+                <view class="fs-18 color-8 mg-t1">各位老师，推门听课活动今天启动，请各学科组负责人做好听课安排，老师们积极参与，互听互学，共同进步！</view>
+            </view>
+        </view>
+        <view class="box box-pe">
+            <view class="fs-18 color-8 msg-time" style='background-image: url(image/icon_notice.png);'>发布时间：2016-12-26</view>
+        </view>
+    </view>
+    <view class="one-msg">
+        <view class="msg-box box">
+            <view class="img-msg box-img" style="background-image: url(../../temp/msg_3.png);"></view>
+            <view class="box box-ver box-f1 pd-right">
+                <view class="fs-30 color-0">电影院开放啦</view>
+                <view class="fs-18 color-8 mg-t1">每周三18：45开始将在北楼一楼电影院播放电影，请各位老师合理安排时间，前往观看。</view>
+            </view>
+        </view>
+        <view class="box box-pe">
+            <view class="fs-18 color-8 msg-time" style='background-image: url(image/icon_notice.png);'>发布时间：2016-12-26</view>
+        </view>
+    </view>
+    <view class="one-msg">
+        <view class="msg-box box">
+            <view class="img-msg box-img" style="background-image: url(../../temp/msg_1.png);"></view>
+            <view class="box box-ver box-f1 pd-right">
+                <view class="fs-30 color-0">推门听课活动今天启动</view>
+                <view class="fs-18 color-8 mg-t1">各位老师，推门听课活动今天启动，请各学科组负责人做好听课安排，老师们积极参与，互听互学，共同进步！</view>
+            </view>
+        </view>
+        <view class="box box-pe">
+            <view class="fs-18 color-8 msg-time" style='background-image: url(image/icon_notice.png);'>发布时间：2016-12-26</view>
+        </view>
+    </view>
+    <view class="one-msg">
+        <view class="msg-box box">
+            <view class="img-msg box-img" style="background-image: url(../../temp/msg_2.png);"></view>
+            <view class="box box-ver box-f1 pd-right">
+                <view class="fs-30 color-0">招聘公告</view>
+                <view class="fs-18 color-8 mg-t1">各位老师，推门听课活动今天启动，请各学科组负责人做好听课安排，老师们积极参与，互听互学，共同进步！</view>
+            </view>
+        </view>
+        <view class="box box-pe">
+            <view class="fs-18 color-8 msg-time" style='background-image: url(image/icon_notice.png);'>发布时间：2016-12-26</view>
+        </view>
+    </view>
+</view>

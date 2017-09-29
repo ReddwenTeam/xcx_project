@@ -1,0 +1,8 @@
+@import "../../common/wxss/common";
+.pd-lr2 { padding: 0 20rpx 40rpx; }
+.one-msg { padding-top: 30rpx; }
+.msg-box { background-color: #ffffff; margin-bottom: 13rpx; border-top: solid 1rpx rgba(0, 0, 0, .1); border-left: solid 1rpx rgba(0, 0, 0, .1); box-shadow: 2rpx 2rpx 5rpx rgba(0, 0, 0, .2); }
+.img-msg { width: 194rpx; height: 131rpx; }
+.pd-right { padding: 13rpx 15rpx; text-align: justify; }
+.mg-t1 { margin-top: 10rpx; }
+.msg-time { padding-left: 25rpx; background-size: 15rpx 20rpx; background-repeat: no-repeat; background-position: left center; }
