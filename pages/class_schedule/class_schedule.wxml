@@ -1,21 +1,28 @@
 <view class="pd-t7 pd-lr2 pd-bf">
     <view class="schedule-box box box-ac">
-        <view class="btn-left box-img" style='background-image: url(image/btn_l.png);' ></view>
+        <view class="btn-left box-img" style='background-image: url(image/btn_l.png);' bindtap='goPrev' ></view>
         <view class="box box-f1">
-            <view class="one-day box box-ver box-ac box-pc">
-                <view class="fs-20">07-17</view>
-                <view class="fs-20">星期一</view>
-            </view>
-            <view class="one-day box box-ver box-ac box-pc on">
-                <view class="fs-20">07-18</view>
-                <view class="fs-20">星期二</view>
-            </view>
-            <view class="one-day box box-ver box-ac box-pc">
-                <view class="fs-20">07-19</view>
-                <view class="fs-20">星期三</view>
-            </view>
+        <swiper class='sliders' current='{{currentIndex}}' bindchange="changeDate">
+          <block wx:for="{{dateList}}" wx:key='{{*this}}'>
+            <swiper-item class="box">
+              <view class="one-day box box-ver box-ac box-pc {{ active == item.date0_current ? 'on':'' }}" bindtap='askSchedule' data-dateSource="{{item.date0_current}}">
+                  <view class="fs-20">{{item.date0}}</view>
+                  <view class="fs-20">{{item.week0}}</view>
+              </view>
+              <view class="one-day box box-ver box-ac box-pc {{ active == item.date1_current ? 'on':'' }}" bindtap='askSchedule' data-dateSource="{{item.date1_current}}">
+                  <view class="fs-20">{{item.date1}}</view>
+                  <view class="fs-20">{{item.week1}}</view>
+              </view>
+              <view class="one-day box box-ver box-ac box-pc {{ active == item.date2_current ? 'on':'' }}" bindtap='askSchedule' data-dateSource="{{item.date2_current}}">
+                  <view class="fs-20">{{item.date2}}</view>
+                  <view class="fs-20">{{item.week2}}</view>
+              </view>
+            </swiper-item>
+          </block>
+        </swiper>
+         
         </view>
-        <view class="btn-right box-img" style='background-image: url(image/btn_r.png);'></view>
+        <view class="btn-right box-img" style='background-image: url(image/btn_r.png);' bindtap='goNext'></view>
     </view>
     <view class="div-after">
         <view class="one-class fl-l class-english">
