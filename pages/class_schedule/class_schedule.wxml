@@ -1,6 +1,6 @@
 <view class="pd-t7 pd-lr2 pd-bf">
     <view class="schedule-box box box-ac">
-        <view class="btn-left box-img"></view>
+        <view class="btn-left box-img" style='background-image: url(image/btn_l.png);' ></view>
         <view class="box box-f1">
             <view class="one-day box box-ver box-ac box-pc">
                 <view class="fs-20">07-17</view>
@@ -15,7 +15,7 @@
                 <view class="fs-20">星期三</view>
             </view>
         </view>
-        <view class="btn-right box-img"></view>
+        <view class="btn-right box-img" style='background-image: url(image/btn_r.png);'></view>
     </view>
     <view class="div-after">
         <view class="one-class fl-l class-english">
