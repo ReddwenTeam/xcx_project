@@ -15,6 +15,7 @@
     "pages/publish_work/publish_work",
     "pages/work_list/work_list",
     "pages/teacher_detail/teacher_detail",
+    "pages/class_schedule/class_schedule",
     "pages/msg_examine/msg_examine",
     "pages/supply_detail/supply_detail",
     "pages/news_detail/news_detail",
@@ -45,7 +46,7 @@
           "selectedIconPath": "common/image/header/icon_group_on.png"
         },
         {
-          "pagePath": "pages/supply_detail/supply_detail",
+          "pagePath": "pages/class_schedule/class_schedule",
           "iconPath": "common/image/header/icon_add.png",
           "selectedIconPath": "common/image/header/icon_add.png"
         },

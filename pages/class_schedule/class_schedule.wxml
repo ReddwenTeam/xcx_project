@@ -1,0 +1,59 @@
+<view class="pd-t7 pd-lr2 pd-bf">
+    <view class="schedule-box box box-ac">
+        <view class="btn-left box-img"></view>
+        <view class="box box-f1">
+            <view class="one-day box box-ver box-ac box-pc">
+                <view class="fs-20">07-17</view>
+                <view class="fs-20">星期一</view>
+            </view>
+            <view class="one-day box box-ver box-ac box-pc on">
+                <view class="fs-20">07-18</view>
+                <view class="fs-20">星期二</view>
+            </view>
+            <view class="one-day box box-ver box-ac box-pc">
+                <view class="fs-20">07-19</view>
+                <view class="fs-20">星期三</view>
+            </view>
+        </view>
+        <view class="btn-right box-img"></view>
+    </view>
+    <view class="div-after">
+        <view class="one-class fl-l class-english">
+            <view class="fs-28 color-w mg-t15 ta-center">上午第一节</view>
+            <view class="class-img box-img" style='background-image: url(image/course_1.png)'></view>
+            <view class="fs-30 color-w ta-center">英语</view>
+        </view>
+        <view class="one-class fl-l class-math">
+            <view class="fs-28 color-w mg-t15 ta-center">上午第二节</view>
+            <view class="class-img box-img" style='background-image: url(image/course_2.png)'></view>
+            <view class="fs-30 color-w ta-center">数学</view>
+        </view>
+        <view class="one-class fl-l class-chinese">
+            <view class="fs-28 color-w mg-t15 ta-center">上午第三节</view>
+            <view class="class-img box-img" style='background-image: url(image/course_4.png)'></view>
+            <view class="fs-30 color-w ta-center">语文</view>
+        </view>
+        <view class="one-class fl-l class-history">
+            <view class="fs-28 color-w mg-t15 ta-center">上午第四节</view>
+            <view class="class-img box-img" style='background-image: url(image/course_3.png)'></view>
+            <view class="fs-30 color-w ta-center">历史</view>
+        </view>
+    </view>
+    <view class="div-after mg-t48">
+        <view class="one-class fl-l class-politics">
+            <view class="fs-28 color-w mg-t15 ta-center">下午第一节</view>
+            <view class="class-img box-img" style='background-image: url(image/course_6.png)'></view>
+            <view class="fs-30 color-w ta-center">政治</view>
+        </view>
+        <view class="one-class fl-l class-geography">
+            <view class="fs-28 color-w mg-t15 ta-center">下午第二节</view>
+            <view class="class-img box-img" style='background-image: url(image/course_5.png)'></view>
+            <view class="fs-30 color-w ta-center">地理</view>
+        </view>
+        <view class="one-class fl-l class-chinese">
+            <view class="fs-28 color-w mg-t15 ta-center">下午第三节</view>
+            <view class="class-img box-img" style='background-image: url(image/course_4.png)'></view>
+            <view class="fs-30 color-w ta-center">语文</view>
+        </view>
+    </view>
+</view>
