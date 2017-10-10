@@ -1,3 +1,4 @@
+var app = getApp()
 Page({
   /**
    * 页面的初始数据
@@ -18,7 +19,7 @@ Page({
    */
   onReady: function () {
     console.log("生命周期函数--监听页面初次渲染完成")
-
+    console.log(app.globalData)
   },
 
   /**
@@ -26,7 +27,6 @@ Page({
    */
   onShow: function () {
     console.log("生命周期函数--监听页面显示")
-
   },
 
   /**
@@ -34,7 +34,6 @@ Page({
    */
   onHide: function () {
     console.log("生命周期函数--监听页面隐藏")
-
   },
 
   /**
@@ -42,7 +41,6 @@ Page({
    */
   onUnload: function () {
     console.log("生命周期函数--监听页面卸载")
-
   },
 
   /**
@@ -50,7 +48,6 @@ Page({
    */
   onPullDownRefresh: function () {
     console.log("页面相关事件处理函数--监听用户下拉动作")
-
   },
 
   /**
@@ -58,7 +55,6 @@ Page({
    */
   onReachBottom: function () {
     console.log("页面上拉触底事件的处理函数")
-
   },
 
   /**
