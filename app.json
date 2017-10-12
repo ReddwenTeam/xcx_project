@@ -2,7 +2,6 @@
   "pages":[
     "pages/index/index",
     "pages/share_study/share_study",
-    "pages/home/home",
     "pages/course_detail/course_detail",
     "pages/my_course/my_course",
     "pages/msg/msg",
