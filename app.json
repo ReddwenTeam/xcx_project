@@ -17,8 +17,7 @@
     "pages/msg_examine/msg_examine",
     "pages/supply_detail/supply_detail",
     "pages/news_detail/news_detail",
-    "pages/user/user",
-    "pages/test/test"
+    "pages/user/user"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -45,7 +44,7 @@
           "selectedIconPath": "common/image/header/icon_group_on.png"
         },
         {
-          "pagePath": "pages/test/test",
+          "pagePath": "pages/user/user",
           "iconPath": "common/image/header/icon_add.png",
           "selectedIconPath": "common/image/header/icon_add.png"
         },
