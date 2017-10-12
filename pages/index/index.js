@@ -1,66 +1,29 @@
-var app = getApp()
+var app = getApp();
+var common = require("../../common/js/common.js");
 Page({
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    articleList: {}
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-    console.log("生命周期函数--监听页面加载")
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
   onReady: function () {
-    console.log("生命周期函数--监听页面初次渲染完成")
-    console.log(app.globalData)
+    console.log(app.globalData);
+    this.queryArticle();
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-    console.log("生命周期函数--监听页面显示")
+  //首页文章推荐
+  queryArticle: function (){
+    var that = this;
+    common.requestServer("http://weiqing.startingline.com.cn/addons/star_school/app/index.php?p=news&ac=artic&d=getArticsParam&isNeadPager=true&f=ajax", { "pindex": 1,"psize": 1 }, function(data){
+      that.setData({
+        articleList: data[0]
+      })
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-    console.log("生命周期函数--监听页面隐藏")
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-    console.log("生命周期函数--监听页面卸载")
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-    console.log("页面相关事件处理函数--监听用户下拉动作")
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-    console.log("页面上拉触底事件的处理函数")
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-    console.log("用户点击右上角分享")
+  //首页文章详情
+  queryArticleDetail: function (id) {
+    var that = this;
+    console.log(id)
+    // common.requestServer("http://weiqing.startingline.com.cn/addons/star_school/app/index.php?p=news&ac=artic&d=getArticParam&f=ajax", {"id": id}, function (data) {
+    //   console.log(data)
+    // })
   }
+  
 })

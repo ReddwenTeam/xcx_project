@@ -4,7 +4,7 @@
         <view class="flag-box box box-ver box-ac">
             <view class="cn-flag box-img" style="background-image: url(image/zhongguo.png)"></view>
             <view class="fs-32 color-3">{{item.name}}</view>
-            <view class="fs-24 color-9">{{item.concise}}</view>
+            <view class="fs-24 color-9 ellipsis-1">{{item.concise}}</view>
         </view>
     </view>
 </view>

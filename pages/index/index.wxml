@@ -18,7 +18,7 @@
     <view class='fs-26 color-w video-name'>什么什么什么什么</view>
   </image>
   <view class='box box-ac'>
-    <view class='box box-f1 fs-30'>文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述</view>
+    <view class='box box-f1 fs-30 ellipsis-2'>文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述</view>
     <view class='box box-ver box-ac box-pc' style='padding: 5rpx 20rpx 0'>
       <image class="img-logo" mode="scaleToFill" src="../../common/image/img_logo.png"></image>
       <view class='fs-30'>光谷外校</view>
@@ -30,14 +30,16 @@
     <view class='fs-30 box box-f1'>文章推荐</view>
     <view class='fs-26 color-6'>查看更多</view>
   </view>
-  <image class="video-bg" mode="scaleToFill" src="../../temp/index_4.png">
-    <view class='fs-26 color-w video-name'>2017WOFLS校园开放日完美收官</view>
-  </image>
-  <view class='box box-ac'>
-    <view class='box box-f1 fs-30'>文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述</view>
-    <view class='box box-ver box-ac box-pc' style='padding: 5rpx 20rpx 0'>
-      <image class="img-logo" mode="scaleToFill" src="../../common/image/img_logo.png"></image>
-      <view class='fs-30'>光谷外校</view>
+  <view bindtap="queryArticleDetail(3)">
+    <image class="video-bg" mode="scaleToFill" src="{{articleList.picarr}}">
+      <view class='fs-26 color-w video-name ellipsis-1'>{{articleList.title}}</view>
+    </image>
+    <view class='box box-ac'>
+      <view class='box box-f1 fs-30 ellipsis-2'>{{articleList.breif}}</view>
+      <view class='box box-ver box-ac box-pc' style='padding: 5rpx 20rpx 0'>
+        <image class="img-logo" mode="scaleToFill" src="../../common/image/img_logo.png"></image>
+        <view class='fs-30'>光谷外校</view>
+      </view>
     </view>
   </view>
 </view>
