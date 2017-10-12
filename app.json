@@ -1,7 +1,6 @@
 {
   "pages":[
     "pages/index/index",
-    "pages/logs/logs",
     "pages/share_study/share_study",
     "pages/home/home",
     "pages/course_detail/course_detail",
