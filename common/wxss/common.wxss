@@ -59,6 +59,7 @@ div { outline: 0 !important; -webkit-text-size-adjust: none; -webkit-tap-highlig
 .box-ellipsis { text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden; }
 .ellipsis-1 {overflow : hidden; text-overflow: ellipsis; -webkit-line-clamp: 1; display: -webkit-box; -webkit-box-orient: vertical; }
 .ellipsis-2 {overflow : hidden; text-overflow: ellipsis; -webkit-line-clamp: 2; display: -webkit-box; -webkit-box-orient: vertical; }
+.ellipsis-3 {overflow : hidden; text-overflow: ellipsis; -webkit-line-clamp: 3; display: -webkit-box; -webkit-box-orient: vertical; }
 .ta-center { text-align: center }
 .ta-right { text-align: right }
 .ta-justify { text-align: justify; }

@@ -7,6 +7,7 @@ Page({
   onReady: function () {
     console.log(app.globalData);
     this.queryArticle();    
+    this.test(); 
   },
   queryArticle: function (){
     var that = this;
@@ -16,10 +17,27 @@ Page({
       })
     })
   },
+  test: function () {
+    var that = this;
+    //视频列表
+     common.requestServer("http://weiqing.startingline.com.cn/addons/star_school/app/index.php?p=course&ac=vcourse&d=getVcoursesParam&isNeadPager=true", { "pindex": 1, "psize": 1 }, function (data) {
+    //单个视频
+       // audition 非试听0  试听1 price 收费价格 ischarge 是否收费 非0  是1
+       // 免费的就没有试听的，全部都能播放
+       // 收费的试听视频才能播放，非试听视频需要购买了才能播放
+    // common.requestServer("http://weiqing.startingline.com.cn/addons/star_school/app/index.php?p=course&ac=cvideo&d=getCvideosParam&isNeadPager=false", { "vcourseid": 2 }, function (data) {
+      console.log(data)
+    })
+  },
   ToArticleDetail: function (event) {
     var dataSet = event.currentTarget.dataset;
     wx.navigateTo({
       url: '../news_detail/news_detail?id=' + dataSet.articleId
+    })
+  },
+  ToMoreArticle: function(){
+    wx.navigateTo({
+      url: '../more_news/more_news?BarTitle=更多文章推荐'
     })
   }
 })

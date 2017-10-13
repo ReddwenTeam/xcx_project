@@ -1,50 +1,23 @@
-<view class="pd-t7">
-    <!--slider start-->
-    <image class="slider-content" mode="scaleToFill" src="../../temp/news_1.png">
-        <view class="slider-info box box-ac">
-            <text class="fs-30 color-w pd-l4 box box-f1">专家团队视导光谷外校</text>
-            <text class="fs-16 color-w pd-r4">发布时间：2017-01-05</text>
-        </view>
-    </image>
-    <!--slider end-->
-    <!--article start-->
-    <view class="pd-lr2">
-        <view class="one-new box">
-            <view class="box box-ver box-f1 pd-left">
-                <p class="fs-30 color-0">吉克俊逸、金志文、刘佳空降武汉给中小学生当音乐导师</p>
-                <p class="fs-16 color-9 box box-f1 box-ae">发布时间：2016-12-26</p>
-            </view>
-            <image class="img-news" mode="scaleToFill" src="../../temp/news_4.png">
-                <image class="img-shadow" mode="scaleToFill" src="image/img_left.png"></image>
-            </image>
-        </view>
-        <view class="one-new box">
-            <view class="box box-ver box-f1 pd-left">
-                <p class="fs-30 color-0">坐上时光机，来一场二十年后的 JOB INTERVIEW</p>
-                <p class="fs-16 color-9 box box-f1 box-ae">发布时间：2017-06-24</p>
-            </view>
-            <image class="img-news" mode="scaleToFill" src="../../temp/news_5.png">
-                <image class="img-shadow" mode="scaleToFill" src="image/img_left.png"></image>
-            </image>
-        </view>
-        <view class="one-new box">
-            <view class="box box-ver box-f1 pd-left">
-                <p class="fs-30 color-0">特别的爱给特别的你，WOFLS校园开放日剪影</p>
-                <p class="fs-16 color-9 box box-f1 box-ae">发布时间：2017-06-20</p>
-            </view>
-            <image class="img-news" mode="scaleToFill" src="../../temp/news_2.png">
-                <image class="img-shadow" mode="scaleToFill" src="image/img_left.png"></image>
-            </image>
-        </view>
-        <view class="one-new box">
-            <view class="box box-ver box-f1 pd-left">
-                <p class="fs-30 color-0">武汉市委常委、组织部长杨汉军一行莅临我校调研指导工作</p>
-                <p class="fs-16 color-9 box box-f1 box-ae">发布时间：2017-06-15</p>
-            </view>
-            <image class="img-news" mode="scaleToFill" src="../../temp/news_3.png">
-                <image class="img-shadow" mode="scaleToFill" src="image/img_left.png"></image>
-            </image>
-        </view>
+<view class="pd-b4">
+  <view wx:for="{{ArticleList}}" wx:key="id">
+    <view wx:if="{{index == 0}}"> 
+      <image class="slider-content" mode="scaleToFill" src="{{item.picarr}}">
+          <view class="slider-info box box-ac">
+              <text class="fs-30 color-w pd-l4 box box-f1 ellipsis-1">{{item.title}}</text>
+              <text class="fs-16 color-w pd-r4">发布时间：{{item.formatTime}}</text>
+          </view>
+      </image>
     </view>
-    <!--article end-->
+    <view wx:else class='pd-lr2'>
+      <view class="one-new box">
+          <view class="box box-ver box-f1 pd-left">
+              <p class="fs-30 color-0 ellipsis-3">{{item.title}}</p>
+              <p class="fs-16 color-9 box box-f1 box-ae">发布时间：{{item.formatTime}}</p>
+          </view>
+          <view class="img-news box-img1" style="background-image: url({{item.picarr}})">
+              <image class="img-shadow" mode="scaleToFill" src="image/img_left.png"></image>
+          </view>
+      </view>
+    </view>
+  </view>
 </view>
