@@ -50,7 +50,7 @@ Page({
     var dataSet = event.currentTarget.dataset;
     console.log(dataSet)
     wx.navigateTo({
-      url: '../course_detail/course_detail?id=' + dataSet.videoId + '&BarTitle=' + dataSet.videoName + '&price=' + dataSet.videoPrice
+      url: '../course_detail/course_detail?id=' + dataSet.videoId + '&BarTitle=' + dataSet.videoName + '&price=' + dataSet.videoPrice + '&ischarge=' + dataSet.videoIscharge
     })
   },
   ToMoreArticle: function(){

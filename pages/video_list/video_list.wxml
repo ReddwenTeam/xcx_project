@@ -3,7 +3,8 @@
     <view class="video-content" wx:key="{{item.index}}" wx:for="{{video_list}}">
         <view class="one-video" bindtap="ToVideoDetail" 
             data-video-id="{{item.id}}" 
-            data-video-price="{{item.price}}"
+            data-video-price="{{item.price}}"    
+            data-video-ischarge="{{videoList.ischarge}}"
             data-video-name="{{item.title}}"
             >
           <image class='box box-img course-img' src="{{item.poster_src}}"></image>

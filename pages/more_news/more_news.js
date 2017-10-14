@@ -1,5 +1,5 @@
 var common = require("../../common/js/common.js");
-var curPage = 3, curArticleList=[];
+var curPage = 1, curArticleList=[];
 Page({
   data: {
     ArticleList:[],
@@ -11,6 +11,7 @@ Page({
   },
   onShow:function(){
     curArticleList = [];
+    curPage = 1;
   },
   onLoad: function (param) {
     var that = this;

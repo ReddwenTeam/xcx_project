@@ -1,7 +1,10 @@
 <view class="pd-t7 pd-b1">
   <view class="one-video">
-    <video id="myVideo" poster='../../temp/course_1.png'  src="http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400" danmu-list="{{danmuList}}" enable-danmu danmu-btn controls></video>
-    
+    <!-- 试听 -->
+    <video wx:if="{{audition != 0 }}" id="myVideo" poster='{{poster}}'  src="{{video_src}}" controls></video>
+    <!-- 非试听 -->
+    <image wx:else src='{{poster}}' bindtap='toastInfo'>
+    <image class="btn-play" mode="scaleToFill" src="../../common/image/btn_play.png"></image></image>
   </view>
   <view class="box list-content">
       <view class="width-3 fs-28 box box-ac box-pc {{curPageName == 'xiangqing' ? 'list-on' :''}} " bindtap="changePage" data-page-name="xiangqing" >
@@ -20,13 +23,15 @@
   </view>
   <template name="xiangqing">
     <view class="list-info">
-        <p class="fs-32 color-0">零基础2小时搞定韩语发音全套（包括音变和常用语）【小鹿韩语】</p>
-        <view class="box mg-t2">
+        <view class="fs-32 color-0">{{items.videoList[0].name}}</view>
+        <view class="fs-26 color-6 mg-t2">{{items.videoList[0].breif}}</view>
+        
+        <!-- <view class="box mg-t2">
             <text class="color-7 fs-26 buy-num">购买人数</text>
             <text class="color-7 fs-26 pd-l4">好评度</text>
             <text class="color-7 fs-26 pd-l4">8人评论</text>
-        </view>
-        <view class="fs-40 color-money mg-t2">19.9</view>
+        </view> -->
+        <view class="fs-40 color-money mg-t2">{{price}}</view>
     </view>
     <view class="one-info box box-ac color-7">
         <text class="icon-word fs-24">保</text>
@@ -53,13 +58,14 @@
     </view>
   </template> 
   <template name="mulu">
-  <view class='box box-f1 box-ver bg-fff video-list-box'>
-    <view class="one-class box">
-        <image class="img-msg box-img" src="../../temp/course_1.png" ></image> 
+  <view class='box box-f1 box-ver bg-fff video-list-box' wx:for="{{items.videoList}}" wx:key="{{index}}">
+    <view class="one-class box" bindtap="ToPlay"
+     data-video-index="{{index}}">
+        <image class="img-msg box-img" src="{{item[0].picarr}}" ></image> 
         <view class="box box-ver box-f1">
-            <view class="fs-30 color-b">11111</view>
-            <view class="fs-26 color-9 mg-t1">| 2222 |  3333 共12节</view>
-            <view class="box box-f1 box-ae box-pe fs-26 color-9">主讲：jack</view>
+            <view class="fs-30 color-b">{{item[0].name}}</view>
+            <view class="fs-26 color-9 mg-t1">{{item[0].breif}}</view>
+            <view class="box box-f1 box-ae box-pe fs-26 color-9">发布时间：{{item[0].formatTime}}</view>
         </view>
     </view> 
   </view>  
@@ -76,12 +82,12 @@
       </view> 
     </view>
   </template>
-  <template is="{{curPageName}}"></template>
+  <template is="{{curPageName}}" data="{{items,price}}"></template>
 </view>
 <view class="footer-fixed box box-ac">
     <image class="box btn-msg box-img" src='image/message.png'></image> 
     <text class="fs-30 color-b">咨询</text>
     <view class="box box-f1 box-pe">
-        <view class="btn-submit color-w fs-26">立即购买</view>
+        <view class="{{ischarge == 0 ?'btn-disable' : 'btn-submit' }}  color-w fs-26">{{ischarge == 0 ?'免费' : '立即购买' }} </view>
     </view>
 </view>

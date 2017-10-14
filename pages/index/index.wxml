@@ -5,7 +5,7 @@
   <view class='fs-30'>国内外顶级专家精心设计，打造华中地区一流的教育基地！</view>
   <view class='box mg-t2 color-6'>
     <view class='fs-26 box box-f1'>通知</view>
-    <view class='fs-26'>什么什么五星好评</view>
+    <view class='fs-26'>五星好评</view>
   </view>
 </view>
 <view class="pd-2">
@@ -18,6 +18,7 @@
     src="{{videoList.picarr}}" 
     data-video-id="{{videoList.id}}"
     data-video-price="{{videoList.price}}"
+    data-video-ischarge="{{videoList.ischarge}}"
     data-video-name="{{videoList.name}}"
     bindtap="ToVideoDetail"
     >

@@ -4,6 +4,8 @@ page { background-color: #efefef; }
 /*video*/
 .one-video { position: relative; height: 350rpx; }
 .one-video video{width: 100%;height: 100%; }
+.one-video>image{width: 100%;height: 100%; position: relative;}
+.btn-play { position: absolute; left: 50%; top: 50%; width: 80rpx; height: 80rpx; margin: -40rpx 0 0  -40rpx; }
 .display { display: none; } 
 /*list-content*/
 .list-content { padding: 20rpx 0; border-bottom: solid 1px #e5e5e5; background-color: #ffffff; }
@@ -29,6 +31,7 @@ page { background-color: #efefef; }
 .footer-fixed { width: 100%; border-top: solid 1px #e5e5e5; height: 90rpx; background-color: #fff; position: fixed; left: 0; bottom: 0; }
  .btn-msg { width: 40rpx; height: 40rpx; margin: 0 20rpx;  } 
 .btn-submit { width: 200rpx; height: 60rpx; background-color: #2b3579; border-radius: 60rpx; line-height: 60rpx; text-align: center; margin-right: 20rpx; }
+.btn-disable{width: 200rpx; height: 60rpx; background-color: #bbb; border-radius: 60rpx; line-height: 60rpx; text-align: center; margin-right: 20rpx; }
 .one-class { background-color: #ffffff; margin-top: 17rpx; padding: 15rpx 10rpx; box-shadow: 2rpx 2rpx 5rpx rgba(0, 0, 0, .2) }
 .img-msg { width: 255rpx; height: 144rpx; margin-right: 20rpx; }
 .mg-t1 { margin-top: 10rpx; }
