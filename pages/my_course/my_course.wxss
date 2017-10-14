@@ -14,7 +14,7 @@
 .pop-info .play-btn{width: 80rpx;height: 80rpx;margin-bottom: 30rpx;}
 .pop-info .play-btn image{width: 100%;height: 100%;}
 .info-time { opacity: 0.5; margin-top: 10rpx; }
-.one-class { background-color: #ffffff; margin-top: 17rpx; padding: 15rpx 10rpx; box-shadow: 0 0 50rpx rgba(0, 0, 0, .2); }
+.one-class { background-color: #ffffff; margin-top: 17rpx; padding: 15rpx 10rpx; box-shadow: 2rpx 2rpx 5rpx rgba(0, 0, 0, .2) }
 .img-msg { width: 255rpx; height: 144rpx; margin-right: 20rpx; }
 .mg-t1 { margin-top: 10rpx; }
 .poster-title{ max-width: 60%;}

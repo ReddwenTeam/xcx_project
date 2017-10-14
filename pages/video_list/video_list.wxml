@@ -1,18 +1,26 @@
 <view class="pd-t7">
     <!--video start-->
     <view class="video-content" wx:key="{{item.index}}" wx:for="{{video_list}}">
-        <view class="one-video">
+        <view class="one-video" bindtap="ToVideoDetail" 
+            data-video-id="{{item.id}}" 
+            data-video-price="{{item.price}}"
+            data-video-name="{{item.title}}"
+            >
           <image class='box box-img course-img' src="{{item.poster_src}}"></image>
           <view class="pop-box box box-ac">
               <view class="pop-info box box-ver box-ac">
                   <image src='../../common/image/btn_play.png' class='box box-img play-btn'></image>
                   <view class="color-w fs-30">{{item.title}}</view>
                   <view class="color-w fs-30">{{item.sub_title}}</view>
-                  <view class="color-w fs-24 info-time">  | {{item.tag}} |  {{item.duration}}</view>
+                  <!-- <view class="color-w fs-24 info-time">  | {{item.tag}} |  {{item.duration}}</view> -->
               </view>
           </view>
         </view>
         
     </view>
     <!--video end-->
+</view>
+<view class='box box-pc box-ac' style='padding: 20rpx 0;' wx:if="{{loading.status}}">
+  <view class='loading-img box-img' style='background-image: url(../../common/image/loading.png)' wx:if="{{loading.load}}"></view>
+  <view class='fs-26 color-9'>{{loading.text}}</view>
 </view>

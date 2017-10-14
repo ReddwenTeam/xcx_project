@@ -1,3 +1,5 @@
+var common = require("../../common/js/common.js");
+var curVideoList = [], curPage = 1;
 var VIDEO_LIST = [
   {
     title: "他们有一种魔力，让我情不自禁",
@@ -34,67 +36,79 @@ var VIDEO_LIST = [
 ]
 
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-    video_list: VIDEO_LIST
+    video_list: []
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-    
+  onLoad: function (param) {
+    var that = this;
+    wx.setNavigationBarTitle({
+      title: param.BarTitle
+    });
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-    
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
   onShow: function () {
-    
+    curVideoList = [];
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-    
+  onReady: function () {
+    this.queryVideoList(curPage);
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-    
+  queryVideoList: function (page) {
+    var that = this;
+    common.requestServer("http://weiqing.startingline.com.cn/addons/star_school/app/index.php?p=course&ac=vcourse&d=getVcoursesParam&isNeadPager=true", { "pindex": page, "psize": 1 }, function (data) {
+      if (data.length == 0) {
+        if (page == 1) {
+          that.setData({
+            loading: {
+              status: true,
+              load: false,
+              text: "暂无数据"
+            }
+          });
+        } else {
+          that.setData({
+            loading: {
+              status: true,
+              load: false,
+              text: "没有更多数据。"
+            }
+          });
+          curPage--;
+        }
+      } else {
+        data.forEach(function (item) {
+          var temp = {
+            title: item.name,
+            sub_title: item.breif,
+            tag: "",
+            duration: "",
+            id: item.id,
+            poster_src: item.picarr,
+            price: item.price
+          }
+          curVideoList.push(temp);
+        });
+        that.setData({
+          video_list: curVideoList
+        });
+      }
+      console.log(data);
+    })
   },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-    
+  ToVideoDetail: function (event){
+    var dataSet = event.currentTarget.dataset;
+    console.log(dataSet)
+    wx.navigateTo({
+      url: '../course_detail/course_detail?id=' + dataSet.videoId + '&BarTitle=' + dataSet.videoName + '&price=' + dataSet.videoPrice
+    })
   },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
   onReachBottom: function () {
-    
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-    
+    this.setData({
+      loading: {
+        status: true,
+        load: true,
+        text: "加载中..."
+      }
+    });
+    curPage++;
+    this.queryVideoList(curPage);
   }
 })

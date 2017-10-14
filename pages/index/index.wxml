@@ -11,14 +11,21 @@
 <view class="pd-2">
   <view class='box'>
     <view class='fs-30 box box-f1'>在线课程</view>
-    <view class='fs-26 color-6'>查看更多</view>
+    <view class='fs-26 color-6' bindtap="ToMoreVideo">查看更多</view>
   </view>
-  <image class="video-bg" mode="scaleToFill" src="../../temp/index_4.png">
-    <image class="btn-play" mode="scaleToFill" src="../../common/image/btn_play.png"></image>
-    <view class='fs-26 color-w video-name'>什么什么什么什么</view>
+  <image class="video-bg" 
+    mode="scaleToFill" 
+    src="{{videoList.picarr}}" 
+    data-video-id="{{videoList.id}}"
+    data-video-price="{{videoList.price}}"
+    data-video-name="{{videoList.name}}"
+    bindtap="ToVideoDetail"
+    >
+      <image class="btn-play" mode="scaleToFill" src="../../common/image/btn_play.png"></image>
+      <view class='fs-26 color-w video-name'>{{videoList.name}}</view>
   </image>
   <view class='box box-ac'>
-    <view class='box box-f1 fs-30 ellipsis-2'>文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述</view>
+    <view class='box box-f1 fs-30 ellipsis-2'>{{videoList.breif}}</view>
     <view class='box box-ver box-ac box-pc' style='padding: 5rpx 20rpx 0'>
       <image class="img-logo" mode="scaleToFill" src="../../common/image/img_logo.png"></image>
       <view class='fs-30'>光谷外校</view>

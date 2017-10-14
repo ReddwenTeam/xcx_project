@@ -29,3 +29,12 @@ page { background-color: #efefef; }
 .footer-fixed { width: 100%; border-top: solid 1px #e5e5e5; height: 90rpx; background-color: #fff; position: fixed; left: 0; bottom: 0; }
  .btn-msg { width: 40rpx; height: 40rpx; margin: 0 20rpx;  } 
 .btn-submit { width: 200rpx; height: 60rpx; background-color: #2b3579; border-radius: 60rpx; line-height: 60rpx; text-align: center; margin-right: 20rpx; }
+.one-class { background-color: #ffffff; margin-top: 17rpx; padding: 15rpx 10rpx; box-shadow: 2rpx 2rpx 5rpx rgba(0, 0, 0, .2) }
+.img-msg { width: 255rpx; height: 144rpx; margin-right: 20rpx; }
+.mg-t1 { margin-top: 10rpx; }
+.poster-title{ max-width: 60%;}
+.poster-title text{ display: table-cell ;text-align: center; word-break: break-all;}
+.mainVideo{ position: absolute; width: 100%; top:0;left: 0;visibility: hidden;}
+.mainVideo.active{visibility: visible;}
+
+.video-list-box{padding: 20rpx; background-color: #ffffff}

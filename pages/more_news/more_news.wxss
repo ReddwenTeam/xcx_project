@@ -11,3 +11,11 @@
 .pd-left { padding: 18rpx 30rpx 18rpx 12rpx; text-align: justify; }
 .img-news { width: 336rpx; height: 189rpx; position: relative; }
 .img-shadow { width: 16rpx; height: 19rpx; position: absolute; left: 0; bottom: 22rpx; }
+.loading-img { width: 50rpx; height: 50rpx; margin-right: 20rpx;
+animation: rotation 1.6s linear infinite;
+-webkit-animation: rotation 1.6s linear infinite;
+ }
+@-webkit-keyframes rotation{
+from {-webkit-transform: rotate(0deg);}
+to {-webkit-transform: rotate(360deg);}
+}

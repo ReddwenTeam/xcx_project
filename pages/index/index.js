@@ -2,11 +2,13 @@ var app = getApp();
 var common = require("../../common/js/common.js");
 Page({
   data: {
-    articleList: {}
+    articleList: {},
+    videoList: {}
   },
   onReady: function () {
     console.log(app.globalData);
     this.queryArticle();    
+    this.queryVideo();
     this.test(); 
   },
   queryArticle: function (){
@@ -14,6 +16,15 @@ Page({
     common.requestServer("http://weiqing.startingline.com.cn/addons/star_school/app/index.php?p=news&ac=artic&d=getArticsParam&isNeadPager=true&f=ajax", { "pindex": 1,"psize": 1 }, function(data){
       that.setData({
         articleList: data[0]
+      })
+    })
+  },
+  queryVideo: function () {
+    var that = this;
+    common.requestServer("http://weiqing.startingline.com.cn/addons/star_school/app/index.php?p=course&ac=vcourse&d=getVcoursesParam&isNeadPager=true", { "pindex": 1, "psize": 1 }, function (data) {
+      console.log(data[0])
+      that.setData({
+        videoList: data[0]
       })
     })
   },
@@ -35,9 +46,21 @@ Page({
       url: '../news_detail/news_detail?id=' + dataSet.articleId
     })
   },
+  ToVideoDetail: function (event) {
+    var dataSet = event.currentTarget.dataset;
+    console.log(dataSet)
+    wx.navigateTo({
+      url: '../course_detail/course_detail?id=' + dataSet.videoId + '&BarTitle=' + dataSet.videoName + '&price=' + dataSet.videoPrice
+    })
+  },
   ToMoreArticle: function(){
     wx.navigateTo({
       url: '../more_news/more_news?BarTitle=更多文章推荐'
+    })
+  },
+  ToMoreVideo: function () {
+    wx.navigateTo({
+      url: '../video_list/video_list?BarTitle=更多在线课程'
     })
   }
 })

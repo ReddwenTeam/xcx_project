@@ -7,3 +7,11 @@
 .pop-info { width: 100%; height: 170rpx; }
 .info-time { opacity: 0.8; margin-top: 10rpx; }
 .play-btn{width: 80rpx;height: 80rpx;margin-bottom: 20rpx;}
+.loading-img { width: 50rpx; height: 50rpx; margin-right: 20rpx;
+animation: rotation 1.6s linear infinite;
+-webkit-animation: rotation 1.6s linear infinite;
+ }
+@-webkit-keyframes rotation{
+from {-webkit-transform: rotate(0deg);}
+to {-webkit-transform: rotate(360deg);}
+}
