@@ -1,5 +1,5 @@
 <view class="teacher-list div-after">
-    <view class="one-teacher" wx:for="{{teacherList}}" wx:key="id">
+    <view class="one-teacher" wx:for="{{teacherList}}" wx:key="id" bindtap='ToTeacherDetail' data-teacher-id='{{item.id}}'>
         <view class="img-teacher box-img2" style="background-image: url({{item.avatar}})"></view>
         <view class="flag-box box box-ver box-ac">
             <view class="cn-flag box-img" style="background-image: url(image/zhongguo.png)"></view>

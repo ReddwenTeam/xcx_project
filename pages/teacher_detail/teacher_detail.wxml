@@ -1,7 +1,7 @@
-<view class="teacher-img box-img2" style="background-image: url(../../temp/friend_1.png)"></view>
+<view class="teacher-img box-img2" style="background-image: url({{info.avatar}})"></view>
 <view class="info-box">
     <view class="one-info box box-ver box-ac">
-        <p class="color-0 fs-40">Selina 鲜啦啦</p>
+        <p class="color-0 fs-40">{{info.name}}</p>
         <view class="box mg-t15">
             <view class="cn-flag box-img" style="background-image: url(image/zhongguo.png)"></view>
             <view class="color-0 fs-30">中国</view>

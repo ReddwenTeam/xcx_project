@@ -16,4 +16,10 @@ Page({
       })
     });
   },
+  ToTeacherDetail: function (event){
+    var dataSet = event.currentTarget.dataset;
+    wx.navigateTo({
+      url: '../teacher_detail/teacher_detail?id=' + dataSet.teacherId + '&BarTitle="教师详情"'
+    })
+  }
 })
