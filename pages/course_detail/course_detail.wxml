@@ -1,7 +1,7 @@
 <view class="pd-t7 pd-b1">
   <view class="one-video">
     <!-- 试听 -->
-    <video wx:if="{{audition != 0 }}" id="myVideo" poster='{{poster}}'  src="{{video_src}}" controls></video>
+    <video wx:if="{{audition == 0 }}" id="myVideo" poster='{{poster}}'  src="{{video_src}}" controls></video>
     <!-- 非试听 -->
     <image wx:else src='{{poster}}' bindtap='toastInfo'>
     <image class="btn-play" mode="scaleToFill" src="../../common/image/btn_play.png"></image></image>
@@ -24,7 +24,7 @@
   <template name="xiangqing">
     <view class="list-info">
         <view class="fs-32 color-0 ellipsis-1">{{items.videoList.name}}</view>
-        <view class="fs-26 color-7 mg-t2">{{audition == 1 ?'试听课程' : '非试听课程' }}</view>
+        <view class="fs-26 color-7 mg-t2">{{audition == 0 ?'试听课程' : '非试听课程' }}</view>
         <view class="fs-26 color-6 mg-t2">{{items.videoList.breif}}</view>
         <view class="fs-40 color-money mg-t2">{{price}}</view>
     </view>
