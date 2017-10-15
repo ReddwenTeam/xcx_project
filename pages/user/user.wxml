@@ -4,7 +4,7 @@
   <view class="info-content box box-ac">
       <view class="info-box color-0 fs-26">身份：游客</view>
       <view class="box box-f1 box-ver box-ac box-pe pos-head">
-          <view class="img-head box-img" style="background-image: url(../../temp/head.png)"></view>
+          <view class="img-head box-img" style="background-image: url(../../common/image/img_logo.png)"></view>
           <p class="fs-34 color-0 fs-bold head-name">Bernice</p>
       </view>
       <view class="info-box color-0 fs-26">姓名：Carol</view>
@@ -22,7 +22,7 @@
   <view class="info-content box box-ac">
       <view class="info-box color-0 fs-26">身份：家长</view>
       <view class="box box-f1 box-ver box-ac box-pe pos-head">
-          <view class="img-head box-img" style="background-image: url(../../temp/head.png)"></view>
+          <view class="img-head box-img" style="background-image: url(../../common/image/img_logo.png)"></view>
           <p class="fs-34 color-0 fs-bold head-name">Bernice</p>
       </view>
       <view class="info-box color-0 fs-26">学生切换</view>
@@ -79,7 +79,7 @@
     <view class="info-content box box-ac">
         <view class="info-box color-0 fs-26">身份：老师</view>
         <view class="box box-f1 box-ver box-ac box-pe pos-head">
-            <view class="img-head box-img" style="background-image: url(../../temp/head.png)"></view>
+            <view class="img-head box-img" style="background-image: url(../../common/image/img_logo.png)"></view>
             <p class="fs-34 color-0 fs-bold head-name">Miranda</p>
         </view>
         <view class="info-box color-0 fs-26">科任老师</view>
@@ -124,7 +124,7 @@
     <view class="info-content box box-ac">
         <view class="info-box color-0 fs-26">身份：老师</view>
         <view class="box box-f1 box-ver box-ac box-pe pos-head">
-            <view class="img-head box-img" style="background-image: url(../../temp/head.png)"></view>
+            <view class="img-head box-img" style="background-image: url(../../common/image/img_logo.png)"></view>
             <p class="fs-34 color-0 fs-bold head-name">Miranda</p>
         </view>
         <view class="info-box color-0 fs-26">行政办公</view>

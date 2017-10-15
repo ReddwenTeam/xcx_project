@@ -1,8 +1,8 @@
 @import "../../common/wxss/common";
-
 page { background-color: #efefef; }
 /*video*/
-.one-video { position: relative; height: 350rpx; }
+#myVideo { height: 500rpx;}
+.one-video { position: relative; height: 500rpx; }
 .one-video video{width: 100%;height: 100%; }
 .one-video>image{width: 100%;height: 100%; position: relative;}
 .btn-play { position: absolute; left: 50%; top: 50%; width: 80rpx; height: 80rpx; margin: -40rpx 0 0  -40rpx; }

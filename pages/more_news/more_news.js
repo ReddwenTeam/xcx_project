@@ -36,7 +36,7 @@ Page({
             loading: {
               status: true,
               load: false,
-              text: "没有更多数据。"
+              text: "没有更多数据"
             }
           });
           curPage--;

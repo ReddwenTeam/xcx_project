@@ -12,7 +12,7 @@
 .img-news { width: 336rpx; height: 189rpx; position: relative; }
 .img-shadow { width: 16rpx; height: 19rpx; position: absolute; left: 0; bottom: 22rpx; }
 .loading-img { width: 50rpx; height: 50rpx; margin-right: 20rpx;
-animation: rotation 1.6s linear infinite;
+ animation: rotation 1.6s linear infinite;
 -webkit-animation: rotation 1.6s linear infinite;
  }
 @-webkit-keyframes rotation{
