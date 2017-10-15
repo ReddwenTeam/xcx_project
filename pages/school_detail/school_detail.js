@@ -13,7 +13,7 @@ Page({
   },
   queryDetail: function(){
     var that = this;
-    common.requestServer("http://weiqing.startingline.com.cn/addons/star_school/app/index.php?p=basic&ac=sys&d=getParamByKey&keys=schoolSetting", {}, function (data) {
+    common.requestServer("p=basic&ac=sys&d=getParamByKey&keys=schoolSetting", {}, function (data) {
       that.setData({
         schoolList: data
       });
@@ -30,7 +30,15 @@ Page({
   },
   showPanel: function (info){
     var that = this;
-    var content = "<div style=\"word-break:normal;\" class='fs-26 color-0 p-paragraph'>" + info + "</div>";
-    common.formatHtml("article", "html", content, that);
+    if (info.length){
+      var content = "<div style=\"word-break:normal;\" class='fs-26 color-0 p-paragraph'>" + info + "</div>";
+      common.formatHtml("article", "html", content, that);
+    }else{
+      wx.showToast({
+        title: '暂无信息!',
+        image: '../../common/image/cry.png',
+        duration: 2000
+      })
+    }
   }
 })

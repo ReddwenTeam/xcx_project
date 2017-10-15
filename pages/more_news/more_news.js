@@ -21,7 +21,7 @@ Page({
   },
   queryArticleList: function(page){
     var that = this;
-    common.requestServer("http://weiqing.startingline.com.cn/addons/star_school/app/index.php?p=news&ac=artic&d=getArticsParam&isNeadPager=true&f=ajax", { "pindex": page, "psize": 5 }, function (data) {
+    common.requestServer("p=news&ac=artic&d=getArticsParam&isNeadPager=true&f=ajax", { "pindex": page, "psize": 5 }, function (data) {
       if (data.length == 0){
         if (page == 1){
           that.setData({

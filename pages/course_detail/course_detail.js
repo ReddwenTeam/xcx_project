@@ -34,7 +34,7 @@ Page({
   },
   queryDetail:function(id){
     var that = this;
-    common.requestServer("http://weiqing.startingline.com.cn/addons/star_school/app/index.php?p=course&ac=cvideo&d=getCvideosParam&isNeadPager=false", { "vcourseid": id }, function (data) {
+    common.requestServer("p=course&ac=cvideo&d=getCvideosParam&isNeadPager=false", { "vcourseid": id }, function (data) {
       if(data.length>0){
         data.forEach(function (item) {
           item.formatTime = common.formatTime(item.createtime, 'Y-M-D');

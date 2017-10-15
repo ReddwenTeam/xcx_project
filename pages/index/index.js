@@ -14,7 +14,8 @@ Page({
   },
   queryArticle: function (){
     var that = this;
-    common.requestServer("http://weiqing.startingline.com.cn/addons/star_school/app/index.php?p=news&ac=artic&d=getArticsParam&isNeadPager=true&f=ajax", { "pindex": 1,"psize": 1 }, function(data){
+    common.requestServer("p=news&ac=artic&d=getArticsParam&isNeadPager=true&f=ajax", { "pindex": 1,"psize": 1 }, function(data){
+      console.log(data)
       that.setData({
         articleList: data[0]
       })
@@ -22,7 +23,7 @@ Page({
   },
   queryVideo: function () {
     var that = this;
-    common.requestServer("http://weiqing.startingline.com.cn/addons/star_school/app/index.php?p=course&ac=vcourse&d=getVcoursesParam&isNeadPager=true", { "pindex": 1, "psize": 1 }, function (data) {
+    common.requestServer("p=course&ac=vcourse&d=getVcoursesParam&isNeadPager=true", { "pindex": 1, "psize": 1 }, function (data) {
       that.setData({
         videoList: data[0]
       })
@@ -30,7 +31,7 @@ Page({
   },
   querySchool: function () {
     var that = this;
-    common.requestServer("http://weiqing.startingline.com.cn/addons/star_school/app/index.php?p=basic&ac=sys&d=getParamByKey&keys=schoolSetting", {}, function (data) {
+    common.requestServer("p=basic&ac=sys&d=getParamByKey&keys=schoolSetting", {}, function (data) {
       that.setData({
         schoolList: data
       })

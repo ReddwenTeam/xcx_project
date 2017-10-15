@@ -16,7 +16,7 @@ Page({
   },
   queryVideoList: function (page) {
     var that = this;
-    common.requestServer("http://weiqing.startingline.com.cn/addons/star_school/app/index.php?p=course&ac=vcourse&d=getVcoursesParam&isNeadPager=true", { "pindex": page, "psize": 3 }, function (data) {
+    common.requestServer("p=course&ac=vcourse&d=getVcoursesParam&isNeadPager=true", { "pindex": page, "psize": 3 }, function (data) {
       if (data.length == 0) {
         if (page == 1) {
           that.setData({

@@ -5,7 +5,7 @@ Page({
   },
   onLoad: function (param) {
     var that = this;
-    common.requestServer("http://weiqing.startingline.com.cn/addons/star_school/app/index.php?p=news&ac=artic&d=getArticParam&f=ajax", { "id": param.id }, function (data) {
+    common.requestServer("p=news&ac=artic&d=getArticParam&f=ajax", { "id": param.id }, function (data) {
       data.formatTime = common.formatTime(data.createtime, 'Y-M-D');
       that.setData({
         articleInfo: data

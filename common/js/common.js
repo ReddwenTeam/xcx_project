@@ -2,9 +2,10 @@ var WxParse = require('../wxParse/wxParse.js');
 /** 
  * 请求服务
 */
+var baseUrl = "https://weiqing.zqkj.site/addons/star_school/app/index.php?";
 function requestServer(url,param,callback){
   wx.request({
-    url: url,
+    url: baseUrl+url,
     data: param,
     header: {
       'content-type': 'application/json'
