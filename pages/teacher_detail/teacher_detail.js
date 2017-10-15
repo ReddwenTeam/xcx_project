@@ -1,5 +1,4 @@
 var common = require("../../common/js/common.js");
-
 Page({
   data:{
     info:{}

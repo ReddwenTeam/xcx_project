@@ -1,5 +1,4 @@
 @import "../../common/wxss/common";
-
 .teacher-img { width: 100%; height: 800rpx; }
 .one-info { border-bottom: solid 1rpx #eaeaea; padding: 30rpx 20rpx; }
 .one-info:last-child { border-bottom: none; padding: 30rpx 0; }
