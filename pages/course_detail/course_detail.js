@@ -15,6 +15,7 @@ Page({
     allVideoList = [];
   },
   onLoad: function (param) {
+    this.player = wx.createVideoContext('myVideo');
     wx.setNavigationBarTitle({
       title: param.BarTitle
     });
@@ -51,6 +52,7 @@ Page({
   },
   showPanel: function (type,index){
     var that = this;
+    // console.log(allVideoList[index]);
     if (allVideoList.length>0){
       switch (type) {
         case "xiangqing":
@@ -62,6 +64,7 @@ Page({
               videoList: allVideoList[index]
             }
           })
+         
           break;
         case "mulu":
           that.setData({
@@ -82,7 +85,9 @@ Page({
     }
   },
   ToPlay: function(event){
+    this.videoPause();
     var dataSet = event.currentTarget.dataset;
+
     this.setData({
       curPageName: "xiangqing"
     });
@@ -95,5 +100,11 @@ Page({
       image: '../../common/image/cry.png',
       duration: 2000
     })
+  },
+  videoPause: function () {
+    this.player.pause();
+  },
+  videoPlay: function () {
+    this.player.play();
   }
 })
