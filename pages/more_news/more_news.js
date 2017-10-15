@@ -9,12 +9,9 @@ Page({
       text: ""
     },
   },
-  onShow:function(){
+  onLoad: function (param) {
     curArticleList = [];
     curPage = 1;
-  },
-  onLoad: function (param) {
-    var that = this;
     wx.setNavigationBarTitle({
       title: param.BarTitle
     });

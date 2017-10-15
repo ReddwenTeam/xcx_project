@@ -5,18 +5,11 @@ Page({
     video_list: []
   },
   onLoad: function (param) {
-    var that = this;
+    curVideoList = [];
+    curPage = 1;
     wx.setNavigationBarTitle({
       title: param.BarTitle
     });
-  },
-  onShow: function () {
-    curVideoList = [];
-    curPage = 1;
-    console.log("------------------")
-    console.log(curVideoList)
-    console.log(curPage)
-    console.log("------------------")
   },
   onReady: function () {
     this.queryVideoList(curPage);
@@ -61,12 +54,10 @@ Page({
           video_list: curVideoList
         });
       }
-      console.log(data);
     })
   },
   ToVideoDetail: function (event){
     var dataSet = event.currentTarget.dataset;
-    console.log(dataSet)
     wx.navigateTo({
       url: '../course_detail/course_detail?id=' + dataSet.videoId + '&BarTitle=' + dataSet.videoName + '&price=' + dataSet.videoPrice + '&ischarge=' + dataSet.videoIscharge
     })
