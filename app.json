@@ -45,7 +45,7 @@
           "selectedIconPath": "common/image/header/icon_group_on.png"
         },
         {
-          "pagePath": "pages/publish_work/publish_work",
+          "pagePath": "pages/work_list/work_list",
           "iconPath": "common/image/header/icon_add.png",
           "selectedIconPath": "common/image/header/icon_add.png"
         },
