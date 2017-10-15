@@ -15,7 +15,6 @@ Page({
   queryArticle: function (){
     var that = this;
     common.requestServer("p=news&ac=artic&d=getArticsParam&isNeadPager=true&f=ajax", { "pindex": 1,"psize": 1 }, function(data){
-      console.log(data)
       that.setData({
         articleList: data[0]
       })
