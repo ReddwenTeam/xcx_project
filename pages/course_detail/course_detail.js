@@ -11,6 +11,9 @@ Page({
       videoList: []
     }
   },
+  onShow: function (param) {
+    allVideoList = [];
+  },
   onLoad: function (param) {
     wx.setNavigationBarTitle({
       title: param.BarTitle
@@ -31,45 +34,51 @@ Page({
   queryDetail:function(id){
     var that = this;
     common.requestServer("http://weiqing.startingline.com.cn/addons/star_school/app/index.php?p=course&ac=cvideo&d=getCvideosParam&isNeadPager=false", { "vcourseid": id }, function (data) {
-      data.forEach(function (item) {
-        if (typeof item == "object"){
-          item[0].formatTime = common.formatTime(item[0].createtime, 'Y-M-D');
-        }
-      });
-      allVideoList = data;
-      that.showPanel("xiangqing",0);
-      
+      if(data.length>0){
+        data.forEach(function (item) {
+          item.formatTime = common.formatTime(item.createtime, 'Y-M-D');
+        });
+        allVideoList = data;
+        that.showPanel("xiangqing", 0);
+      }else{
+        wx.showToast({
+          title: '暂无视频信息!',
+          image: '../../common/image/cry.png',
+          duration: 2000
+        })
+      }
     })
   },
   showPanel: function (type,index){
     var that = this;
-    switch (type) {
-      case "xiangqing":
-        console.log(allVideoList[index][0])
-        that.setData({
-          poster: allVideoList[index][0].picarr,
-          video_src: allVideoList[index][0].videourl,
-          audition: allVideoList[index][0].audition,
-          items:{
-            videoList: allVideoList[index]
-          }
-        })
-        break;
-      case "mulu":
-        that.setData({
-          items: {
-            videoList: allVideoList
-          }
-        });
-        break;
-      case "kecheng":
-        that.setData({
-          items: {
-            videoList: allVideoList
-          }
-        });
-        break;
-      default: break;
+    if (allVideoList.length>0){
+      switch (type) {
+        case "xiangqing":
+          that.setData({
+            poster: allVideoList[index].picarr,
+            video_src: allVideoList[index].videourl,
+            audition: allVideoList[index].audition,
+            items: {
+              videoList: allVideoList[index]
+            }
+          })
+          break;
+        case "mulu":
+          that.setData({
+            items: {
+              videoList: allVideoList
+            }
+          });
+          break;
+        case "kecheng":
+          // that.setData({
+          //   items: {
+          //     videoList: allVideoList
+          //   }
+          // });
+          break;
+        default: break;
+      }
     }
   },
   ToPlay: function(event){

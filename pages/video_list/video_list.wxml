@@ -11,9 +11,8 @@
           <view class="pop-box box box-ac">
               <view class="pop-info box box-ver box-ac">
                   <image src='../../common/image/btn_play.png' class='box box-img play-btn'></image>
-                  <view class="color-w fs-30">{{item.title}}</view>
-                  <view class="color-w fs-30">{{item.sub_title}}</view>
-                  <!-- <view class="color-w fs-24 info-time">  | {{item.tag}} |  {{item.duration}}</view> -->
+                  <view class="color-w fs-30 ellipsis-1">{{item.title}}</view>
+                  <view class="color-w fs-30 ellipsis-1">{{item.sub_title}}</view>
               </view>
           </view>
         </view>

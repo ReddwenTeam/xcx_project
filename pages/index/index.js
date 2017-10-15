@@ -9,6 +9,7 @@ Page({
     console.log(app.globalData);
     this.queryArticle();    
     this.queryVideo();
+    this.querySchool();
     this.test(); 
   },
   queryArticle: function (){
@@ -22,10 +23,16 @@ Page({
   queryVideo: function () {
     var that = this;
     common.requestServer("http://weiqing.startingline.com.cn/addons/star_school/app/index.php?p=course&ac=vcourse&d=getVcoursesParam&isNeadPager=true", { "pindex": 1, "psize": 1 }, function (data) {
-      console.log(data[0])
       that.setData({
         videoList: data[0]
       })
+    })
+  },
+  querySchool: function () {
+    var that = this;
+    common.requestServer("http://weiqing.startingline.com.cn/addons/star_school/app/index.php?p=basic&ac=sys&d=getParamByKey&keys=schoolSetting", {}, function (data) {
+      console.log(data)
+ 
     })
   },
   test: function () {
@@ -48,7 +55,6 @@ Page({
   },
   ToVideoDetail: function (event) {
     var dataSet = event.currentTarget.dataset;
-    console.log(dataSet)
     wx.navigateTo({
       url: '../course_detail/course_detail?id=' + dataSet.videoId + '&BarTitle=' + dataSet.videoName + '&price=' + dataSet.videoPrice + '&ischarge=' + dataSet.videoIscharge
     })
