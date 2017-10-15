@@ -3,6 +3,11 @@ Page({
   data: {
     teacherList: [],
   },
+  onLoad: function (param) {
+    wx.setNavigationBarTitle({
+      title: param.BarTitle
+    });
+  },
   onReady: function () {
     var _this = this;
     common.requestServer("http://weiqing.startingline.com.cn/addons/star_school/app/index.php?p=teacher&ac=teacher&d=getCountrysParam", {}, function (data) {

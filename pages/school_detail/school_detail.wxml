@@ -1,0 +1,4 @@
+<import src="../../common/wxParse/wxParse.wxml"/> 
+<view class='pd-2'>
+  <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+</view>

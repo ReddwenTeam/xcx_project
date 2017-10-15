@@ -1,6 +1,6 @@
 <!--游客-->
 <template name="youke">
-  <view class="slider-content box-img2 box box-ac box-pe" style="background-image: url(image/tourist_bg.png);"></view>
+  <view class="slider-content box-img2 box box-ac box-pe" style="background-image: url(image/tourist_bg.jpg);"></view>
   <view class="info-content box box-ac">
       <view class="info-box color-0 fs-26">身份：游客</view>
       <view class="box box-f1 box-ver box-ac box-pe pos-head">
@@ -18,7 +18,7 @@
 
 <!--家长-->
 <template name="jiazhang">
-  <view class="slider-content box-img2 box box-ac box-pe" style="background-image: url(image/tourist_bg.png);"></view>
+  <view class="slider-content box-img2 box box-ac box-pe" style="background-image: url(image/tourist_bg.jpg);"></view>
   <view class="info-content box box-ac">
       <view class="info-box color-0 fs-26">身份：家长</view>
       <view class="box box-f1 box-ver box-ac box-pe pos-head">
@@ -75,7 +75,7 @@
 
 <!--老师-->
 <template name="laoshi">
-  <view class="slider-content box-img2 box box-ac box-pe" style="background-image: url(image/teacher_bg.png);"></view>
+  <view class="slider-content box-img2 box box-ac box-pe" style="background-image: url(image/teacher_bg.jpg);"></view>
     <view class="info-content box box-ac">
         <view class="info-box color-0 fs-26">身份：老师</view>
         <view class="box box-f1 box-ver box-ac box-pe pos-head">
@@ -120,7 +120,7 @@
 
 <!--行政-->
 <template name="xingzheng">
-  <view class="slider-content box-img2 box box-ac box-pe" style="background-image: url(image/teacher_bg.png);"></view>
+  <view class="slider-content box-img2 box box-ac box-pe" style="background-image: url(image/teacher_bg.jpg);"></view>
     <view class="info-content box box-ac">
         <view class="info-box color-0 fs-26">身份：老师</view>
         <view class="box box-f1 box-ver box-ac box-pe pos-head">
@@ -167,4 +167,4 @@
       
   </view>
 </template>
-<template is="youke"/>
+<template is="laoshi"/>

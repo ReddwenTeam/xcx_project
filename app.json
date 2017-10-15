@@ -17,6 +17,7 @@
     "pages/msg_examine/msg_examine",
     "pages/supply_detail/supply_detail",
     "pages/news_detail/news_detail",
+    "pages/school_detail/school_detail",
     "pages/user/user"
   ],
   "window":{
@@ -44,7 +45,7 @@
           "selectedIconPath": "common/image/header/icon_group_on.png"
         },
         {
-          "pagePath": "pages/teacher_list/teacher_list",
+          "pagePath": "pages/publish_work/publish_work",
           "iconPath": "common/image/header/icon_add.png",
           "selectedIconPath": "common/image/header/icon_add.png"
         },

@@ -3,14 +3,14 @@ var common = require("../../common/js/common.js");
 Page({
   data: {
     articleList: {},
-    videoList: {}
+    videoList: {},
+    schoolList: {}
   },
   onReady: function () {
     console.log(app.globalData);
     this.queryArticle();    
     this.queryVideo();
     this.querySchool();
-    this.test(); 
   },
   queryArticle: function (){
     var that = this;
@@ -31,20 +31,9 @@ Page({
   querySchool: function () {
     var that = this;
     common.requestServer("http://weiqing.startingline.com.cn/addons/star_school/app/index.php?p=basic&ac=sys&d=getParamByKey&keys=schoolSetting", {}, function (data) {
-      console.log(data)
- 
-    })
-  },
-  test: function () {
-    var that = this;
-    //视频列表
-     common.requestServer("http://weiqing.startingline.com.cn/addons/star_school/app/index.php?p=course&ac=vcourse&d=getVcoursesParam&isNeadPager=true", { "pindex": 1, "psize": 1 }, function (data) {
-    //单个视频
-       // audition 非试听0  试听1 price 收费价格 ischarge 是否收费 非0  是1
-       // 免费的就没有试听的，全部都能播放
-       // 收费的试听视频才能播放，非试听视频需要购买了才能播放
-    // common.requestServer("http://weiqing.startingline.com.cn/addons/star_school/app/index.php?p=course&ac=cvideo&d=getCvideosParam&isNeadPager=false", { "vcourseid": 2 }, function (data) {
-      console.log(data)
+      that.setData({
+        schoolList: data
+      })
     })
   },
   ToArticleDetail: function (event) {
@@ -57,6 +46,18 @@ Page({
     var dataSet = event.currentTarget.dataset;
     wx.navigateTo({
       url: '../course_detail/course_detail?id=' + dataSet.videoId + '&BarTitle=' + dataSet.videoName + '&price=' + dataSet.videoPrice + '&ischarge=' + dataSet.videoIscharge
+    })
+  },
+  ToSchoolDetail: function (event) {
+    var dataSet = event.currentTarget.dataset;
+    wx.navigateTo({
+      url: '../school_detail/school_detail?schoolInfo=' + dataSet.schoolInfo + '&BarTitle=' + dataSet.schoolName
+    })
+  },
+  ToTeacherDetail: function (event) {
+    var dataSet = event.currentTarget.dataset;
+    wx.navigateTo({
+      url: '../teacher_list/teacher_list?BarTitle=' + dataSet.schoolName
     })
   },
   ToMoreArticle: function(){

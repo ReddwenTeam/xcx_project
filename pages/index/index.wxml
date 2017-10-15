@@ -56,25 +56,30 @@
     <view class='fs-30 box box-f1'>学习机构</view>
   </view>
   <view class='box'>
-    <view class='width-3'>
-      <image class="width-3-img" mode="scaleToFill" src="../../temp/index_4.png"></image>
+    <view class='width-3' bindtap="ToSchoolDetail" 
+    data-school-info='1'
+     data-school-name="学校外招">
+      <image class="width-3-img" mode="scaleToFill" src="{{schoolList.shpicarr}}"></image>
       <view class='box box-ver box-ac box-pc'>
         <image class="img-logo3" mode="scaleToFill" src="../../common/image/img_logo.png"></image>
-        <view class='fs-28'>光谷外校</view>
+        <view class='fs-28'>学校外招</view>
       </view>
     </view>
-    <view class='width-3'>
-      <image class="width-3-img" mode="scaleToFill" src="../../temp/index_4.png"></image>
+    <view class='width-3' bindtap="ToSchoolDetail"
+     data-school-info='2'
+     data-school-name="招生简介">
+      <image class="width-3-img" mode="scaleToFill" src="{{schoolList.stpicarr}}"></image>
       <view class='box box-ver box-ac box-pc'>
         <image class="img-logo3" mode="scaleToFill" src="../../common/image/img_logo.png"></image>
-        <view class='fs-28'>光谷外校</view>
+        <view class='fs-28'>招生简介</view>
       </view>
     </view>
-    <view class='width-3'>
-      <image class="width-3-img" mode="scaleToFill" src="../../temp/index_4.png"></image>
+    <view class='width-3' bindtap="ToTeacherDetail"
+     data-school-name="教师风采">
+      <image class="width-3-img" mode="scaleToFill" src="{{schoolList.thpicarr}}"></image>
       <view class='box box-ver box-ac box-pc'>
         <image class="img-logo3" mode="scaleToFill" src="../../common/image/img_logo.png"></image>
-        <view class='fs-28'>光谷外校</view>
+        <view class='fs-28'>教师风采</view>
       </view>
     </view>
   </view>
