@@ -167,4 +167,4 @@
       
   </view>
 </template>
-<template is="laoshi"/>
+<template is = "{{role}}" />

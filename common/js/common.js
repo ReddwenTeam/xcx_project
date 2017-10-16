@@ -69,8 +69,27 @@ function formatHtml(bindName, type, content, self) {
   WxParse.wxParse(bindName, type, content, self, imgCount);
 }
 
+function getStorage(name){
+  wx.getStorage({
+    key: name,
+    success: function (res) {
+      return res.data;
+    }
+  })
+  
+}
+
+function setStorage(key,value){
+  wx.setStorage({
+    key: key,
+    data: value
+  })
+}
+
 module.exports = {
   requestServer: requestServer,
   formatTime: formatTime,
-  formatHtml: formatHtml
+  formatHtml: formatHtml,
+  getStorage: getStorage,
+  setStorage: setStorage
 }
