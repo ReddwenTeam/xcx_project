@@ -1,43 +1,62 @@
+<import src="../../common/wxParse/wxParse.wxml"/> 
 <view class="teacher-img box-img2" style="background-image: url({{info.avatar}})"></view>
 <view class="info-box">
     <view class="one-info box box-ver box-ac">
         <p class="color-0 fs-40">{{info.name}}</p>
         <view class="box mg-t15">
-            <view class="cn-flag box-img" style="background-image: url(image/zhongguo.png)"></view>
-            <view class="color-0 fs-30">中国</view>
+            <view class="cn-flag box-img" style="background-image: url({{info.countrylist.picarr}})"></view>
+            <view class="color-0 fs-30">{{info.countrylist.name}}</view>
         </view>
-        <view class="mg-t15 color-0 fs-28">专业英语培训师</view>
+        <view class="mg-t15 color-0 fs-28">{{info.concise}}</view>
         <view class="img-id box-img" style="background-image: url(image/img_id.png)"></view>
         <view class="mg-t15 color-0 fs-32">身份认证</view>
+        <view class="box box-f1 width-90 mg-t15">
+          <view class="fs-28 color-3 box box-f1">手机</view>
+          <view class="fs-28 color-9">{{info.mobile.length > 0 ? info.mobile : "暂无"}}</view>
+        </view>
+          <view class="box box-f1 width-90 mg-t15">
+          <view class="fs-28 color-3 box box-f1">电话</view>
+          <view class="fs-28 color-9">{{info.tel.length > 0 ? info.tel : "暂无"}}</view>
+        </view>
     </view>
     <view class="one-info box box-ver box-ac">
         <view class="color-0 fs-32">语言水平</view>
-        <view class="box box-f1 width-90 mg-t15">
-            <view class="fs-28 color-3 box box-f1">英语</view>
-            <view class="fs-28 color-9">母语</view>
+        <view wx:if="{{info.masterlist.length > 0}}"  style="width:100%">
+          <view class="mg-t15 box" wx:for="{{info.masterlist}}" wx:key="{{item.index}}">
+            <view class="fs-28 color-3 box box-f1">{{item}}</view>
+            <view class="fs-28 color-9">精通</view>
+          </view>
         </view>
-        <view class="box box-f1 width-90 mg-t15">
-            <view class="fs-28 color-3 box box-f1">普通话</view>
-            <view class="fs-28 color-9">高级</view>
+        <view wx:if="{{info.intimacylist.length > 0}}" style="width:100%">
+          <view class="mg-t15 box" wx:for="{{info.intimacylist}}" wx:key="{{item.index}}">
+            <view class="fs-28 color-3 box box-f1">{{item}}</view>
+            <view class="fs-28 color-9">熟悉</view>
+          </view>
         </view>
     </view>
-    <view class="one-info box box-ver box-ac">
+    <view class="one-info article box box-ver box-ac">
         <view class="color-0 fs-32">自我介绍</view>
-        <p class="color-6 fs-28 p-paragraph">
-            大家好，我是来自哪里的美少女。自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍
-        </p>
+        <view class="wxParse">
+          <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+        </view>
     </view>
     <view class="one-info box box-ver box-ac">
         <view class="color-0 fs-32">我的服务</view>
-        <view class="one-class">
-            <view class="img-class box-img1" style="background-image: url(../../temp/course_3.png)"></view>
-            <view class="fs-30 color-3 pd-lr2">一节英语课</view>
-            <view class="fs-26 color-9 mg-t15 pd-lr2"><text>时长：1小时</text><text>一对一辅导</text></view>
-        </view>
-        <view class="one-class">
-            <view class="img-class box-img1" style="background-image: url(../../temp/course_3.png)"></view>
-            <view class="fs-30 color-3 pd-lr2">一节英语课</view>
-            <view class="fs-26 color-9 mg-t15 pd-lr2"><text>时长：1小时</text><text>一对一辅导</text></view>
+        <view wx:if="{{info.vcourselist.length > 0}}" >
+          <view wx:key="{{item.index}}" wx:for="{{info.vcourselist}}">
+            <view class="one-class" bindtap="ToVideoDetail" 
+            data-video-id="{{item.id}}" 
+            data-video-price="{{item.price}}"    
+            data-video-ischarge="{{item.ischarge}}"
+            data-video-name="{{item.name}}"
+            >
+              <view class="img-class box-img1 box box-ac box-pc" style="background-image: url({{item.picarr}})">
+                <image src='../../common/image/btn_play.png' class='box box-img play-btn'></image>
+              </view>
+              <view class="fs-30 color-3">{{item.name}}</view>
+              <view class="fs-26 color-9 mg-t15">{{item.info}}</view>
+            </view>
+          </view>
         </view>
     </view>
 </view>

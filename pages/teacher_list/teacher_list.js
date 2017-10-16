@@ -13,7 +13,7 @@ Page({
     common.requestServer("p=teacher&ac=teacher&d=getCountrysParam", {}, function (data) {
       _this.setData({
         teacherList: data,
-      })
+      });
     });
   },
   ToTeacherDetail: function (event){

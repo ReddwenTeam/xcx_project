@@ -17,7 +17,9 @@ Page({
       console.log(data);
       that.setData({
         info: data
-      })
+      });
+      var content = "<div style=\"word-break:normal;\" class='fs-28 color-6 p-paragraph'>" + data.info + "</div>";
+      common.formatHtml("article", "html", content, that);
     });
   }
 })

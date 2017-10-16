@@ -7,10 +7,18 @@ Page({
     schoolList: {}
   },
   onReady: function () {
-    console.log(app.globalData);
     this.queryArticle();    
     this.queryVideo();
     this.querySchool();
+    this.test();
+  },
+  test:function(){
+    var userData = app.globalData.AllInfo;
+    console.log(userData)
+    common.requestServer("p=member&ac=member", { "d": userData }, function (data) {
+      console.log("-------")
+      console.log(data)
+    })
   },
   queryArticle: function (){
     var that = this;
