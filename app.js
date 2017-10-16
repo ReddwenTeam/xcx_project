@@ -1,4 +1,3 @@
-//app.js
 var common = require("common/js/common.js");
 var CODE_INFO = {};
 App({
@@ -10,12 +9,9 @@ App({
     wx.setStorageSync('logs', logs)
     wx.login({
       success: function (res) {
-        console.log(res);
-        
         if (res.code) {
           //code 换取 session_key
           common.requestServer("p=member&ac=member&d=memberLogin", { "code": res.code }, function (data) {
-            var CODE_M = res.code;
             CODE_INFO.openid = data.openid;
             wx.getUserInfo({
               success: function (res) {
@@ -27,22 +23,20 @@ App({
                 CODE_INFO.city = userInfo.city;
                 CODE_INFO.country = userInfo.country;
                 CODE_INFO.gender = userInfo.gender;
-                
-                common.setStorage("roles", "xingzheng");
-
-
+                console.log(CODE_INFO)
+                //common.setStorage("roles", "xingzheng");
                 //第三方服务器登录
                 common.requestServer("p=member&ac=member&d=gainMembersInfo", CODE_INFO, function (data) {
-                  
                   if (data.status == "success"){
                     that.isMemberBinded(data.memberid);
-                    //绑定身份
-                    // common.requestServer(
-                    //   "p=member&ac=binding&d=saveBindingParam&code=" + CODE_M + "&name=" + userInfo.nickName + "&memberid=" + data.memberid+"&type=parent",
-                    //   {},
-                    //   function (data) {
-                    //     console.log(data);
-                    //   })
+                    wx.setStorage({
+                      key: "openInfo",
+                      data: {
+                        openId: CODE_INFO.openid,
+                        memberId: data.memberid,
+                        nickName: CODE_INFO.nickName
+                      }
+                    })
                   }
                 })
               }

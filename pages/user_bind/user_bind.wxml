@@ -20,7 +20,7 @@
         <view class='fs-34 color-3'>家长</view>
       </view>
     </view>
-    <view class="btn-bind color-w fs-30">绑 定</view>
+    <view class="btn-bind color-w fs-30" bindtap='bindInfo'>绑 定</view>
     </view>
   </view>
 </template>
@@ -30,7 +30,7 @@
     <view class="box box-ac box-pc img-box">
       <view class='box box-ver box-ac box-bc'>
         <view class="user-img box-img" style="background-image: url({{avatarUrl}})"></view>
-        <view class='fs-34 color-3'>sda</view>
+        <view class='fs-34 color-3'>{{nickName}}</view>
       </view>
       <view class="bind-img box-img" style="background-image: url(image/bind.png)"></view>
       <view class='box box-ver box-ac box-bc'>
@@ -40,13 +40,13 @@
     </view>
     <view class='box pd-5'>
       <view class='fs-30 user-name'>老师姓名：</view>
-      <input class='input-style fs-30 color-3 box box-f1'/>
+      <input class='input-style fs-30 color-3 box box-f1' bindinput='bindInput1' />
     </view>
         <view class='box pd-5'>
       <view class='fs-30 user-name'>绑定码：</view>
-      <input class='input-style fs-30 color-3 box box-f1'/>
+      <input class='input-style fs-30 color-3 box box-f1' bindinput='bindInput2'/>
     </view>
-    <view class="btn-bind color-w fs-30" >绑 定</view>
+    <view class="btn-bind color-w fs-30" bindtap='bindTeacherInfo'>绑 定</view>
     </view>
   </view>
 </template>
