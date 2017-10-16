@@ -1,0 +1,4 @@
+@import "../../common/wxss/common";
+page { background-color: #efefef;  }
+.pd-2 { padding: 20rpx; }
+.bind-content { width: 100%; height: 80rpx; background-color: #ffffff; border-radius: 10rpx;  border: solid 1px #cccccc; border-bottom: none; }
