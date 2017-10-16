@@ -23,9 +23,15 @@ App({
                 CODE_INFO.province = userInfo.province;
                 CODE_INFO.city = userInfo.city;
                 CODE_INFO.country = userInfo.country;
-                console.log(CODE_INFO)
+                CODE_INFO.gender = userInfo.gender;
                 common.requestServer("p=member&ac=member&d=gainMembersInfo", CODE_INFO, function (data) {
-                  console.log(data)
+                  if (data.status == "success"){
+                    if (data.status == "success"){
+                      wx.navigateTo({
+                        url: '../user_bind/user_bind?avatarUrl=' + CODE_INFO.avatarUrl + '&nickName = ' + CODE_INFO.nickName
+                      })
+                    }
+                  }
                 })
               }
             })

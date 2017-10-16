@@ -18,6 +18,7 @@
     "pages/supply_detail/supply_detail",
     "pages/news_detail/news_detail",
     "pages/school_detail/school_detail",
+    "pages/user_bind/user_bind",
     "pages/user/user"
   ],
   "window":{
