@@ -1,7 +1,7 @@
 <view class="pd-b4">
   <view wx:for="{{ArticleList}}" wx:key="id">
     <view wx:if="{{index == 0}}"> 
-      <image class="slider-content" mode="scaleToFill" src="{{item.picarr}}" bindtap="ToArticleDetail" data-article-id="{{item.id}}">
+      <image class="slider-content" mode="scaleToFill" src="{{item.picarr}}" bindtap="ToArticleDetail" data-article-id="{{item.id}}" data-article-name="{{item.title}}">
           <view class="slider-info box box-ac">
               <text class="fs-30 color-w pd-l4 box box-f1 ellipsis-1">{{item.title}}</text>
               <text class="fs-16 color-w pd-r4">发布时间：{{item.formatTime}}</text>
@@ -9,7 +9,7 @@
       </image>
     </view>
     <view wx:else class='pd-lr2'>
-      <view class="one-new box" bindtap="ToArticleDetail" data-article-id="{{item.id}}">
+      <view class="one-new box" bindtap="ToArticleDetail" data-article-id="{{item.id}}" data-article-name="{{item.title}}">
           <view class="box box-ver box-f1 pd-left">
               <p class="fs-30 color-0 ellipsis-3">{{item.title}}</p>
               <p class="fs-16 color-9 box box-f1 box-ae">发布时间：{{item.formatTime}}</p>
@@ -21,8 +21,7 @@
     </view>
   </view>
 </view>
-
 <view class='box box-pc box-ac' style='padding: 20rpx 0;' wx:if="{{loading.status}}">
-  <view class='loading-img box-img' style='background-image: url(../../common/image/loading.png)' wx:if="{{loading.load}}"></view>
+  <image class="loading-img" mode="scaleToFill" src="../../common/image/loading.png" wx:if="{{loading.load}}"></image>
   <view class='fs-26 color-9'>{{loading.text}}</view>
 </view>

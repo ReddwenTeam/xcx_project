@@ -8,7 +8,7 @@
             <view class="color-0 fs-30">{{info.countrylist.name}}</view>
         </view>
         <view class="mg-t15 color-0 fs-28">{{info.concise}}</view>
-        <view class="img-id box-img" style="background-image: url(image/img_id.png)"></view>
+        <image class="img-id" mode="scaleToFill" src="image/img_id.png"></image>
         <view class="mg-t15 color-0 fs-32">身份认证</view>
         <view class="box box-f1 width-90 mg-t15">
           <view class="fs-28 color-3 box box-f1">手机</view>

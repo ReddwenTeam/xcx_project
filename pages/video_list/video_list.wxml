@@ -21,6 +21,6 @@
     <!--video end-->
 </view>
 <view class='box box-pc box-ac' style='padding: 20rpx 0;' wx:if="{{loading.status}}">
-  <view class='loading-img box-img' style='background-image: url(../../common/image/loading.png)' wx:if="{{loading.load}}"></view>
+  <image class="loading-img" mode="scaleToFill" src="../../common/image/loading.png" wx:if="{{loading.load}}"></image>
   <view class='fs-26 color-9'>{{loading.text}}</view>
 </view>

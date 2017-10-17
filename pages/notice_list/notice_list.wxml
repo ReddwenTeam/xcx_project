@@ -1,74 +1,23 @@
 <view class="pd-lr2">
-    <view class="one-msg">
+  <view wx:key="{{item.index}}" wx:for="{{notice_list}}">
+    <view class="one-msg"bindtap="ToNoticeDetail" 
+            data-notice-id="{{item.id}}" 
+            data-notice-name="{{item.title}}"
+            >
         <view class="msg-box box">
-            <view class="img-msg box-img" style="background-image: url(../../temp/msg_3.png);"></view>
+            <image class="img-msg" mode="aspectFill" src="{{item.picarr}}"></image>
             <view class="box box-ver box-f1 pd-right">
-                <view class="fs-30 color-0">电影院开放啦</view>
-                <view class="fs-18 color-8 mg-t1">每周三18：45开始将在北楼一楼电影院播放电影，请各位老师合理安排时间，前往观看。</view>
+                <view class="fs-30 color-0 ellipsis-1">{{item.title}}</view>
+                <view class="fs-18 color-8 mg-t1 ellipsis-2">{{item.breif}}</view>
             </view>
         </view>
         <view class="box box-pe">
-            <view class="fs-18 color-8 msg-time" style='background-image: url(image/icon_notice.png);'>发布时间：2016-12-26</view>
+            <view class="fs-18 color-8 msg-time">发布时间：{{item.formatTime}}</view>
         </view>
     </view>
-    <view class="one-msg">
-        <view class="msg-box box">
-            <view class="img-msg box-img" style="background-image: url(../../temp/msg_1.png);"></view>
-            <view class="box box-ver box-f1 pd-right">
-                <view class="fs-30 color-0">推门听课活动今天启动</view>
-                <view class="fs-18 color-8 mg-t1">各位老师，推门听课活动今天启动，请各学科组负责人做好听课安排，老师们积极参与，互听互学，共同进步！</view>
-            </view>
-        </view>
-        <view class="box box-pe">
-            <view class="fs-18 color-8 msg-time" style='background-image: url(image/icon_notice.png);'>发布时间：2016-12-26</view>
-        </view>
-    </view>
-    <view class="one-msg">
-        <view class="msg-box box">
-            <view class="img-msg box-img" style="background-image: url(../../temp/msg_2.png);"></view>
-            <view class="box box-ver box-f1 pd-right">
-                <view class="fs-30 color-0">招聘公告</view>
-                <view class="fs-18 color-8 mg-t1">各位老师，推门听课活动今天启动，请各学科组负责人做好听课安排，老师们积极参与，互听互学，共同进步！</view>
-            </view>
-        </view>
-        <view class="box box-pe">
-            <view class="fs-18 color-8 msg-time" style='background-image: url(image/icon_notice.png);'>发布时间：2016-12-26</view>
-        </view>
-    </view>
-    <view class="one-msg">
-        <view class="msg-box box">
-            <view class="img-msg box-img" style="background-image: url(../../temp/msg_3.png);"></view>
-            <view class="box box-ver box-f1 pd-right">
-                <view class="fs-30 color-0">电影院开放啦</view>
-                <view class="fs-18 color-8 mg-t1">每周三18：45开始将在北楼一楼电影院播放电影，请各位老师合理安排时间，前往观看。</view>
-            </view>
-        </view>
-        <view class="box box-pe">
-            <view class="fs-18 color-8 msg-time" style='background-image: url(image/icon_notice.png);'>发布时间：2016-12-26</view>
-        </view>
-    </view>
-    <view class="one-msg">
-        <view class="msg-box box">
-            <view class="img-msg box-img" style="background-image: url(../../temp/msg_1.png);"></view>
-            <view class="box box-ver box-f1 pd-right">
-                <view class="fs-30 color-0">推门听课活动今天启动</view>
-                <view class="fs-18 color-8 mg-t1">各位老师，推门听课活动今天启动，请各学科组负责人做好听课安排，老师们积极参与，互听互学，共同进步！</view>
-            </view>
-        </view>
-        <view class="box box-pe">
-            <view class="fs-18 color-8 msg-time" style='background-image: url(image/icon_notice.png);'>发布时间：2016-12-26</view>
-        </view>
-    </view>
-    <view class="one-msg">
-        <view class="msg-box box">
-            <view class="img-msg box-img" style="background-image: url(../../temp/msg_2.png);"></view>
-            <view class="box box-ver box-f1 pd-right">
-                <view class="fs-30 color-0">招聘公告</view>
-                <view class="fs-18 color-8 mg-t1">各位老师，推门听课活动今天启动，请各学科组负责人做好听课安排，老师们积极参与，互听互学，共同进步！</view>
-            </view>
-        </view>
-        <view class="box box-pe">
-            <view class="fs-18 color-8 msg-time" style='background-image: url(image/icon_notice.png);'>发布时间：2016-12-26</view>
-        </view>
-    </view>
+  </view>  
+</view>
+<view class='box box-pc box-ac' style='padding: 20rpx 0;' wx:if="{{loading.status}}">
+  <image class="loading-img" mode="scaleToFill" src="../../common/image/loading.png" wx:if="{{loading.load}}"></image>
+  <view class='fs-26 color-9'>{{loading.text}}</view>
 </view>

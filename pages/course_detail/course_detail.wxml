@@ -41,7 +41,7 @@
         <p class="fs-30 color-0">老师介绍<text class="fs-26 color-7">（1）</text></p>
         <view class="info-box box box-pc">
             <view class="box info-detail">
-                <view class="img-teacher box-img" style="background-image: url(../../temp/head.png)"></view>
+                <image class="img-teacher" mode="scaleToFill" src="../../common/image/img_logo.png"></image>
                 <view>
                     <view class="color-0 fs-32">Selina老师</view>
                     <view class="color-7 fs-26">好评度 100%</view>
@@ -56,7 +56,7 @@
   <view class='box box-f1 box-ver bg-fff video-list-box' wx:for="{{items.videoList}}" wx:key="{{index}}">
     <view class="one-class box" bindtap="ToPlay"
      data-video-index="{{index}}">
-        <image class="img-msg box-img" src="{{item.picarr}}" ></image> 
+        <image class="img-msg" src="{{item.picarr}}" ></image> 
         <view class="box box-ver box-f1">
             <view class="fs-30 color-b ellipsis-1">{{item.name}}</view>
             <view class="fs-26 color-9 mg-t1 ellipsis-2">{{item.breif}}</view>
@@ -67,14 +67,14 @@
   </template>
   <template name="kecheng">
    <view class='box box-f1 box-ver bg-fff video-list-box'>
-      <view class="one-class box">
-          <image class="img-msg box-img" src="../../temp/course_1.png" ></image> 
+      <!-- <view class="one-class box">
+          <image class="img-msg" src="../../temp/course_1.png" ></image> 
           <view class="box box-ver box-f1">
               <view class="fs-30 color-b">相关课程假数据</view>
               <view class="fs-26 color-9 mg-t1">| 2222 |  3333 共12节</view>
               <view class="box box-f1 box-ae box-pe fs-26 color-9">主讲：jack</view>
           </view>
-      </view> 
+      </view>  -->
     </view>
   </template>
   <template is="{{curPageName}}" data="{{items,price,audition}}"></template>

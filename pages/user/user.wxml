@@ -4,7 +4,7 @@
   <view class="info-content box box-ac">
       <view class="info-box color-0 fs-26">身份：游客</view>
       <view class="box box-f1 box-ver box-ac box-pe pos-head">
-          <image class="img-head" mode="scaleToFill" src="image/img_logo.png"></image>
+          <image class="img-head" mode="scaleToFill" src="../../common/image/img_logo.png"></image>
           <p class="fs-34 color-0 fs-bold head-name">{{nickName}}</p>
       </view>
       <view class="info-box color-0 fs-26" bindtap='ToUserBind'>去绑定</view>
@@ -22,7 +22,7 @@
   <view class="info-content box box-ac">
       <view class="info-box color-0 fs-26">身份：家长</view>
       <view class="box box-f1 box-ver box-ac box-pe pos-head">
-          <view class="img-head box-img" style="background-image: url({{avatarUrl}})"></view>
+          <image class="img-head" mode="scaleToFill" src="{{avatarUrl}}"></image>
           <p class="fs-34 color-0 fs-bold head-name">{{nickName}}</p>
       </view>
       <view class="info-box color-0 fs-26">学生切换</view>
@@ -41,19 +41,19 @@
       </view> -->
   </view>
   <view class="box box-ac box-pc">
-      <view class="width-4 box box-ac">
+      <view class="width-4 box box-ac" bindtap='ToNoticeList'>
           <view class="pd-l2 box box-ver box-f1">
               <view class="fs-32 color-g">校园通知</view>
               <view class="fs-22 color-9 mg-t05">实时关注孩子</view>
           </view>
-          <view class="img-ptab img1 box-img" style="background-image: url(image/teacher_2.png);"></view>
+          <image class="img-ptab" mode="scaleToFill" src="image/teacher_2.png"></image>
       </view>
       <view class="width-4 box box-ac">
           <view class="pd-l2 box box-ver box-f1">
               <view class="fs-32 color-r">作业发布</view>
               <view class="fs-22 color-9 mg-t05">家园共育</view>
           </view>
-          <view class="img-ptab img2 box-img" style="background-image: url(image/teacher_3.png);"></view>
+          <image class="img-ptab" mode="scaleToFill" src="image/teacher_3.png"></image>
       </view>
   </view>
   <view class="box box-ac box-ac box-pc">
@@ -62,17 +62,17 @@
               <view class="fs-32 color-lg">班级课程</view>
               <view class="fs-22 color-9 mg-t05">关注学生成长</view>
           </view>
-          <view class="img-ptab img4 box-img" style="background-image: url(image/teacher_5.png);"></view>
+          <image class="img-ptab" mode="scaleToFill" src="image/teacher_5.png"></image>
       </view>
       <view class="width-4-hide"></view>
   </view>
   <view class="one-msg box box-ac mg-t35">
-      <view class="img-info box-img" style='background-image: url(image/parent_msg.png);'></view>
+      <image class="img-info" mode="scaleToFill" src="image/parent_msg.png"></image>
       <view class="box box-f1 color-7 fs-28">学生基本信息</view>
       <view class="icon-right box-img"></view>
   </view>
   <view class="one-msg box box-ac mg-t15">
-      <view class="img-msg box-img" style='background-image: url(image/tourist_msg.png);'></view>
+      <image class="img-msg" mode="scaleToFill" src="image/tourist_msg.png"></image>
       <view class="box box-f1 color-7 fs-28">我在读的在线课程</view>
       <view class="icon-right box-img"></view>
   </view>
@@ -84,7 +84,7 @@
     <view class="info-content box box-ac">
         <view class="info-box color-0 fs-26">身份：老师</view>
         <view class="box box-f1 box-ver box-ac box-pe pos-head">
-            <view class="img-head box-img" style="background-image: url({{avatarUrl}})"></view>
+            <image class="img-head" mode="scaleToFill" src="{{avatarUrl}}"></image>
             <p class="fs-34 color-0 fs-bold head-name">{{nickName}}</p>
         </view>
         <view class="info-box color-0 fs-26">科任老师</view>
@@ -101,22 +101,22 @@
     </view>
     <view class="tab-content">
       <view class="box">
-          <view class="one-tab">
-              <view class="img-tab box-img" style='background-image: url(image/teacher_2.png)'></view>
+          <view class="one-tab box box-ver box-ac box-pc" bindtap='ToNoticeList'>
+              <image class="img-tab" mode="scaleToFill" src="image/teacher_2.png"></image>
               <view class="color-3 fs-24 ta-center">校园通知</view>
           </view>
-          <view class="one-tab">
-              <view class="img-tab box-img" style='background-image: url(image/teacher_3.png)'></view>
+          <view class="one-tab box box-ver box-ac box-pc">
+              <image class="img-tab" mode="scaleToFill" src="image/teacher_3.png"></image>
               <view class="color-3 fs-24 ta-center">发布作业</view>
           </view>
-          <view class="one-tab">
-              <view class="img-tab box-img" style='background-image: url(image/teacher_5.png)'></view>
+          <view class="one-tab box box-ver box-ac box-pc">
+              <image class="img-tab" mode="scaleToFill" src="image/teacher_5.png"></image>
               <view class="color-3 fs-24 ta-center">班级课程</view>
           </view>
       </view>
       <view class="box">
-          <view class="one-tab">
-              <view class="img-tab box-img" style='background-image: url(image/teacher_6.png)'></view>
+          <view class="one-tab box box-ver box-ac box-pc">
+              <image class="img-tab" mode="scaleToFill" src="image/teacher_6.png"></image>
               <view class="color-3 fs-24 ta-center">报名列表</view>
           </view>
       </view>

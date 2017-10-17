@@ -5,7 +5,15 @@ Page({
   },
   onLoad: function (param) {
     var that = this;
-    common.requestServer("p=news&ac=artic&d=getArticParam&f=ajax", { "id": param.id }, function (data) {
+    wx.setNavigationBarTitle({
+      title: param.BarTitle
+    });
+    var url = "p=news&ac=artic&d=getArticParam&f=ajax";
+    if (param.type){
+      console.log("noticr")
+      url = "p=news&ac=news&d=getNewParam";
+    }
+    common.requestServer(url, { "id": param.id }, function (data) {
       data.formatTime = common.formatTime(data.createtime, 'Y-M-D');
       that.setData({
         articleInfo: data

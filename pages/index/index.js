@@ -37,7 +37,7 @@ Page({
   ToArticleDetail: function (event) {
     var dataSet = event.currentTarget.dataset;
     wx.navigateTo({
-      url: '../news_detail/news_detail?id=' + dataSet.articleId
+      url: '../news_detail/news_detail?id=' + dataSet.articleId + '&BarTitle=' + dataSet.articleName
     })
   },
   ToVideoDetail: function (event) {

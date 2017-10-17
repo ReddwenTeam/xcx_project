@@ -1,8 +1,16 @@
 @import "../../common/wxss/common";
 .pd-lr2 { padding: 0 20rpx 40rpx; }
 .one-msg { padding-top: 30rpx; }
-.msg-box { background-color: #ffffff; margin-bottom: 13rpx; border-top: solid 1rpx rgba(0, 0, 0, .1); border-left: solid 1rpx rgba(0, 0, 0, .1); box-shadow: 2rpx 2rpx 5rpx rgba(0, 0, 0, .2); }
+.msg-box { height: 131rpx; background-color: #ffffff; margin-bottom: 13rpx; border-top: solid 1rpx rgba(0, 0, 0, .1); border-left: solid 1rpx rgba(0, 0, 0, .1); box-shadow: 2rpx 2rpx 5rpx rgba(0, 0, 0, .2); }
 .img-msg { width: 194rpx; height: 131rpx; }
-.pd-right { padding: 13rpx 15rpx; text-align: justify; }
+.pd-right { padding: 12px 15rpx 0; text-align: justify; }
 .mg-t1 { margin-top: 10rpx; }
-.msg-time { padding-left: 25rpx; background-size: 15rpx 20rpx; background-repeat: no-repeat; background-position: left center; }
+.msg-time { padding-left: 25rpx; background-size: 15rpx 20rpx; background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAUCAYAAABSx2cSAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAUBJREFUeNpi+P//PwMh/IxBqBGIFdDFmRgIgOeMwo1ASguIPwHZLMhyjCAT8GisAlKuQOwAxNyS/99+Q5ZnwqOxGUkjCCihq2HBobETSBkhaQSBN+jqmLBobAVSJkDsgib1ByovAsRcYJuBjAIgLQ3E74FYEojlgNgJi4O4oHQpEMsAcTTI2dpAnMJAGHyB0lJALAS0NAmkmY2BOADz4lwg3g/E10ACn4jUzAGlr8H4TLCAIAEoIDuFh0hN76B0OJR+DNIMSjVLgHgBkc4WgalnBCZ4JmCy+wcMPSaok0DxHIFFszxQ3SOgOgNQaAPZ+zDSNlBSCEhNBOIYNM3CQA3v8KYwqIJyIF5BKCljzRhAA54BqUw0A34RpRmUb4EGfAAyK7G4AAGIKEWEgHg2EMuhy+EtDJBcogbKkugBBhBgAAi5o8mdaAXQAAAAAElFTkSuQmCC); background-repeat: no-repeat; background-position: left center; }
+.loading-img { width: 50rpx; height: 50rpx; margin-right: 20rpx;
+animation: rotation 1.6s linear infinite;
+-webkit-animation: rotation 1.6s linear infinite;
+ }
+@-webkit-keyframes rotation{
+from {-webkit-transform: rotate(0deg);}
+to {-webkit-transform: rotate(360deg);}
+}

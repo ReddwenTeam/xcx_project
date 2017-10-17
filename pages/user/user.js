@@ -71,5 +71,10 @@ Page({
     wx.navigateTo({
       url: '../user_bind/user_bind'
     })
+  },
+  ToNoticeList: function () {
+    wx.navigateTo({
+      url: '../notice_list/notice_list?BarTitle=校园通知'
+    })
   }
 })

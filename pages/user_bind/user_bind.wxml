@@ -14,9 +14,9 @@
         <view class="user-img box-img" style="background-image: url({{avatarUrl}})"></view>
         <view class='fs-34 color-3'>{{nickName}}</view>
       </view>
-      <view class="bind-img box-img" style="background-image: url(image/bind.png)"></view>
+      <image class="bind-img" mode="scaleToFill" src="image/bind.png"></image>
       <view class='box box-ver box-ac box-bc'>
-        <view class="user-img box-img" style="background-image: url(image/head_default.png)"></view>
+        <image class="user-img" mode="scaleToFill" src="image/head_default.png"></image>
         <view class='fs-34 color-3'>家长</view>
       </view>
     </view>
@@ -32,9 +32,9 @@
         <view class="user-img box-img" style="background-image: url({{avatarUrl}})"></view>
         <view class='fs-34 color-3'>{{nickName}}</view>
       </view>
-      <view class="bind-img box-img" style="background-image: url(image/bind.png)"></view>
+      <image class="bind-img" mode="scaleToFill" src="image/bind.png"></image>
       <view class='box box-ver box-ac box-bc'>
-        <view class="user-img box-img" style="background-image: url(image/head_default.png)"></view>
+        <image class="user-img" mode="scaleToFill" src="image/head_default.png"></image>
         <view class='fs-34 color-3'>老师</view>
       </view>
     </view>
