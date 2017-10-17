@@ -2,7 +2,7 @@ var common = require("../../common/js/common.js");
 Page({
   data: {
     class: ['@五年级一班', '@五年级二班', '@五年级三班', '@五年级四班'],
-    subject: ['语文', '数学', '外语', '物理', '化学', '生物', '政治', '历史', '地理'],
+    subject: ['付费用户', '所有人'],
     classindex: 0,
     subjectindex: 0 ,
     focus:false,
@@ -50,6 +50,9 @@ Page({
       function (data) {
         if (data.status == "success"){
           common.showToast(data.msg, true);
+          setTimeout(function () {
+            wx.navigateBack()
+          }, 2000);
         }else{
           common.showToast(data.msg, true);
         }

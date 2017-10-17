@@ -10,7 +10,7 @@ Page({
   },
   onReady: function () {
     var _this = this;
-    common.requestServer("p=teacher&ac=teacher&d=getCountrysParam", {}, function (data) {
+    common.requestServer("p=teacher&ac=teacher&d=getTeachersParam", {}, function (data) {
       _this.setData({
         teacherList: data,
       });

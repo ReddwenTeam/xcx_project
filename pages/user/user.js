@@ -31,41 +31,52 @@ Page({
   },
   deleteBinding:function(){
     var that = this;
-    wx.getStorage({
-      key: "bindingInfo",
+    wx.showModal({
+      title: '提示',
+      content: '确定要解除绑定么？',
       success: function (res) {
-        var data = res.data;
-        switch (data.bdtype){
-          //老师
-          case 1: requestUnBind({ "bdtype": data.bdtype, "memberid": data.memberid, "bid": data.bid });break;
-          //家长
-          case 2: requestUnBind({ "bdtype": data.bdtype, "memberid": data.memberid }); break;
-          default:break;
-        }
-        function requestUnBind(param){
-          common.requestServer("p=member&ac=binding&d=deleteBinding", param , function (data) {
-            if (data.status == "success") {
-              common.showToast(data.msg, true);
-              that.setData({
-                role: "youke"
-              });
-              wx.removeStorage({
-                key: 'bindingInfo',
-                success: function (res) {
-                  setTimeout(function () {
-                    wx.switchTab({
-                      url: '../index/index'
-                    });
-                  }, 2000)
-                }
-              })
-            } else {
-              common.showToast(data.msg)
-            }
-          });
+        if (res.confirm) {
+          deleteEvent()
         }
       }
     })
+    function deleteEvent(){
+      wx.getStorage({
+        key: "bindingInfo",
+        success: function (res) {
+          var data = res.data;
+          switch (data.bdtype) {
+            //老师
+            case 1: requestUnBind({ "bdtype": data.bdtype, "memberid": data.memberid, "bid": data.bid }); break;
+            //家长
+            case 2: requestUnBind({ "bdtype": data.bdtype, "memberid": data.memberid }); break;
+            default: break;
+          }
+          function requestUnBind(param) {
+            common.requestServer("p=member&ac=binding&d=deleteBinding", param, function (data) {
+              if (data.status == "success") {
+                common.showToast(data.msg, true);
+                that.setData({
+                  role: "youke"
+                });
+                wx.removeStorage({
+                  key: 'bindingInfo',
+                  success: function (res) {
+                    setTimeout(function () {
+                      wx.switchTab({
+                        url: '../index/index'
+                      });
+                    }, 2000)
+                  }
+                })
+              } else {
+                common.showToast(data.msg)
+              }
+            });
+          }
+        }
+      })
+    }
   },
   ToUserBind: function(){
     wx.navigateTo({
@@ -75,11 +86,6 @@ Page({
   ToNoticeList: function () {
     wx.navigateTo({
       url: '../notice_list/notice_list?BarTitle=校园通知'
-    })
-  },
-  ToPublishWork: function () {
-    wx.navigateTo({
-      url: '../publish_work/publish_work?BarTitle=发布作业'
     })
   },
   ToWorkList: function () {

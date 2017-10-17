@@ -1,0 +1,6 @@
+@import "../../common/wxss/common";
+Page { background-color: #ffffff; }
+.pd-2 { padding: 20rpx; }
+.mg-t3 { margin-top: 30rpx; }
+.pd-td { padding-top: 50rpx; }
+.btn-delete { width: 60rpx; height: 60rpx; margin: 10rpx; }

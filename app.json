@@ -19,6 +19,7 @@
     "pages/news_detail/news_detail",
     "pages/school_detail/school_detail",
     "pages/user_bind/user_bind",
+    "pages/work_detail/work_detail",
     "pages/user/user"
   ],
   "window":{
@@ -46,7 +47,7 @@
           "selectedIconPath": "common/image/header/icon_group_on.png"
         },
         {
-          "pagePath": "pages/index/index",
+          "pagePath": "pages/msg_examine/msg_examine",
           "iconPath": "common/image/header/icon_add.png",
           "selectedIconPath": "common/image/header/icon_add.png"
         },
