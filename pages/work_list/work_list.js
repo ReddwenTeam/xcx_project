@@ -3,23 +3,17 @@ var curWorksList = [], curPage = 1;
 Page({
   data: {
     Works_list: [],
-    bid:""
   },
   onLoad: function (param) {
     curWorksList = [];
     curPage = 1;
-    var that = this;
-    wx.getStorage({
-      key: "bindingInfo",
-      success: function (res) {
-        that.setData({
-          bid: res.data.bid
-        })
-      }
-    })
+    wx.setNavigationBarTitle({
+      title: "作业列表"
+    });
   },
   onShow:function(){
     curWorksList = [];
+    curPage = 1;
     this.queryWorksList(curPage);
   },
   queryWorksList: function (page) {

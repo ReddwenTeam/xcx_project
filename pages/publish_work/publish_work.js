@@ -12,6 +12,9 @@ Page({
   },
   onLoad:function(){
     var that =this;
+    wx.setNavigationBarTitle({
+      title: "发布作业"
+    });
     wx.getStorage({
       key: "bindingInfo",
       success: function (res) {
