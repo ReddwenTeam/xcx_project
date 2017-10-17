@@ -105,11 +105,11 @@
               <image class="img-tab" mode="scaleToFill" src="image/teacher_2.png"></image>
               <view class="color-3 fs-24 ta-center">校园通知</view>
           </view>
-          <view class="one-tab box box-ver box-ac box-pc">
+          <view class="one-tab box box-ver box-ac box-pc" bindtap="ToPublishWork">
               <image class="img-tab" mode="scaleToFill" src="image/teacher_3.png"></image>
               <view class="color-3 fs-24 ta-center">发布作业</view>
           </view>
-          <view class="one-tab box box-ver box-ac box-pc">
+          <view class="one-tab box box-ver box-ac box-pc" bindtap='ToWorkList'>
               <image class="img-tab" mode="scaleToFill" src="image/teacher_5.png"></image>
               <view class="color-3 fs-24 ta-center">班级课程</view>
           </view>

@@ -5,3 +5,11 @@
 .class-math { width: 68rpx; height: 54rpx; margin-right: 15rpx; background-image: url(../../image/msg/class3.png) }
 .icon-new { width: 31rpx; height: 15rpx; background-image: url(../../image/msg/icon_new.png) }
 .info-detail > text { margin-right: 20rpx; }
+.loading-img { width: 50rpx; height: 50rpx; margin-right: 20rpx;
+animation: rotation 1.6s linear infinite;
+-webkit-animation: rotation 1.6s linear infinite;
+ }
+@-webkit-keyframes rotation{
+from {-webkit-transform: rotate(0deg);}
+to {-webkit-transform: rotate(360deg);}
+}

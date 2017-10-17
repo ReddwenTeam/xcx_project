@@ -12,17 +12,17 @@
         </view>
     </picker>
     <view class="one-msg box box-ac">
-        <input class='class="fs-26 color-0 box box-f1"' placeholder="作业主题......"/>
+        <input class='class="fs-26 color-0 box box-f1"' bindinput='getValue1' placeholder="作业主题......"/>
     </view>
-    <view class="one-text">
-        <textarea class="textarea-style fs-26 color-0" maxlength='200' bindblur="bindTextAreaBlur" auto-height placeholder="请输入文字......" />
+    <view class="one-text" bindtap='bindFocus'>
+        <textarea class="textarea-style fs-26 color-0" focus="{{focus}}" bindinput='getValue2' maxlength='200' bindblur="bindTextAreaBlur" auto-height placeholder="请输入文字......" />
     </view>
 </view>
 <view class="footer-fixed box box-ac">
-    <view class="btn-smile box-img" style='background-image: url(image/icon_smile.png);'></view>
+    <!-- <view class="btn-smile box-img" style='background-image: url(image/icon_smile.png);'></view>
     <view class="btn-img box-img" style='background-image: url(image/icon_img.png);'></view>
-    <view class="btn-video box-img" style='background-image: url(image/icon_video.png);'></view>
+    <view class="btn-video box-img" style='background-image: url(image/icon_video.png);'></view> -->
     <view class="box box-f1 box-pe">
-        <view class="btn-submit color-w fs-26">提 交</view>
+        <view class="btn-submit color-w fs-26" bindtap='publishWork'>提 交</view>
     </view>
 </view>

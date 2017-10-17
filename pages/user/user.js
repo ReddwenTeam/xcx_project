@@ -76,5 +76,15 @@ Page({
     wx.navigateTo({
       url: '../notice_list/notice_list?BarTitle=校园通知'
     })
+  },
+  ToPublishWork: function () {
+    wx.navigateTo({
+      url: '../publish_work/publish_work?BarTitle=发布作业'
+    })
+  },
+  ToWorkList: function () {
+    wx.navigateTo({
+      url: '../work_list/work_list?BarTitle=作业列表'
+    })
   }
 })
