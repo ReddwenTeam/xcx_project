@@ -69,20 +69,15 @@ function formatHtml(bindName, type, content, self) {
   WxParse.wxParse(bindName, type, content, self, imgCount);
 }
 
-function getStorage(name){
-  wx.getStorage({
-    key: name,
-    success: function (res) {
-      return res.data;
-    }
-  })
-  
-}
-
-function setStorage(key,value){
-  wx.setStorage({
-    key: key,
-    data: value
+function showToast(msg,type){
+  var image = '../../common/image/cry.png';
+  if (type){
+    image = '../../common/image/smile.png';
+  }
+  wx.showToast({
+    title: msg,
+    image: image,
+    duration: 2000
   })
 }
 
@@ -90,6 +85,5 @@ module.exports = {
   requestServer: requestServer,
   formatTime: formatTime,
   formatHtml: formatHtml,
-  getStorage: getStorage,
-  setStorage: setStorage
+  showToast: showToast
 }

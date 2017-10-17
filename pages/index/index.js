@@ -9,16 +9,6 @@ Page({
     this.queryArticle();    
     this.queryVideo();
     this.querySchool();
-    wx.checkSession({
-      success: function () {
-        //session 未过期，并且在本生命周期一直有效
-      },
-      fail: function () {
-        //登录态过期
-        wx.login() //重新登录
-
-      }
-    })  
   },
   queryArticle: function (){
     var that = this;

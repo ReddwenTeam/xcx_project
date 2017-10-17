@@ -1,16 +1,17 @@
 var common = require("../../common/js/common.js");
+var app = getApp();
 Page({
   data: {
     pageNum:0,
     tempName:"jiazhang",
     teacherName:"",
-    teacherCode:""
+    teacherCode:"",
   },
   onLoad: function (param) {
-    console.log(param)
+    var that = this;
     this.setData({
-      avatarUrl: param.avatarUrl,
-      nickName: param.nickName
+      avatarUrl: app.globalData.userInfo.avatarUrl,
+      nickName: app.globalData.userInfo.nickName
     });
   },
   tapCheck: function (event) {
@@ -33,10 +34,24 @@ Page({
     wx.getStorage({
       key: 'openInfo',
       success: function (res) {
-        console.log(res)
         var openInfo = res.data;
-        common.requestServer("p=member&ac=binding&d=saveBindingParam", { "code": openInfo.openId, "name": openInfo.nickName, "memberid": openInfo.memberId, "type":"parent"}, function (data) {
-          console.log(data);
+        common.requestServer("p=member&ac=binding&d=saveBindingParam", { "code": "", "name": "", "memberid": openInfo.memberId, "type":"patriarch"}, function (data) {
+          if (data.status == "success"){
+            common.showToast(data.msg, true);
+            wx.setStorage({
+              key: "bindingInfo",
+              data: {
+                bdtype: data.bindingInfo.bdtype,
+                bid: data.bindingInfo.bid,
+                memberid: openInfo.memberId
+              }
+            })
+            setTimeout(function () {
+              wx.navigateBack()
+            }, 2000)
+          }else{
+            common.showToast(data.msg)
+          }
         });
       }
     })    
@@ -52,11 +67,32 @@ Page({
     })
   },
   bindTeacherInfo:function(){
+    var that = this;
     var code = this.data.teacherCode;
     var name = this.data.teacherName;
-    console.log(name+"-----"+code);
-    // common.requestServer("p=member&ac=binding&d=saveBindingParam", { "code": openInfo.openId, "name": openInfo.nickName, "memberid": openInfo.memberId, "type": "teacher" }, function (data) {
-    //   console.log(data);
-    // });
+    wx.getStorage({
+      key: 'openInfo',
+      success: function (res) {
+        var openInfo = res.data;
+        common.requestServer("p=member&ac=binding&d=saveBindingParam", { "code": code, "name": name, "memberid": openInfo.memberId, "type": "teacher" }, function (data) {
+          if (data.status == "success"){
+            common.showToast(data.msg,true);
+            wx.setStorage({
+              key: "bindingInfo",
+              data: {
+                bdtype: data.bindingInfo.bdtype,
+                bid: data.bindingInfo.bid,
+                memberid: openInfo.memberId
+              }
+            })
+            setTimeout(function () {
+              wx.navigateBack()
+            }, 2000)
+          }else{
+            common.showToast(data.msg)
+          }
+        });
+      }
+    }) 
   }
 })

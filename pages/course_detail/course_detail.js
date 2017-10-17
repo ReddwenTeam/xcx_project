@@ -42,17 +42,12 @@ Page({
         allVideoList = data;
         that.showPanel("xiangqing", 0);
       }else{
-        wx.showToast({
-          title: '暂无视频信息!',
-          image: '../../common/image/cry.png',
-          duration: 2000
-        })
+        common.showToast('暂无视频信息!')
       }
     })
   },
   showPanel: function (type,index){
     var that = this;
-    // console.log(allVideoList[index]);
     if (allVideoList.length>0){
       switch (type) {
         case "xiangqing":

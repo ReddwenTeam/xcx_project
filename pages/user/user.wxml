@@ -1,16 +1,16 @@
 <!--游客-->
 <template name="youke">
-  <view class="slider-content box-img2 box box-ac box-pe" style="background-image: url(image/tourist_bg.jpg);"></view>
+  <image class="slider-content" mode="scaleToFill" src="image/tourist_bg.jpg"></image>
   <view class="info-content box box-ac">
       <view class="info-box color-0 fs-26">身份：游客</view>
       <view class="box box-f1 box-ver box-ac box-pe pos-head">
-          <view class="img-head box-img" style="background-image: url(../../common/image/img_logo.png)"></view>
-          <p class="fs-34 color-0 fs-bold head-name">Bernice</p>
+          <image class="img-head" mode="scaleToFill" src="image/img_logo.png"></image>
+          <p class="fs-34 color-0 fs-bold head-name">{{nickName}}</p>
       </view>
-      <view class="info-box color-0 fs-26">姓名：Carol</view>
+      <view class="info-box color-0 fs-26" bindtap='ToUserBind'>去绑定</view>
   </view>
   <view class="one-msg box box-ac">
-      <view class="img-msg box-img" style='background-image: url(image/tourist_msg.png);'></view>
+      <image class="img-msg" mode="scaleToFill" src="image/tourist_msg.png"></image>
       <view class="box box-f1 color-7 fs-28">我在读的在线课程</view>
       <view class="icon-right box-img"></view>
   </view>
@@ -18,22 +18,27 @@
 
 <!--家长-->
 <template name="jiazhang">
-  <view class="slider-content box-img2 box box-ac box-pe" style="background-image: url(image/tourist_bg.jpg);"></view>
+  <image class="slider-content" mode="scaleToFill" src="image/tourist_bg.jpg"></image>
   <view class="info-content box box-ac">
       <view class="info-box color-0 fs-26">身份：家长</view>
       <view class="box box-f1 box-ver box-ac box-pe pos-head">
-          <view class="img-head box-img" style="background-image: url(../../common/image/img_logo.png)"></view>
-          <p class="fs-34 color-0 fs-bold head-name">Bernice</p>
+          <view class="img-head box-img" style="background-image: url({{avatarUrl}})"></view>
+          <p class="fs-34 color-0 fs-bold head-name">{{nickName}}</p>
       </view>
       <view class="info-box color-0 fs-26">学生切换</view>
   </view>
   <view class="bg-blue box">
       <view class="width-5 box box-ac box-pc">
+        <text class="fs-26 color-9 mg-r2">服务</text>
+        <text class="fs-26 color-w">已绑定</text>
+        <text class="fs-26 color-y box box-f1 box-pe" bindtap='deleteBinding'>解除</text>
+      </view>
+      <!-- <view class="width-5 box box-ac box-pc">
           <text class="fs-26 color-w">班级：五年级一班</text>
-      </view>
-      <view class="width-5 box box-ac box-pc">
+      </view> -->
+      <!-- <view class="width-5 box box-ac box-pc">
           <text class="fs-26 color-w">学生：李颖儿</text>
-      </view>
+      </view> -->
   </view>
   <view class="box box-ac box-pc">
       <view class="width-4 box box-ac">
@@ -75,12 +80,12 @@
 
 <!--老师-->
 <template name="laoshi">
-  <view class="slider-content box-img2 box box-ac box-pe" style="background-image: url(image/teacher_bg.jpg);"></view>
+    <image class="slider-content" mode="scaleToFill" src="image/teacher_bg.jpg"></image>
     <view class="info-content box box-ac">
         <view class="info-box color-0 fs-26">身份：老师</view>
         <view class="box box-f1 box-ver box-ac box-pe pos-head">
-            <view class="img-head box-img" style="background-image: url(../../common/image/img_logo.png)"></view>
-            <p class="fs-34 color-0 fs-bold head-name">Miranda</p>
+            <view class="img-head box-img" style="background-image: url({{avatarUrl}})"></view>
+            <p class="fs-34 color-0 fs-bold head-name">{{nickName}}</p>
         </view>
         <view class="info-box color-0 fs-26">科任老师</view>
     </view>
@@ -88,11 +93,11 @@
         <view class="width-5 box box-ac box-pc">
             <text class="fs-26 color-9 mg-r2">服务</text>
             <text class="fs-26 color-w">已绑定</text>
-            <text class="fs-26 color-y box box-f1 box-pe">解除</text>
+            <text class="fs-26 color-y box box-f1 box-pe"  bindtap='deleteBinding'>解除</text>
         </view>
-        <view class="width-5 box box-ac box-pc">
+        <!-- <view class="width-5 box box-ac box-pc">
             <text class="fs-26 color-w">班级：五年级一班</text>
-        </view>
+        </view> -->
     </view>
     <view class="tab-content">
       <view class="box">
@@ -120,7 +125,7 @@
 
 <!--行政-->
 <template name="xingzheng">
-  <view class="slider-content box-img2 box box-ac box-pe" style="background-image: url(image/teacher_bg.jpg);"></view>
+    <image class="slider-content" mode="scaleToFill" src="image/teacher_bg.jpg"></image>
     <view class="info-content box box-ac">
         <view class="info-box color-0 fs-26">身份：老师</view>
         <view class="box box-f1 box-ver box-ac box-pe pos-head">
@@ -167,4 +172,4 @@
       
   </view>
 </template>
-<template is = "{{role}}" />
+<template is = "{{role}}" data="{{avatarUrl, nickName}}" />
