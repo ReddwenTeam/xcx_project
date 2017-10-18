@@ -43,7 +43,6 @@ Page({
   },
   publishWork:function(){
     var that = this;
-    
     common.requestServer("p=member&ac=task&d=addTaskInfo", 
       {
         "tid": that.data.bid,
@@ -52,12 +51,12 @@ Page({
       }, 
       function (data) {
         if (data.status == "success"){
-          common.showToast(data.msg, true);
+          common.showToast("作业发布成功", true);
           setTimeout(function () {
             wx.navigateBack()
           }, 2000);
         }else{
-          common.showToast(data.msg, true);
+          common.showToast("作业发布失败");
         }
     })
 
