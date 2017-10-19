@@ -83,6 +83,7 @@
     <image class="box btn-msg box-img" src='image/message.png'></image> 
     <text class="fs-30 color-b">咨询</text>
     <view class="box box-f1 box-pe">
-        <view class="{{ischarge == 0 ?'btn-disable' : 'btn-submit' }}  color-w fs-26">{{ischarge == 0 ?'免费' : '立即购买' }} </view>
-    </view>
+        <view wx:if="{{ischarge == 0}}" class="btn-disable color-w fs-26">免费</view>
+        <view wx:else class="btn-submit color-w fs-26" bindtap='toPay'>立即购买</view>
+    </view> 
 </view>

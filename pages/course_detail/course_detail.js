@@ -5,6 +5,7 @@ Page({
     curPageName:"xiangqing",
     price:0,
     ischarge:0,
+    vcourseid:"",
     poster:"",
     audition:0,
     items:{
@@ -21,7 +22,8 @@ Page({
     });
     this.setData({
       price: param.price,
-      ischarge: param.ischarge
+      ischarge: param.ischarge,
+      vcourseid: param.id
     })
     this.queryDetail(param.id);
   },
@@ -82,7 +84,6 @@ Page({
   ToPlay: function(event){
     this.videoPause();
     var dataSet = event.currentTarget.dataset;
-
     this.setData({
       curPageName: "xiangqing"
     });
@@ -101,5 +102,34 @@ Page({
   },
   videoPlay: function () {
     this.player.play();
+  },
+  toPay: function (){
+    var that = this;
+    wx.getStorage({
+      key: "bindingInfo",
+      success: function (res) {
+        var data = res.data;
+        common.requestServer("p=pay&ac=pay&d=unifiedOrder", { "memberid": data.memberid, "vcourseid": that.data.vcourseid }, function (data) {
+          console.log(data);
+          if (data.status == "success"){
+            var data = data.data;
+            wx.requestPayment({
+              'timeStamp': "'" + data.timeStamp +"'",
+              'nonceStr': data.nonceStr,
+              'package': data.package,
+              'signType': 'MD5',
+              'paySign': data.paySign,
+              'success': function (res) {
+                console.log(res)
+                common.showToast("支付成功！", true);
+              },
+              'fail': function (res) {
+                console.log(res)
+              }
+            })
+          }
+         })
+      }
+    })
   }
 })
