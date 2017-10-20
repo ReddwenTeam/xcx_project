@@ -14,7 +14,6 @@ App({
           wx.getUserInfo({
             success: function (res) {
               that.globalData.userInfo = res.userInfo;
-              console.log(res.userInfo)
               if (that.userInfoReadyCallback) {
                 that.userInfoReadyCallback(res)
               }
@@ -43,7 +42,6 @@ App({
                   CODE_INFO.city = userInfo.city;
                   CODE_INFO.country = userInfo.country;
                   CODE_INFO.gender = userInfo.gender;
-                  console.log(CODE_INFO)
                   //第三方服务器登录
                   common.requestServer("p=member&ac=member&d=gainMembersInfo", CODE_INFO, function (data) {
                     if (data.status == "success") {
@@ -81,7 +79,6 @@ App({
   getUserInfo: function (cb) {
     var that = this;
     if (that.globalData.userInfo) {
-      console.log(0)
       if (typeof cb == "function"){
         cb(that.globalData.userInfo)
       }

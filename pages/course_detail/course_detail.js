@@ -1,5 +1,6 @@
 var common = require("../../common/js/common.js");
 var allVideoList = [], curIndex = 0;
+var app = getApp();
 Page({
   data:{
     curPageName:"xiangqing",
@@ -109,26 +110,33 @@ Page({
       key: "bindingInfo",
       success: function (res) {
         var data = res.data;
-        common.requestServer("p=pay&ac=pay&d=unifiedOrder", { "memberid": data.memberid, "vcourseid": that.data.vcourseid }, function (data) {
-          console.log(data);
-          if (data.status == "success"){
-            var data = data.data;
-            wx.requestPayment({
-              'timeStamp': "'" + data.timeStamp +"'",
-              'nonceStr': data.nonceStr,
-              'package': data.package,
-              'signType': 'MD5',
-              'paySign': data.paySign,
-              'success': function (res) {
-                console.log(res)
-                common.showToast("支付成功！", true);
-              },
-              'fail': function (res) {
-                console.log(res)
-              }
-            })
+        wx.request({
+          url: 'https://weiqing.zqkj.site/addons/star_school/payment/example/jsapi.php',
+          data: {
+            "memberid": data.memberid,
+            "vcourseid": that.data.vcourseid
+          },
+          header: {
+            'content-type': 'application/json'
+          },
+          success: function (res) {
+            var data = res.data;
+            if (data.status == "error"){
+              common.showToast(data.msg);
+            }else{
+              wx.requestPayment({
+                'timeStamp': data.timeStamp,
+                'nonceStr': data.nonceStr,
+                'package': data.package,
+                'signType': data.signType,
+                'paySign': data.paySign,
+                'success': function (res) {
+                  common.showToast("支付成功！", true);
+                }
+              })
+            }
           }
-         })
+        })
       }
     })
   }
