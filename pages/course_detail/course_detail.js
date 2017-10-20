@@ -17,6 +17,7 @@ Page({
     allVideoList = [];
   },
   onLoad: function (param) {
+    var that = this;
     this.player = wx.createVideoContext('myVideo');
     wx.setNavigationBarTitle({
       title: param.BarTitle
@@ -25,7 +26,7 @@ Page({
       price: param.price,
       ischarge: param.ischarge,
       vcourseid: param.id
-    })
+    });
     this.queryDetail(param.id);
   },
   changePage:function(event){
@@ -37,17 +38,22 @@ Page({
   },
   queryDetail:function(id){
     var that = this;
-    common.requestServer("p=course&ac=cvideo&d=getCvideosParam&isNeadPager=false", { "vcourseid": id }, function (data) {
-      if(data.length>0){
-        data.forEach(function (item) {
-          item.formatTime = common.formatTime(item.createtime, 'Y-M-D');
-        });
-        allVideoList = data;
-        that.showPanel("xiangqing", 0);
-      }else{
-        common.showToast('暂无视频信息!')
+    wx.getStorage({
+      key: "bindingInfo",
+      success: function (res) {
+        common.requestServer("p=course&ac=cvideo&d=getCvideosParam&isNeadPager=false", { "vcourseid": id, "memberid": res.data.memberid }, function (data) {
+          if (data.length > 0) {
+            data.forEach(function (item) {
+              item.formatTime = common.formatTime(item.createtime, 'Y-M-D');
+            });
+            allVideoList = data;
+            that.showPanel("xiangqing", 0);
+          } else {
+            common.showToast('暂无视频信息!')
+          }
+        })
       }
-    })
+    });
   },
   showPanel: function (type,index){
     var that = this;
@@ -62,7 +68,6 @@ Page({
               videoList: allVideoList[index]
             }
           })
-         
           break;
         case "mulu":
           that.setData({
@@ -72,6 +77,9 @@ Page({
           });
           break;
         case "kecheng":
+          common.requestServer("p=course&ac=vcourse&d=getSamesParam", {}, function (data) {
+            console.log(data)
+          })
           // that.setData({
           //   items: {
           //     videoList: allVideoList
