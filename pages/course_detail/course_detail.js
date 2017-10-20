@@ -1,11 +1,12 @@
 var common = require("../../common/js/common.js");
-var allVideoList = [], curIndex = 0;
+var allVideoList = [], curIndex = 0 ;
 var app = getApp();
 Page({
   data:{
     curPageName:"xiangqing",
     price:0,
     ischarge:0,
+    isbuy:"error",
     vcourseid:"",
     poster:"",
     audition:0,
@@ -22,9 +23,11 @@ Page({
     wx.setNavigationBarTitle({
       title: param.BarTitle
     });
+    console.log(param)
     this.setData({
       price: param.price,
       ischarge: param.ischarge,
+      isbuy: param.isbuy,
       vcourseid: param.id
     });
     this.queryDetail(param.id);
@@ -78,13 +81,17 @@ Page({
           break;
         case "kecheng":
           common.requestServer("p=course&ac=vcourse&d=getSamesParam", {}, function (data) {
-            console.log(data)
+            if(data.length > 0){
+              data.forEach(function (item) {
+                item.formatTime = common.formatTime(item.createtime, 'Y-M-D');
+              });
+              that.setData({
+                items: {
+                  videoList: data
+                }
+              });
+            }
           })
-          // that.setData({
-          //   items: {
-          //     videoList: allVideoList
-          //   }
-          // });
           break;
         default: break;
       }
@@ -147,5 +154,14 @@ Page({
         })
       }
     })
+  },
+  ToVideoDetail: function (event) {
+    var dataSet = event.currentTarget.dataset;
+    this.queryDetail(dataSet.videoId);
+    this.videoPause();
+    this.setData({
+      curPageName: "xiangqing"
+    });
+    this.showPanel("xiangqing", 0);
   }
 })

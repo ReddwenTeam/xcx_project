@@ -4,8 +4,9 @@
         <view class="one-video" bindtap="ToVideoDetail" 
             data-video-id="{{item.id}}" 
             data-video-price="{{item.price}}"    
-            data-video-ischarge="{{videoList.ischarge}}"
+            data-video-ischarge="{{item.ischarge}}"
             data-video-name="{{item.title}}"
+            data-video-isbuy="{{item.isbuy}}"
             >
           <image class='box box-img course-img' src="{{item.poster_src}}"></image>
           <view class="pop-box box box-ac">
@@ -16,7 +17,6 @@
               </view>
           </view>
         </view>
-        
     </view>
     <!--video end-->
 </view>

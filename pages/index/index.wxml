@@ -20,6 +20,7 @@
     data-video-price="{{videoList.price}}"
     data-video-ischarge="{{videoList.ischarge}}"
     data-video-name="{{videoList.name}}"
+    data-video-isbuy="{{videoList.isbuy}}"
     bindtap="ToVideoDetail"
     >
       <image class="btn-play" mode="scaleToFill" src="../../common/image/btn_play.png"></image>
