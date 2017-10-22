@@ -45,6 +45,7 @@ App({
                   //第三方服务器登录
                   common.requestServer("p=member&ac=member&d=gainMembersInfo", CODE_INFO, function (data) {
                     if (data.status == "success") {
+                      that.memberid = data.memberid;
                       that.isMemberBinded(data.memberid);
                       wx.setStorage({
                         key: "openInfo",

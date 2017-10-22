@@ -20,11 +20,18 @@ Page({
   },
   queryVideo: function () {
     var that = this;
-    common.requestServer("p=course&ac=vcourse&d=getVcoursesParam&isNeadPager=true", { "pindex": 1, "psize": 1 }, function (data) {
-      that.setData({
-        videoList: data[0]
-      })
-    })
+    wx.getStorage({
+      key: "bindingInfo",
+      success: function (res) {
+        console.log(res.data.memberid)
+        common.requestServer("p=course&ac=vcourse&d=getVcoursesParam&isNeadPager=true", { "pindex": 1, "psize": 1, "memberid": res.data.memberid }, function (data) {
+          that.setData({
+            videoList: data[0]
+          })
+        })
+      }
+    });
+
   },
   querySchool: function () {
     var that = this;

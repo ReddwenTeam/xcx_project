@@ -1,0 +1,14 @@
+@import "../../common/wxss/common";
+page { background-color: #efeff0; }
+/*msg*/
+.pd-lr2 { padding: 0 20rpx; }
+.one-msg { height: 60rpx; margin-top: 20rpx; background-color: #fff; padding: 0 20rpx; border-top: solid 1rpx rgba(0, 0, 0, .1); border-left: solid 1rpx rgba(0, 0, 0, .1); box-shadow: 2rpx 2rpx 5rpx rgba(0, 0, 0, .2); }
+.btn-down { width: 18rpx; height: 8rpx; }
+.one-text { height: 560rpx; margin-top: 20rpx; margin-bottom: 20rpx; background-color: #fff; padding: 20rpx; border-top: solid 1rpx rgba(0, 0, 0, .1); border-left: solid 1rpx rgba(0, 0, 0, .1); box-shadow: 2rpx 2rpx 5rpx rgba(0, 0, 0, .2); }
+.textarea-style { width: 100%; height: 560rpx; background-color: #fff; border: none; outline: none; }
+/*.btn-toggle { width: 54rpx; height: 40rpx; margin-left: 20rpx; background-image: url(../../image/msg/btn_toggle.png); }*/
+.footer-fixed { width: 100%; height: 90rpx; background-color: #fff; position: fixed; left: 0; bottom: 0; }
+.btn-smile { width: 53rpx; height: 53rpx; margin: 0 34rpx 0 20rpx; }
+.btn-img { width: 62rpx; height: 43rpx; margin-right: 36rpx; }
+.btn-video { width: 61rpx; height: 49rpx; }
+.btn-submit { width: 140rpx; height: 60rpx; background-color: #2b3579; border-radius: 60rpx; line-height: 60rpx; text-align: center; margin-right: 20rpx; }

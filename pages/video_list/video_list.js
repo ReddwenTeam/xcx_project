@@ -1,8 +1,10 @@
 var common = require("../../common/js/common.js");
 var curVideoList = [], curPage = 1;
+var app = getApp();
 Page({
   data: {
-    video_list: []
+    video_list: [],
+    isbuy: "error"
   },
   onLoad: function (param) {
     curVideoList = [];
@@ -16,7 +18,8 @@ Page({
   },
   queryVideoList: function (page) {
     var that = this;
-    common.requestServer("p=course&ac=vcourse&d=getVcoursesParam&isNeadPager=true", { "pindex": page, "psize": 3 }, function (data) {
+    console.log(app.memberid)
+    common.requestServer("p=course&ac=vcourse&d=getVcoursesParam&isNeadPager=true", { "pindex": page, "psize": 3, "memberid": app.memberid }, function (data) {
       if (data.length == 0) {
         if (page == 1) {
           that.setData({
