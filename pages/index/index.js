@@ -4,8 +4,7 @@ Page({
   data: {
     articleList: {},
     videoList: {},
-    schoolList: {},
-
+    schoolList: {}
   },
   onReady: function () {
     var that = this;
@@ -38,7 +37,6 @@ Page({
         })
       }
     });
-
   },
   querySchool: function () {
     var that = this;
