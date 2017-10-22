@@ -1,14 +1,22 @@
 var common = require("../../common/js/common.js");
+var app = getApp();
 Page({
   data: {
     articleList: {},
     videoList: {},
-    schoolList: {}
+    schoolList: {},
+
   },
   onReady: function () {
-    this.queryArticle();    
-    this.queryVideo();
-    this.querySchool();
+    var that = this;
+    that.queryArticle();    
+    that.queryVideo();
+    that.querySchool();
+    app.getUserInfo(function(data){
+      that.setData({
+        nickName: data.nickName
+      })
+    })
   },
   queryArticle: function (){
     var that = this;
@@ -23,7 +31,6 @@ Page({
     wx.getStorage({
       key: "bindingInfo",
       success: function (res) {
-        console.log(res.data.memberid)
         common.requestServer("p=course&ac=vcourse&d=getVcoursesParam&isNeadPager=true", { "pindex": 1, "psize": 1, "memberid": res.data.memberid }, function (data) {
           that.setData({
             videoList: data[0]

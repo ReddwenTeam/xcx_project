@@ -49,11 +49,6 @@
           "selectedIconPath": "common/image/header/icon_group_on.png"
         },
         {
-          "pagePath": "pages/msg_examine/msg_examine",
-          "iconPath": "common/image/header/icon_add.png",
-          "selectedIconPath": "common/image/header/icon_add.png"
-        },
-        {
           "pagePath": "pages/msg/msg",
           "text": "消息",
           "iconPath": "common/image/header/icon_msg_off.png",

@@ -60,14 +60,7 @@ Page({
                   role: "youke"
                 });
                 wx.removeStorage({
-                  key: 'bindingInfo',
-                  success: function (res) {
-                    setTimeout(function () {
-                      wx.switchTab({
-                        url: '../index/index'
-                      });
-                    }, 2000)
-                  }
+                  key: 'bindingInfo'
                 })
               } else {
                 common.showToast(data.msg)

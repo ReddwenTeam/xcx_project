@@ -1,5 +1,5 @@
 @import "../../common/wxss/common";
-.index-bg { width: 750rpx; height: 350rpx; }
+.index-bg { width: 750rpx; height: 500rpx; }
 .pd-2 { padding: 20rpx; border-bottom: solid 1rpx #eaeaea }
 .title-pd { padding: 20rpx 0 15rpx; }
 .mg-t2 { margin-top: 20rpx; }

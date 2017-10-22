@@ -10,3 +10,4 @@
 .mg-t12 { margin-top: 12rpx; }
 .mg-t2 { margin-top: 20rpx; }
 .mg-b25 { margin-bottom: 25rpx; }
+.btn-add { width: 120rpx; height: 120rpx; border-radius: 50%; position: fixed; z-index: 100; right: 80rpx; bottom: 80rpx }

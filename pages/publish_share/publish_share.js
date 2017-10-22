@@ -1,39 +1,35 @@
 var common = require("../../common/js/common.js");
 Page({
   data: {
-    class: ['@五年级一班', '@五年级二班', '@五年级三班', '@五年级四班'],
-    subject: ['付费用户', '所有人'],
-    classindex: 0,
-    subjectindex: 0,
     focus: false,
-    title: "",
     info: "",
-    bid: ""
+    bid: "",
+    openId: "",
+    memberid:"",
+    thumbs:"",
+    videourl: ""
   },
   onLoad: function () {
     var that = this;
     wx.setNavigationBarTitle({
-      title: "发布作业"
+      title: "发布朋友圈"
     });
+    wx.getStorage({
+      key: "openInfo",
+      success: function (res) {
+        that.setData({
+          openId: res.data.openId
+        })
+      }
+    })
     wx.getStorage({
       key: "bindingInfo",
       success: function (res) {
         that.setData({
-          bid: res.data.bid
+          bid: res.data.bid,
+          memberid: res.data.memberid
         })
       }
-    })
-  },
-  bindClassChange: function (e) {
-    console.log('picker发送选择改变，携带值为', e.detail.value)
-    this.setData({
-      classindex: e.detail.value
-    })
-  },
-  bindSubjectChange: function (e) {
-    console.log('picker发送选择改变，携带值为', e.detail.value)
-    this.setData({
-      subjectindex: e.detail.value
     })
   },
   bindFocus: function () {
@@ -43,32 +39,54 @@ Page({
   },
   publishWork: function () {
     var that = this;
-    common.requestServer("p=member&ac=task&d=addTaskInfo",
-      {
-        "tid": that.data.bid,
-        "title": that.data.title,
-        "info": that.data.info
-      },
-      function (data) {
-        if (data.status == "success") {
-          common.showToast("作业发布成功", true);
-          setTimeout(function () {
-            wx.navigateBack()
-          }, 2000);
-        } else {
-          common.showToast("作业发布失败");
-        }
-      })
-
-  },
-  getValue1: function (e) {
-    this.setData({
-      title: e.detail.value
-    })
+    if (that.data.info.length > 0){
+      common.requestServer("p=member&ac=exchange&d=savaExchangeParam",
+        {
+          "memberid": that.data.memberid,
+          "openid": that.data.openId,
+          "bid": that.data.bid,
+          "info": that.data.info,
+          "thumbs": that.data.tempFilePaths
+        },
+        function (data) {
+          console.log(data)
+          if (data.status == "success") {
+            common.showToast("朋友圈发布成功", true);
+            setTimeout(function () {
+              wx.navigateBack()
+            }, 2000);
+          } else {
+            common.showToast("朋友圈发布失败");
+          }
+        })
+    }else{
+      common.showToast("请输入文字");
+    }
   },
   getValue2: function (e) {
     this.setData({
       info: e.detail.value
+    })
+  },
+  chooseImage : function(){
+    var that = this;
+    wx.chooseImage({
+      count: 9, // 默认9
+      sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
+      sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
+      success: function (res) {
+        that.setData({
+            tempFilePaths: res.tempFilePaths
+        })
+
+        // common.requestServer("p=comm&ac=upload&d=uploadIMG",{
+        //  // http://tmp/wx1ca81df889bc6600.o6zAJs59VgSVQgYuZNJAEsM7W_ro.9e4109c053466168cbbc94bbc9c225bc.png
+
+        // },function(data){
+        //   console.log(data)
+
+        // })
+      }
     })
   }
 })

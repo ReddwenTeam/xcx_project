@@ -1,6 +1,6 @@
 <image class="index-bg" mode="scaleToFill" src="image/index_bg.jpg"></image>
 <view class="pd-2">
-  <view class='fs-34 title-pd'>Hello，亲爱的XXX家长</view>
+  <view class='fs-34 title-pd'>Hello，亲爱的<text style='margin-left: 15rpx' class="fs-36 color-b">{{nickName}}</text></view>
   <view class='fs-30'>欢迎来到武汉•光谷国际外国语学校</view>
   <view class='fs-30'>国内外顶级专家精心设计，打造华中地区一流的教育基地！</view>
   <view class='box mg-t2 color-6'>

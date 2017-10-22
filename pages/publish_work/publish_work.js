@@ -4,14 +4,14 @@ Page({
     class: ['@五年级一班', '@五年级二班', '@五年级三班', '@五年级四班'],
     subject: ['付费用户', '所有人'],
     classindex: 0,
-    subjectindex: 0 ,
-    focus:false,
-    title:"",
-    info:"",
-    bid:""   
+    subjectindex: 0,
+    focus: false,
+    title: "",
+    info: "",
+    bid: ""
   },
-  onLoad:function(){
-    var that =this;
+  onLoad: function () {
+    var that = this;
     wx.setNavigationBarTitle({
       title: "发布作业"
     });
@@ -41,32 +41,32 @@ Page({
       focus: true
     })
   },
-  publishWork:function(){
+  publishWork: function () {
     var that = this;
-    common.requestServer("p=member&ac=task&d=addTaskInfo", 
+    common.requestServer("p=member&ac=task&d=addTaskInfo",
       {
         "tid": that.data.bid,
         "title": that.data.title,
         "info": that.data.info
-      }, 
+      },
       function (data) {
-        if (data.status == "success"){
+        if (data.status == "success") {
           common.showToast("作业发布成功", true);
           setTimeout(function () {
             wx.navigateBack()
           }, 2000);
-        }else{
+        } else {
           common.showToast("作业发布失败");
         }
-    })
+      })
 
   },
-  getValue1:function(e){
+  getValue1: function (e) {
     this.setData({
       title: e.detail.value
     })
   },
-  getValue2: function (e) {    
+  getValue2: function (e) {
     this.setData({
       info: e.detail.value
     })

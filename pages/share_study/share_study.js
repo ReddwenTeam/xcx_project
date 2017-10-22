@@ -1,70 +1,71 @@
+var common = require("../../common/js/common.js");
+var curShareList = [], curPage = 1;
+var app = getApp();
 Page({
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    share_list: []
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-    console.log("生命周期函数--监听页面加载")
+  onLoad: function () {
+    var that = this;
+    curShareList = [];
+    curPage = 1;
+    app.getUserInfo(function(data){
+      that.setData({
+        getUserInfo: data
+      });
+    });
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
   onReady: function () {
-    console.log("生命周期函数--监听页面初次渲染完成")
-
+    this.queryShareList(curPage);
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-    console.log("生命周期函数--监听页面显示")
-
+  queryShareList: function (page) {
+    var that = this;
+    common.requestServer("p=member&ac=exchange&d=getExchangesParam", { "pindex": page, "psize": 5 }, function (data) {
+      console.log(data);
+      if (data.length == 0) {
+        if (page == 1) {
+          that.setData({
+            loading: {
+              status: true,
+              load: false,
+              text: "暂无数据"
+            }
+          });
+        } else {
+          that.setData({
+            loading: {
+              status: true,
+              load: false,
+              text: "没有更多数据"
+            }
+          });
+          curPage--;
+        }
+      } else {
+        data.forEach(function (item) {
+          item.formatTime = common.formatTime(item.createtime, 'Y-M-D');
+          curShareList.push(item);
+        });
+        that.setData({
+          share_list: curShareList
+        });
+      }
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-    console.log("生命周期函数--监听页面隐藏")
-
+  ToPublishShare: function (event) {
+    wx.navigateTo({
+      url: '../publish_share/publish_share'
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-    console.log("生命周期函数--监听页面卸载")
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-    console.log("页面相关事件处理函数--监听用户下拉动作")
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
   onReachBottom: function () {
-    console.log("页面上拉触底事件的处理函数")
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-    console.log("用户点击右上角分享")
+    this.setData({
+      loading: {
+        status: true,
+        load: true,
+        text: "加载中..."
+      }
+    });
+    curPage++;
+    this.queryShareList(curPage);
   }
 })

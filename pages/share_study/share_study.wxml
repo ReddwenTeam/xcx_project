@@ -1,8 +1,8 @@
 <image class="slider-img" mode="scaleToFill" src="image/friend_bg.jpg"></image>
 <view class="box box-ver box-ae">
     <view class="img-width box box-ver box-ac">
-        <image class="img-head" mode="scaleToFill" src="../../temp/head.png"></image>
-        <view class="fs-34 color-0 fs-bold">Selina</view>
+        <image class="img-head" mode="scaleToFill" src="{{getUserInfo.avatarUrl}}"></image>
+        <view class="fs-34 color-0 fs-bold">{{getUserInfo.nickName}}</view>
     </view>
 </view>
 <view class="msg-box">
@@ -68,3 +68,4 @@
         </view>
     </view>
 </view>
+<image class='btn-add' mode="scaleToFill" src="../../common/image/header/icon_add.png" bindtap="ToPublishShare"></image>

@@ -88,7 +88,7 @@ App({
         success: function (res) {
           that.globalData.userInfo = res.userInfo;
           if (typeof cb == "function") {
-            cb(this.globalData.userInfo)
+            cb(that.globalData.userInfo)
           }
         }
       })
