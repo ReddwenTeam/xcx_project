@@ -14,12 +14,17 @@ Page({
     common.requestServer("p=teacher&ac=teacher&d=getTeacherParam", {
       'id': id
     }, function (data) {
-      console.log(data);
       that.setData({
         info: data
       });
       var content = "<div style=\"word-break:normal;\" class='fs-28 color-6 p-paragraph'>" + data.info + "</div>";
       common.formatHtml("article", "html", content, that);
     });
-  }
+  },
+  ToVideoDetail: function (event) {
+    var dataSet = event.currentTarget.dataset;
+    wx.navigateTo({
+      url: '../course_detail/course_detail?id=' + dataSet.videoId + '&BarTitle=' + dataSet.videoName + '&price=' + dataSet.videoPrice + '&ischarge=' + dataSet.videoIscharge + '&isbuy=' + dataSet.videoIsbuy
+    })
+  },
 })

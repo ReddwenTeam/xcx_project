@@ -3,7 +3,11 @@
         <textarea class="textarea-style fs-26 color-0" focus="{{focus}}" bindinput='getValue2' maxlength='200' bindblur="bindTextAreaBlur" auto-height placeholder="请输入文字......" />
     </view>
     <view class='div-after'>
-      <image class="add-img" mode="scaleToFill" src="{{item}}" wx:for="{{tempFilePaths}}" wx:key="index"><view class="btn-img-delete box-img"></view></image>
+      <view class='add-img box-img1' style='background-image:url({{item}})'  wx:for="{{tempFilePaths}}" wx:key="index">
+        <view class="btn-img-delete box-img" bindtap='infoClose'
+          data-delete-index='{{index}}'
+        ></view>
+      </view>
     </view>
 </view>
 <view class="footer-fixed box box-ac">

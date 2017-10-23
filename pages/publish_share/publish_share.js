@@ -1,4 +1,5 @@
 var common = require("../../common/js/common.js");
+var showImg = [];
 Page({
   data: {
     focus: false,
@@ -11,6 +12,7 @@ Page({
   },
   onLoad: function () {
     var that = this;
+    showImg = [];
     wx.setNavigationBarTitle({
       title: "发布朋友圈"
     });
@@ -18,7 +20,8 @@ Page({
       key: "openInfo",
       success: function (res) {
         that.setData({
-          openId: res.data.openId
+          openId: res.data.openId,
+          nickName: res.data.nickName
         })
       }
     })
@@ -46,10 +49,9 @@ Page({
           "openid": that.data.openId,
           "bid": that.data.bid,
           "info": that.data.info,
-          "thumbs": that.data.tempFilePaths
+          "thumbs": showImg
         },
         function (data) {
-          console.log(data)
           if (data.status == "success") {
             common.showToast("朋友圈发布成功", true);
             setTimeout(function () {
@@ -71,22 +73,41 @@ Page({
   chooseImage : function(){
     var that = this;
     wx.chooseImage({
-      count: 9, // 默认9
+      count: 1, // 默认9
       sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
       sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
       success: function (res) {
-        that.setData({
-            tempFilePaths: res.tempFilePaths
+        wx.uploadFile({
+          url: 'https://weiqing.zqkj.site/addons/star_school/app/index.php?p=comm&ac=upload&d=uploadIMG', 
+          filePath: res.tempFilePaths[0],
+          name: 'file',
+          formData: {
+            'user': res.tempFilePaths[0]
+          },
+          success: function (res) {
+            var data = res.data;
+            if (res.data == "error"){
+              common.showToast("图片上传失败");
+            }else{
+              showImg.push(data);
+              that.setData({
+                tempFilePaths: showImg
+              })
+            }
+          }
         })
-
-        // common.requestServer("p=comm&ac=upload&d=uploadIMG",{
-        //  // http://tmp/wx1ca81df889bc6600.o6zAJs59VgSVQgYuZNJAEsM7W_ro.9e4109c053466168cbbc94bbc9c225bc.png
-
-        // },function(data){
-        //   console.log(data)
-
-        // })
       }
     })
+  },
+  infoClose:function(event){
+    var dataSet = event.currentTarget.dataset, that = this;
+    Array.prototype.remove = function (index) {
+      this.splice(index, 1);
+    };
+    var emp = showImg;
+    emp.remove(dataSet.deleteIndex);
+    that.setData({
+      tempFilePaths: showImg
+    });
   }
 })

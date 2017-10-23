@@ -10,7 +10,6 @@ Page({
     });
     var url = "p=news&ac=artic&d=getArticParam&f=ajax";
     if (param.type){
-      console.log("noticr")
       url = "p=news&ac=news&d=getNewParam";
     }
     common.requestServer(url, { "id": param.id }, function (data) {

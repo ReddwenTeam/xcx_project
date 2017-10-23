@@ -10,30 +10,30 @@
         <view class="mg-t15 color-0 fs-28">{{info.concise}}</view>
         <image class="img-id" mode="scaleToFill" src="image/img_id.png"></image>
         <view class="mg-t15 color-0 fs-32">身份认证</view>
-        <view class="box box-f1 width-90 mg-t15">
+        <view class="box box-f1 width-100 mg-t15">
           <view class="fs-28 color-3 box box-f1">手机</view>
           <view class="fs-28 color-9">{{info.mobile.length > 0 ? info.mobile : "暂无"}}</view>
         </view>
-          <view class="box box-f1 width-90 mg-t15">
+          <view class="box box-f1 width-100 mg-t15">
           <view class="fs-28 color-3 box box-f1">电话</view>
           <view class="fs-28 color-9">{{info.tel.length > 0 ? info.tel : "暂无"}}</view>
         </view>
     </view>
-    <view class="one-info box box-ver box-ac">
+     <view class="one-info box box-ver box-ac">
         <view class="color-0 fs-32">语言水平</view>
-        <view wx:if="{{info.masterlist.length > 0}}"  style="width:100%">
-          <view class="mg-t15 box" wx:for="{{info.masterlist}}" wx:key="{{item.index}}">
+        <view wx:if="{{info.masterlist.length > 0 && info.masterlist[0]!=null}}"  style="width:100%">
+          <view class="mg-t15 box" wx:for="{{info.masterlist}}" wx:key="{{index}}">
             <view class="fs-28 color-3 box box-f1">{{item}}</view>
             <view class="fs-28 color-9">精通</view>
           </view>
         </view>
-        <view wx:if="{{info.intimacylist.length > 0}}" style="width:100%">
-          <view class="mg-t15 box" wx:for="{{info.intimacylist}}" wx:key="{{item.index}}">
+        <view wx:if="{{info.intimacylist.length > 0 && info.intimacylist[0]!=null}}" style="width:100%">
+          <view class="mg-t15 box" wx:for="{{info.intimacylist}}" wx:key="{{index}}">
             <view class="fs-28 color-3 box box-f1">{{item}}</view>
             <view class="fs-28 color-9">熟悉</view>
           </view>
         </view>
-    </view>
+    </view> 
     <view class="one-info article box box-ver box-ac">
         <view class="color-0 fs-32">自我介绍</view>
         <view class="wxParse">
@@ -43,12 +43,13 @@
     <view class="one-info box box-ver box-ac">
         <view class="color-0 fs-32">我的服务</view>
         <view wx:if="{{info.vcourselist.length > 0}}" >
-          <view wx:key="{{item.index}}" wx:for="{{info.vcourselist}}">
+          <view wx:key="{{index}}" wx:for="{{info.vcourselist}}">
             <view class="one-class" bindtap="ToVideoDetail" 
             data-video-id="{{item.id}}" 
             data-video-price="{{item.price}}"    
             data-video-ischarge="{{item.ischarge}}"
             data-video-name="{{item.name}}"
+            data-video-isbuy="{{item.isbuy}}"
             >
               <view class="img-class box-img1 box box-ac box-pc" style="background-image: url({{item.picarr}})">
                 <image src='../../common/image/btn_play.png' class='box box-img play-btn'></image>

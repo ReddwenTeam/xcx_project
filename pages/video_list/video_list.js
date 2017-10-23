@@ -18,7 +18,6 @@ Page({
   },
   queryVideoList: function (page) {
     var that = this;
-    console.log(app.memberid)
     common.requestServer("p=course&ac=vcourse&d=getVcoursesParam&isNeadPager=true", { "pindex": page, "psize": 3, "memberid": app.memberid }, function (data) {
       if (data.length == 0) {
         if (page == 1) {
@@ -64,8 +63,6 @@ Page({
     var dataSet = event.currentTarget.dataset;
     wx.navigateTo({
       url: '../course_detail/course_detail?id=' + dataSet.videoId + '&BarTitle=' + dataSet.videoName + '&price=' + dataSet.videoPrice + '&ischarge=' + dataSet.videoIscharge + '&isbuy=' + dataSet.videoIsbuy
-
-      
     })
   },
   onReachBottom: function () {

@@ -14,14 +14,23 @@ Page({
         getUserInfo: data
       });
     });
+    wx.getStorage({
+      key: "bindingInfo",
+      success: function (res) {
+        that.setData({
+          memberid: res.data.memberid
+        })
+      }
+    })
   },
-  onReady: function () {
+  onShow: function () {
+    curShareList = [];
+    curPage = 1;
     this.queryShareList(curPage);
   },
   queryShareList: function (page) {
     var that = this;
     common.requestServer("p=member&ac=exchange&d=getExchangesParam", { "pindex": page, "psize": 5 }, function (data) {
-      console.log(data);
       if (data.length == 0) {
         if (page == 1) {
           that.setData({
@@ -43,7 +52,7 @@ Page({
         }
       } else {
         data.forEach(function (item) {
-          item.formatTime = common.formatTime(item.createtime, 'Y-M-D');
+          item.formatTime = common.formatTime(item.createtime, 'Y-M-D  h:m:s');
           curShareList.push(item);
         });
         that.setData({
@@ -67,5 +76,19 @@ Page({
     });
     curPage++;
     this.queryShareList(curPage);
+  },
+  deleteOne:function(event){
+    var dataSet = event.currentTarget.dataset, that = this;
+    wx.showModal({
+      title: '提示',
+      content: '确定要删除该朋友圈么？',
+      success: function (res) {
+        if (res.confirm) {
+          common.requestServer("p=member&ac=exchange&d=deleteExchangesParam", { "memberid": that.data.memberid, "id": dataSet.deleteId }, function (data) {
+            console.log(data)
+          });
+        }
+      }
+    })
   }
 })

@@ -54,7 +54,6 @@ Page({
   },
   ToArticleDetail: function (event){
     var dataSet = event.currentTarget.dataset;
-    console.log(dataSet);
     wx.navigateTo({
       url: '../news_detail/news_detail?id=' + dataSet.articleId + '&BarTitle=' + dataSet.articleName
     })

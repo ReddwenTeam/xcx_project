@@ -17,7 +17,6 @@ Page({
   queryNoticeList: function (page) {
     var that = this;
     common.requestServer("p=news&ac=news&d=getNewsParam&isNeadPager=true&f=ajax", { "pindex": page, "psize": 6 }, function (data) {
-      console.log(data)
       if (data.length == 0) {
         if (page == 1) {
           that.setData({

@@ -25,13 +25,11 @@ Page({
     })
   },
   bindClassChange: function (e) {
-    console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
       classindex: e.detail.value
     })
   },
   bindSubjectChange: function (e) {
-    console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
       subjectindex: e.detail.value
     })
