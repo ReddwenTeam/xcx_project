@@ -26,9 +26,9 @@
   ],
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#7f1d1e",
-    "navigationBarTitleText": "武汉•光谷（国际）外国语学校",
-    "navigationBarTextStyle":"white"
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTitleText": "猿师说玩摄影",
+    "navigationBarTextStyle":"black"
   },
   "tabBar": {
       "backgroundColor": "#ffffff",
