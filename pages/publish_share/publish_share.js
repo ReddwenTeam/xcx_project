@@ -72,32 +72,37 @@ Page({
   },
   chooseImage : function(){
     var that = this;
-    wx.chooseImage({
-      count: 1, // 默认9
-      sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
-      sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
-      success: function (res) {
-        wx.uploadFile({
-          url: 'https://weiqing.zqkj.site/addons/star_school/app/index.php?p=comm&ac=upload&d=uploadIMG', 
-          filePath: res.tempFilePaths[0],
-          name: 'file',
-          formData: {
-            'user': res.tempFilePaths[0]
-          },
-          success: function (res) {
-            var data = res.data;
-            if (res.data == "error"){
-              common.showToast("图片上传失败");
-            }else{
-              showImg.push(data);
-              that.setData({
-                tempFilePaths: showImg
-              })
+    console.log(showImg.length)
+    if(showImg.length < 9){
+      wx.chooseImage({
+        count: 1, // 默认9
+        sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
+        sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
+        success: function (res) {
+          wx.uploadFile({
+            url: 'https://weiqing.zqkj.site/addons/star_school/app/index.php?p=comm&ac=upload&d=uploadIMG',
+            filePath: res.tempFilePaths[0],
+            name: 'file',
+            formData: {
+              'user': res.tempFilePaths[0]
+            },
+            success: function (res) {
+              var data = res.data;
+              if (res.data == "error") {
+                common.showToast("图片上传失败");
+              } else {
+                showImg.push(data);
+                that.setData({
+                  tempFilePaths: showImg
+                })
+              }
             }
-          }
-        })
-      }
-    })
+          })
+        }
+      })
+    }else{
+      common.showToast("只能选择9张照片");
+    }
   },
   infoClose:function(event){
     var dataSet = event.currentTarget.dataset, that = this;
