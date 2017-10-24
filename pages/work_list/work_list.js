@@ -5,28 +5,64 @@ Page({
     Works_list: [],
   },
   onLoad: function (param) {
+    var that = this;
+    if (param.workType == 1) {
+      that.setData({
+        showAdd: true
+      });
+    }
+    that.setData({
+      workType: param.workType
+    });
     curWorksList = [];
     curPage = 1;
     wx.setNavigationBarTitle({
       title: "作业列表"
     });
+    that.exeQuery();
   },
   onShow:function(){
-    curWorksList = [];
-    curPage = 1;
-    this.queryWorksList(curPage);
+    var that = this;
+    wx.getStorage({
+      key: 'workReload',
+      success: function (res) {
+        if (res.data) {
+          curWorksList = [];
+          curPage = 1;
+          that.exeQuery();
+          wx.removeStorage({ key: 'workReload' })
+        }
+      }
+    })
   },
-  queryWorksList: function (page) {
+  exeQuery:function(){
     var that = this;
     wx.getStorage({
       key: "bindingInfo",
       success: function (res) {
-        queryList(res.data.bid)
+        that.setData({
+          bid: res.data.bid,
+          memberid: res.data.memberid,
+        });
+        that.queryWorksList(curPage);
       }
     })
+  },
+  queryWorksList: function (page) {
+    var that = this;
+    if (that.data.workType == 1) {
+      //老师
+      var url = "p=member&ac=task&d=getTasksParam&isNeadPager=true";
+      var param = { "tid": that.data.bid, "pindex": page, "psize": 10 };
+    } else if (that.data.workType == 2) {
+      //家长
+      var url = "p=member&ac=task&d=getTaskParamByBid";
+      var param = { "memberid": that.data.memberid, "pindex": page, "psize": 10 };
+    }
+    queryList(url, param);
 
-    function queryList(tid){
-      common.requestServer("p=member&ac=task&d=getTasksParam&isNeadPager=true", { "tid": tid, "pindex": page, "psize": 10 }, function (data) {
+    function queryList(url, param){
+      common.requestServer(url, param , function (data) {
         if (data.length == 0) {
           if (page == 1) {
             that.setData({
@@ -52,7 +88,9 @@ Page({
               id: item.id,
               title: item.title,
               info: item.info,
-              formateTime: common.formatTime(item.createtime, 'Y-M-D')
+              formateTime: common.formatTime(item.createtime, 'Y-M-D  h:m:s'),
+              tavatar: item.tavatar,
+              tname: item.tname              
             }
             curWorksList.push(temp);
           });
@@ -71,9 +109,9 @@ Page({
     }
   },
   ToWorkDetail: function (event) {
-    var dataSet = event.currentTarget.dataset;
+    var dataSet = event.currentTarget.dataset, that = this;
     wx.navigateTo({
-      url: '../work_detail/work_detail?id=' + dataSet.workId + '&BarTitle=' + dataSet.workName
+      url: '../work_detail/work_detail?id=' + dataSet.workId + '&BarTitle=' + dataSet.workName + '&workType=' + that.data.workType
     })
   },
   ToPublishWork: function () {

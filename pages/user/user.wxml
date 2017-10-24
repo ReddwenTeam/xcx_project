@@ -48,7 +48,7 @@
           </view>
           <image class="img-ptab" mode="scaleToFill" src="image/teacher_2.png"></image>
       </view>
-      <view class="width-4 box box-ac">
+      <view class="width-4 box box-ac" bindtap='ToWorkList' data-work-type="2">
           <view class="pd-l2 box box-ver box-f1">
               <view class="fs-32 color-r">作业列表</view>
               <view class="fs-22 color-9 mg-t05">家园共育</view>
@@ -105,7 +105,7 @@
               <image class="img-tab" mode="scaleToFill" src="image/teacher_2.png"></image>
               <view class="color-3 fs-24 ta-center">校园通知</view>
           </view>
-          <view class="one-tab box box-ver box-ac box-pc"  bindtap='ToWorkList'>
+          <view class="one-tab box box-ver box-ac box-pc" bindtap='ToWorkList' data-work-type="1">
               <image class="img-tab" mode="scaleToFill" src="image/teacher_3.png"></image>
               <view class="color-3 fs-24 ta-center">作业列表</view>
           </view>

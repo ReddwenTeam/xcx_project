@@ -81,9 +81,10 @@ Page({
       url: '../notice_list/notice_list?BarTitle=校园通知'
     })
   },
-  ToWorkList: function () {
+  ToWorkList: function (event) {
+    var dataSet = event.currentTarget.dataset;
     wx.navigateTo({
-      url: '../work_list/work_list?BarTitle=作业列表'
+      url: '../work_list/work_list?BarTitle=作业列表&workType=' + dataSet.workType
     })
   }
 })

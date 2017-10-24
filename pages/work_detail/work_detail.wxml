@@ -1,7 +1,7 @@
 <view class="pd-2">
-  <view class='box box-ac'>
+  <view class='box'>
     <view class="fs-32 color-0 box box box-f1">{{workInfo.title}}</view>
-    <image class='btn-delete' mode="scaleToFill" src="../../common/image/delete.png" bindtap="deleteWork"></image>
+    <image class='btn-delete' wx:if="{{showDel == true}}" mode="scaleToFill" src="../../common/image/delete.png" bindtap="deleteWork"></image>
   </view>
   <view class="fs-20 color-9">发布时间：{{workInfo.formateTime}}</view>
   <view class="fs-26 color-3 mg-t3">{{workInfo.info}}</view>

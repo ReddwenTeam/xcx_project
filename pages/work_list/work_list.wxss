@@ -1,6 +1,7 @@
 @import "../../common/wxss/common";
 .one-info { background-color: #ffffff; margin-bottom: 5rpx; padding: 15rpx 30rpx; border-top: solid 1rpx rgba(0, 0, 0, .1); box-shadow: 2rpx 2rpx 5rpx rgba(0, 0, 0, .2); }
 .class-math { width: 68rpx; height: 54rpx; margin-right: 15rpx; }
+.class-teacher { width: 68rpx; height: 68rpx; margin-right: 15rpx; }
 .loading-img { width: 50rpx; height: 50rpx; margin-right: 20rpx;
 animation: rotation 1.6s linear infinite;
 -webkit-animation: rotation 1.6s linear infinite;

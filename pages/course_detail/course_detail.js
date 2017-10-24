@@ -14,11 +14,9 @@ Page({
       videoList: []
     }
   },
-  onShow: function (param) {
-    allVideoList = [];
-  },
   onLoad: function (param) {
     var that = this;
+    allVideoList = [];
     that.player = wx.createVideoContext('myVideo');
     wx.setNavigationBarTitle({
       title: param.BarTitle
@@ -126,7 +124,7 @@ Page({
       success: function (res) {
         var data = res.data;
         wx.request({
-          url: 'https://weiqing.zqkj.site/addons/star_school/payment/example/jsapi.php',
+          url: 'https://xcx.51zhenkun.com/addons/star_school/payment/example/jsapi.php',
           data: {
             "memberid": data.memberid,
             "vcourseid": that.data.vcourseid

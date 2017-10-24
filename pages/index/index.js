@@ -22,6 +22,7 @@ Page({
     wx.getStorage({
       key: "payReload",
       success: function (res) {
+        console.log(res)
         if (res.data) {
           that.queryVideo();
           wx.removeStorage({ key: 'payReload' })

@@ -1,12 +1,28 @@
 var common = require("../../common/js/common.js");
 Page({
   data: {
-    workInfo : {}
+    workInfo : {},
+    appMemberid: ""
   },
   onLoad: function (param) {
+    var that = this;
+    if (param.workType == 1) {
+      that.setData({
+        showDel: true
+      });
+    }
     wx.setNavigationBarTitle({
       title: param.BarTitle
     });
+    //  && workInfo.tid == appMemberid
+    // wx.getStorage({
+    //   key: "bindingInfo",
+    //   success: function (res) {
+    //     that.setData({
+    //       appMemberid: res.data.memberid
+    //     })
+    //   }
+    // })
     this.queryWorkInfo(param.id);
     this.setData({
       workId: param.id
@@ -39,6 +55,10 @@ Page({
           common.requestServer("p=member&ac=task&d=deleteTaskInfo", { "id": that.data.workId, "tid": res.data.bid }, function (data) {
             if (data.status == "success") {
               common.showToast("作业删除成功", true);
+              wx.setStorage({
+                key: "workReload",
+                data: true
+              })
               setTimeout(function () {
                 wx.navigateBack()
               }, 2000)

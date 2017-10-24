@@ -50,6 +50,10 @@ Page({
       function (data) {
         if (data.status == "success") {
           common.showToast("作业发布成功", true);
+          wx.setStorage({
+            key: "workReload",
+            data: true
+          })
           setTimeout(function () {
             wx.navigateBack()
           }, 2000);

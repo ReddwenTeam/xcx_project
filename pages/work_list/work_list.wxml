@@ -3,13 +3,19 @@
     data-work-id="{{item.id}}" 
     data-work-name="{{item.title}}" 
     >
-      <image class="class-math" mode="scaleToFill" src="image/zuoye.png"></image>
+      <view wx:if="{{item.tavatar}}">
+        <image class="class-teacher" mode="scaleToFill" src="{{item.tavatar}}"></image>
+      </view>
+      <view wx:else>
+        <image class="class-math" mode="scaleToFill" src="image/zuoye.png"></image>
+      </view>
       <view class='box box-ver box-f1'>
-          <view class='box box-ae'>
-              <p class="fs-32 color-0">{{item.title}}</p>
-              <view class='fs-20 color-9' style='margin-left:30rpx'>{{item.formateTime}}</view>
-          </view>
+          <view class="fs-32 color-0 box box-f1 ellipsis-1">{{item.title}}</view>
           <view class='fs-26 color-6 ellipsis-1'>{{item.info}}</view>
+          <view class='box box-ae' style='padding-top:10rpx'>
+              <view class="fs-20 color-b" wx:if="{{item.tname}}" style='padding-right:30rpx'>{{item.tname}}</view>
+              <view class='fs-20 color-9'>{{item.formateTime}}</view>
+          </view>
       </view>
     </view>
 </view>
@@ -17,4 +23,4 @@
   <image class="loading-img" mode="scaleToFill" src="../../common/image/loading.png" wx:if="{{loading.load}}"></image>
   <view class='fs-26 color-9'>{{loading.text}}</view>
 </view>
-<image class='btn-add' mode="scaleToFill" src="../../common/image/header/icon_add.png" bindtap="ToPublishWork"></image>
+<image class='btn-add' wx:if="{{showAdd == true}}" mode="scaleToFill" src="../../common/image/header/icon_add.png" bindtap="ToPublishWork"></image>
