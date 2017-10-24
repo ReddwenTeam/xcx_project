@@ -30,6 +30,7 @@ Page({
       success: function (res) {
         that.setData({
           bid: res.data.bid,
+          bdtype: res.data.bdtype,
           memberid: res.data.memberid
         })
       }
@@ -48,12 +49,17 @@ Page({
           "memberid": that.data.memberid,
           "openid": that.data.openId,
           "bid": that.data.bid,
+          "bdtype": that.data.bdtype,
           "info": that.data.info,
-          "thumbs": showImg
+          "thumbs": showImg.join("--")
         },
         function (data) {
           if (data.status == "success") {
             common.showToast("朋友圈发布成功", true);
+            wx.setStorage({
+              key: "shareReload",
+              data: true
+            })
             setTimeout(function () {
               wx.navigateBack()
             }, 2000);
@@ -72,7 +78,6 @@ Page({
   },
   chooseImage : function(){
     var that = this;
-    console.log(showImg.length)
     if(showImg.length < 9){
       wx.chooseImage({
         count: 1, // 默认9

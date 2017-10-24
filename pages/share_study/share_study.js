@@ -3,12 +3,14 @@ var curShareList = [], curPage = 1;
 var app = getApp();
 Page({
   data: {
-    share_list: []
+    share_list: [],
+    appMemberid:""
   },
   onLoad: function () {
     var that = this;
     curShareList = [];
     curPage = 1;
+    that.queryShareList(curPage);
     app.getUserInfo(function(data){
       that.setData({
         getUserInfo: data
@@ -18,15 +20,25 @@ Page({
       key: "bindingInfo",
       success: function (res) {
         that.setData({
-          memberid: res.data.memberid
+          memberid: res.data.memberid,
+          appMemberid: res.data.memberid
         })
       }
     })
   },
   onShow: function () {
-    curShareList = [];
-    curPage = 1;
-    this.queryShareList(curPage);
+    var that = this;
+    wx.getStorage({
+      key: 'shareReload',
+      success: function (res) {
+        if(res.data){
+          curShareList = [];
+          curPage = 1;
+          that.queryShareList(curPage);
+          wx.removeStorage({key: 'shareReload'})
+        }
+      }
+    })
   },
   queryShareList: function (page) {
     var that = this;
@@ -84,11 +96,24 @@ Page({
       content: '确定要删除该朋友圈么？',
       success: function (res) {
         if (res.confirm) {
-          common.requestServer("p=member&ac=exchange&d=deleteExchangesParam", { "memberid": that.data.memberid, "id": dataSet.deleteId }, function (data) {
-            console.log(data)
+          common.requestServer("p=member&ac=exchange&d=deleteExchangeParam", { "memberid": that.data.memberid, "id": dataSet.deleteId }, function (data) {
+            if (data.status == "success"){
+              common.showToast(data.msg, true);
+              curShareList = [];
+              curPage = 1;
+              that.queryShareList(curPage);
+            }
           });
         }
       }
+    })
+  },
+  previewImage: function (event){
+    var dataSet = event.currentTarget.dataset, that = this;
+    var imgItem = dataSet.imgItem, imgIndex = dataSet.imgIndex;
+    wx.previewImage({
+      current: imgItem[imgIndex],
+      urls: imgItem
     })
   }
 })

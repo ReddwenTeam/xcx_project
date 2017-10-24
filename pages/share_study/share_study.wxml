@@ -8,15 +8,26 @@
 <view class="msg-box">
     <view class="one-msg" wx:for="{{share_list}}" wx:key="index">
         <view class="box">
-            <image class="friend-img" mode="scaleToFill" src="{{getUserInfo.avatarUrl}}"></image>
+            <image class="friend-img" mode="scaleToFill" src="{{item.avatar}}"></image>
             <view class="box box-f1 box-ver">
-                <view class="color-blue fs-34">Selina</view>
+                <view class="color-blue fs-34">{{item.nickname}}</view>
                 <view class="color-0 fs-28 ta-justify mg-t12 mg-b25">{{item.info}}</view>
-                <view wx:if="{{item.length > 0}}">
-                  <image class="msg-img" mode="scaleToFill" wx:for="{{share_list.thumbs}}" src="{{item}}"></image>
+                <view wx:if="{{item.thumbs.length > 0 && item.thumbs[0].length > 0}}">
+                  <view wx:if="{{item.thumbs.length == 1}}">
+                    <image class="msg-img" mode="scaleToFill" wx:for="{{item.thumbs}}" wx:for-index="imgindex" wx:for-item="imgitem" wx:key="imgindex" src="{{imgitem}}" bindtap="previewImage" data-img-item="{{item.thumbs}}"></image> 
+                  </view>
+                  <view wx:elif="{{item.thumbs.length == 2}}" class="div-after">
+                    <image class="more-msg-img2" mode="scaleToFill" wx:for="{{item.thumbs}}"  wx:for-index="imgindex" wx:for-item="imgitem" wx:key="imgindex" src="{{imgitem}}" bindtap="previewImage" data-img-item="{{item.thumbs}}" data-img-index="{{imgindex}}"></image> 
+                  </view>
+                  <view wx:elif="{{item.thumbs.length == 4}}" class="div-after">
+                    <image class="more-msg-img2" mode="scaleToFill" wx:for="{{item.thumbs}}"  wx:for-index="imgindex" wx:for-item="imgitem" wx:key="imgindex" src="{{imgitem}}" bindtap="previewImage" data-img-item="{{item.thumbs}}" data-img-index="{{imgindex}}"></image> 
+                  </view>
+                  <view wx:else class="div-after">
+                    <image class="more-msg-img" mode="scaleToFill" wx:for="{{item.thumbs}}"  wx:for-index="imgindex" wx:for-item="imgitem" wx:key="imgindex" src="{{imgitem}}" bindtap="previewImage" data-img-item="{{item.thumbs}}" data-img-index="{{imgindex}}"></image> 
+                  </view>
                 </view>
                 <view class="box box-ac mg-t2">
-                    <view class="fs-24 color-9 box box-f1">{{item.formatTime}}<text class='fs-24 color-b' style='margin-left: 40rpx' bindtap='deleteOne' data-delete-id="{{item.id}}">删除</text></view>
+                    <view class="fs-24 color-9 box box-f1">{{item.formatTime}}<text class='fs-24 color-b' style='margin-left: 40rpx' bindtap='deleteOne' data-delete-id="{{item.id}}">{{ appMemberid == item.memberid ? '删除' : ''}}</text></view>
                     <view class="btn-chat box-img"></view>
                 </view>
             </view>

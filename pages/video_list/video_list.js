@@ -16,6 +16,20 @@ Page({
   onReady: function () {
     this.queryVideoList(curPage);
   },
+  onShow: function () {
+    var that = this;
+    wx.getStorage({
+      key: "payReload",
+      success: function (res) {
+        if (res.data){
+          curVideoList = [];
+          curPage = 1;
+          that.queryVideoList(curPage);
+          wx.removeStorage({ key: 'payReload' })
+        }
+      }
+    })
+  },
   queryVideoList: function (page) {
     var that = this;
     common.requestServer("p=course&ac=vcourse&d=getVcoursesParam&isNeadPager=true", { "pindex": page, "psize": 3, "memberid": app.memberid }, function (data) {
@@ -59,7 +73,7 @@ Page({
       }
     })
   },
-  ToVideoDetail: function (event){
+  ToVideoDetail: function (event) {
     var dataSet = event.currentTarget.dataset;
     wx.navigateTo({
       url: '../course_detail/course_detail?id=' + dataSet.videoId + '&BarTitle=' + dataSet.videoName + '&price=' + dataSet.videoPrice + '&ischarge=' + dataSet.videoIscharge + '&isbuy=' + dataSet.videoIsbuy

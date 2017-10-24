@@ -1,10 +1,14 @@
 <view class="pd-t7 pd-b1">
   <view class="one-video">
-    <!-- 试听 -->
-    <video wx:if="{{audition == 0 }}" id="myVideo" poster='{{poster}}'  src="{{video_src}}" controls></video>
-    <!-- 非试听 -->
-    <image wx:else src='{{poster}}' bindtap='toastInfo'>
-    <image class="btn-play" mode="scaleToFill" src="../../common/image/btn_play.png"></image></image>
+    <view wx:if="{{isbuy == 'success'}}">
+      <video id="myVideo" poster='{{poster}}'  src="{{video_src}}" controls></video>
+    </view>
+    <view wx:else>
+      <!-- 试听 -->
+      <video wx:if="{{audition == 0 }}" id="myVideo" poster='{{poster}}'  src="{{video_src}}" controls></video>
+      <!-- 非试听 -->
+      <image mode="scaleToFill" class="audition-img" wx:else src='{{poster}}' bindtap='toastInfo'><image class="btn-play" mode="scaleToFill" src="../../common/image/btn_play.png"></image></image>
+    </view>
   </view>
   <view class="box list-content">
       <view class="width-3 fs-28 box box-ac box-pc {{curPageName == 'xiangqing' ? 'list-on' :''}} " bindtap="changePage" data-page-name="xiangqing" >

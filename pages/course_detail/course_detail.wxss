@@ -39,5 +39,5 @@ page { background-color: #efefef; }
 .poster-title text{ display: table-cell ;text-align: center; word-break: break-all;}
 .mainVideo{ position: absolute; width: 100%; top:0;left: 0;visibility: hidden;}
 .mainVideo.active{visibility: visible;}
-
+.audition-img { width: 100%; height: 500rpx; }
 .video-list-box{padding: 20rpx; background-color: #ffffff}

@@ -19,17 +19,17 @@ Page({
   },
   onLoad: function (param) {
     var that = this;
-    this.player = wx.createVideoContext('myVideo');
+    that.player = wx.createVideoContext('myVideo');
     wx.setNavigationBarTitle({
       title: param.BarTitle
     });
-    this.setData({
+    that.setData({
       price: param.price,
       ischarge: param.ischarge,
       isbuy: param.isbuy,
       vcourseid: param.id
     });
-    this.queryDetail(param.id);
+    that.queryDetail(param.id);
   },
   changePage:function(event){
     var dataSet = event.currentTarget.dataset;
@@ -146,6 +146,13 @@ Page({
                 'signType': data.signType,
                 'paySign': data.paySign,
                 'success': function (res) {
+                  that.setData({
+                    isbuy: "success"
+                  });
+                  wx.setStorage({
+                    key: "payReload",
+                    data: true
+                  })
                   common.showToast("支付成功！", true);
                 }
               })
