@@ -3,6 +3,7 @@ var WxParse = require('../wxParse/wxParse.js');
  * 请求服务
 */
 var baseUrl = "https://weiqing.zqkj.site/addons/star_school/app/index.php?";
+//var baseUrl = "https://xcx.51zhenkun.com/addons/star_school/app/index.php?";
 //course_detail publish_share
 function requestServer(url,param,callback){
   wx.request({

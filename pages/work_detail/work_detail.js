@@ -15,7 +15,7 @@ Page({
   queryWorkInfo:function(id){
     var that = this;
     common.requestServer("p=member&ac=task&d=getTaskParam", { "id": id }, function (data) {
-      data.formateTime = common.formatTime(data.createtime, 'Y-M-D')
+      data.formateTime = common.formatTime(data.createtime, 'Y-M-D  h:m:s')
       that.setData({
         workInfo: data
       })
