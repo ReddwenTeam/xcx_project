@@ -42,15 +42,14 @@
         </view>
     </view>
     <view class="one-info box box-ver color-7">
-        <p class="fs-30 color-0">老师介绍<text class="fs-26 color-7">（1）</text></p>
+        <p class="fs-30 color-0">老师介绍<text class="fs-26 color-7"></text></p>
         <view class="info-box box box-pc">
             <view class="box info-detail">
-                <image class="img-teacher" mode="scaleToFill" src="../../common/image/img_logo.png"></image>
+                <image class="img-teacher" mode="scaleToFill" src="{{items.videoList.teacherlist.tavatar}}"></image>
                 <view>
-                    <view class="color-0 fs-32">Selina老师</view>
-                    <view class="color-7 fs-26">好评度 100%</view>
-                    <view class="color-7 fs-26">课程数 14</view>
-                    <view class="color-7 fs-26">学生数 4万</view>
+                    <view class="color-0 fs-32">{{items.videoList.teacherlist.tname}}老师</view>
+                    <view class="color-7 fs-26">课程数： {{items.videoList.teacherlist.cnumber}}</view>
+                    <view class="color-7 fs-26">学生数： {{items.videoList.teacherlist.snumber}}</view>
                 </view>
             </view>
         </view>
@@ -95,7 +94,9 @@
     <text class="fs-30 color-b">咨询</text>
     <view class="box box-f1 box-pe">
         <view wx:if="{{isbuy == 'success' }}" class="btn-disable color-w fs-26">已购买</view>  
+        <view wx:elif="{{isbuy == 'zanwu'}}" class="btn-disable color-w fs-26">暂无信息</view>
         <view wx:elif="{{isbuy == 'error' && ischarge == 0 }}" class="btn-disable color-w fs-26">免费</view>
         <view wx:else="{{isbuy == 'error' && ischarge == 1 }}" class="btn-submit color-w fs-26" bindtap='toPay'>立即购买</view>
+        
     </view> 
 </view>

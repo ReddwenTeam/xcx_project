@@ -1,0 +1,7 @@
+@import "../../common/wxss/common";
+page { background-color: #efefef; padding: 20rpx 0; }
+.user-info { height: 100rpx; background-color: #ffffff; border-top: solid 1rpx #eaeaea; padding: 15rpx 20rpx; }
+.user-head { width: 100rpx; height: 100rpx; border-radius: 20rpx; }
+.icon-right { width: 14rpx; height: 33rpx; margin-left: 20rpx; background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAhCAYAAADpspoyAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAc1JREFUeNqclU8obVEUxs89+fPCzEwmUpQkuhlQBvRGBkqZKGHgX9zBqyuUf4k3IMqAgWekq6hbRobKQEm5l6KUVy+pl5mUZGDg+q3aajncs3dWfa2zv7O/8+2zz17reJlMxkulUm0gKdeu8NPpdIvneUnQwfWQ5xg+WAd5ZryCuNJVOABezbgA7CDOtQqj0egReVFxdWDexVFiFpwqfgzX5jBhRHZIgokVpDNQaO79BzWs6CHM0WPCX9Ivda8UbFgd3wPnPVK7onp56FZWRxX94E6N13hYuVXI0+9JPYoqAgnEOTZHER/IYVBUA5i2Ck1Mggs1nsK1MevmBDaqShL4YagbUMuKHsMcZclXpFFFlclmWR2Na4S0D1oV3WkVGnE16VJRt76DKBIoAokJ36H0hgPLTPDuu77FTXZ1WVGyq7HQ74goX4pafQop9i75FLYD8FvKSo0XEB2HnhzcfpLiijoJdoWvyqrYHLUSQz2Z0/LPdlY3lUgiFhR9EuLWFyji5FdF/EFoes6quic9ZzC0y5k+uq0albx4d7ZGpR3nQL3ilxAdhvZV3JrI44o7BzMuDfmPcn6WksHtxUU4At4nxhFdO/2uvvt/fBNgAP075uIj/lGbAAAAAElFTkSuQmCC); }
+.one-info { height: 50rpx; background-color: #ffffff; border-top: solid 1rpx #eaeaea; padding: 20rpx; }
+.border-b { border-bottom: solid 1rpx #eaeaea; }

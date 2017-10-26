@@ -1,0 +1,99 @@
+<!-- 游客 -->
+<template name="youke">
+  <view class='user-info box box-ac'>
+    <image class="user-head" mode="scaleToFill" src="{{avatarUrl}}"></image>
+    <view class='box box-ver box-f1'>
+      <view class="fs-34 color-b head-name">{{nickName}}</view>
+      <view class="fs-26 color-3">会员</view>
+    </view>
+    <view class='box box-ac'>
+      <view class="fs-30 color-3" bindtap='ToUserBind'>去绑定</view>
+      <view class="icon-right box-img"></view>
+    </view>
+  </view>
+  <view class='one-info box box-ac border-b info1' bindtap='ToUserInfo'>
+    <image class="info-img" mode="scaleToFill" src="image/icon1.png"></image>
+    <view class="box box-f1 fs-30 color-3">基本信息</view>
+    <view class="icon-right box-img"></view>
+  </view>
+</template>
+<!-- 家长 会员 -->
+<template name="jiazhang">
+  <view class='user-info box box-ac'>
+    <image class="user-head" mode="scaleToFill" src="{{avatarUrl}}"></image>
+    <view class='box box-ver box-f1'>
+      <view class="fs-34 color-b head-name">{{nickName}}</view>
+      <view class="fs-26 color-3">会员</view>
+    </view>
+    <view class='box box-ac'>
+      <view class="fs-30 color-3" bindtap='deleteBinding'>解除绑定</view>
+      <view class="icon-right box-img"></view>
+    </view>
+  </view>
+  <view class='one-info box box-ac border-b info1' bindtap='ToUserInfo'>
+    <image class="info-img" mode="scaleToFill" src="image/icon1.png"></image>
+    <view class="box box-f1 fs-30 color-3">会员基本信息</view>
+    <view class="icon-right box-img"></view>
+  </view>
+  <view class='one-info box box-ac'>
+    <image class="info-img" mode="scaleToFill" src="image/icon2.png"></image>
+    <view class="box box-f1 fs-30 color-3">我的在读课程</view>
+    <view class="icon-right box-img"></view>
+  </view>
+  <view class='one-info box box-ac' bindtap='ToNoticeList'>
+    <image class="info-img" mode="scaleToFill" src="image/icon3.png"></image>
+    <view class="box box-f1 fs-30 color-3">活动通知</view>
+    <view class="icon-right box-img"></view>
+  </view>
+  <view class='one-info box box-ac' bindtap='ToWorkList' data-work-type="2">
+    <image class="info-img" mode="scaleToFill" src="image/icon4.png"></image>
+    <view class="box box-f1 fs-30 color-3">作业列表</view>
+    <view class="icon-right box-img"></view>
+  </view>
+  <view class='one-info box box-ac border-b'>
+    <image class="info-img" mode="scaleToFill" src="image/icon5.png"></image>
+    <view class="box box-f1 fs-30 color-3">课程列表</view>
+    <view class="icon-right box-img"></view>
+  </view>
+</template>
+<!-- 老师 -->
+<template name="laoshi">
+  <view class='user-info box box-ac'>
+    <image class="user-head" mode="scaleToFill" src="{{avatarUrl}}"></image>
+    <view class='box box-ver box-f1'>
+      <view class="fs-34 color-b head-name">{{nickName}}</view>
+      <view class="fs-26 color-3">老师</view>
+    </view>
+    <view class='box box-ac'>
+      <view class="fs-30 color-3" bindtap='deleteBinding'>解除绑定</view>
+      <view class="icon-right box-img"></view>
+    </view>
+  </view>
+  <view class='one-info box box-ac border-b info1' bindtap='ToUserInfo'>
+    <image class="info-img" mode="scaleToFill" src="image/icon1.png"></image>
+    <view class="box box-f1 fs-30 color-3">老师基本信息</view>
+    <view class="icon-right box-img"></view>
+  </view>
+  <view class='one-info box box-ac'>
+    <image class="info-img" mode="scaleToFill" src="image/icon2.png"></image>
+    <view class="box box-f1 fs-30 color-3">我的在读课程</view>
+    <view class="icon-right box-img"></view>
+  </view>
+  <view class='one-info box box-ac' bindtap='ToNoticeList'>
+    <image class="info-img" mode="scaleToFill" src="image/icon3.png"></image>
+    <view class="box box-f1 fs-30 color-3">活动通知</view>
+    <view class="icon-right box-img"></view>
+  </view>
+  <view class='one-info box box-ac' bindtap='ToWorkList' data-work-type="1">
+    <image class="info-img" mode="scaleToFill" src="image/icon4.png"></image>
+    <view class="box box-f1 fs-30 color-3">作业列表</view>
+    <view class="icon-right box-img"></view>
+  </view>
+  <view class='one-info box box-ac border-b'>
+    <image class="info-img" mode="scaleToFill" src="image/icon5.png"></image>
+    <view class="box box-f1 fs-30 color-3">课程列表</view>
+    <view class="icon-right box-img"></view>
+  </view>
+</template>
+
+<template is = "{{role}}" data="{{avatarUrl, nickName}}" />

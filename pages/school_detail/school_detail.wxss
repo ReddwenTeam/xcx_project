@@ -1,2 +1,3 @@
 @import "../../common/wxss/common";
 .p-paragraph { text-align: justify; overflow-x: hidden;}
+.pd-2 { padding: 0 10px; }

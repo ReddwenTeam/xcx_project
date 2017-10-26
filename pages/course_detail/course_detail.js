@@ -50,7 +50,10 @@ Page({
             allVideoList = data;
             that.showPanel("xiangqing", 0);
           } else {
-            common.showToast('暂无视频信息!')
+            that.setData({
+              isbuy: "zanwu"
+            });
+            common.showToast('暂无视频信息!');
           }
         })
       }

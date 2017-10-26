@@ -54,21 +54,6 @@ function formatNumber(n) {
  * 富文本解析
 */
 function formatHtml(bindName, type, content, self, imagePadding) {
-  var infoFlg = "<!--SPINFO#0-->";
-  if (content.indexOf(infoFlg) > 0) {
-    content = content.replace(/<!--SPINFO#0-->/, "");
-  }
-  var imgFlg = "<!--IMG#";
-  var imgCount = (content.split(imgFlg)).length - 1;
-  if (imgCount > 0) {
-    for (var i = 0; i < imgCount; i++) {
-      var imgStr = "<!--IMG#" + i + "-->";
-      var imgSrc = "\"" + imgInfoArr[i].src + "\"";
-      var imgHTML = "<div> <img style=\"width: 100%\" src=" + imgSrc + "> </div>";
-      content = content.replace(imgStr, imgHTML);
-    }
-  }
-  console.log(imgCount)
   WxParse.wxParse(bindName, type, content, self, imagePadding);
 }
 

@@ -1,0 +1,24 @@
+<view class='user-info box box-ac'>
+  <view class="box box-f1 fs-28 color-3">头像</view>
+  <image class="user-head" mode="scaleToFill" src="{{userInfo.avatarUrl}}"></image>
+</view>
+<view class='one-info box box-ac'>
+  <view class="box box-f1 fs-28 color-3">昵称</view>
+  <view class="fs-28 color-6">{{userInfo.nickName}}</view>
+</view>
+<view class='one-info box box-ac'>
+  <view class="box box-f1 fs-28 color-3">性别</view>
+  <view class="fs-28 color-6">{{userInfo.sex}}</view>
+</view>
+<view class='one-info box box-ac'>
+  <view class="box box-f1 fs-28 color-3">国家</view>
+  <view class="fs-28 color-6">{{userInfo.country}}</view>
+</view>
+<view class='one-info box box-ac'>
+  <view class="box box-f1 fs-28 color-3">省</view>
+  <view class="fs-28 color-6">{{userInfo.province}}</view>
+</view>
+<view class='one-info box box-ac'>
+  <view class="box box-f1 fs-28 color-3">市</view>
+  <view class="fs-28 color-6">{{userInfo.city}}</view>
+</view>

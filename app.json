@@ -16,8 +16,10 @@
     "pages/user/user",
     "pages/publish_share/publish_share",
     "pages/share_study/share_study",
-
     "pages/my_course/my_course",
+    "pages/user_center/user_center",
+    "pages/user_info/user_info",
+
     "pages/msg/msg",
     "pages/apply_record/apply_record",
     "pages/class_schedule/class_schedule",
@@ -34,7 +36,7 @@
       "backgroundColor": "#ffffff",
       "color": "#888888",
       "selectedColor": "#313680",
-      "borderStyle": "white",
+      "borderStyle": "black",
       "list": [
         {
           "pagePath": "pages/index/index",
@@ -44,7 +46,7 @@
         },
         {
           "pagePath": "pages/share_study/share_study",
-          "text": "同学圈",
+          "text": "社交圈",
           "iconPath": "common/image/header/icon_group_off.png",
           "selectedIconPath": "common/image/header/icon_group_on.png"
         },
@@ -55,7 +57,7 @@
           "selectedIconPath": "common/image/header/icon_msg_on.png"
         },
         {
-          "pagePath": "pages/user/user",
+          "pagePath": "pages/user_center/user_center",
           "text": "我的",
           "iconPath": "common/image/header/icon_user_off.png",
           "selectedIconPath": "common/image/header/icon_user_on.png"
