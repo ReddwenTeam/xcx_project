@@ -11,4 +11,5 @@ page { background-color: #efeff0; }
 .btn-smile { width: 53rpx; height: 53rpx; margin: 0 34rpx 0 20rpx; }
 .btn-img { width: 62rpx; height: 43rpx; margin-right: 36rpx; }
 .btn-video { width: 61rpx; height: 49rpx; }
-.btn-submit { width: 140rpx; height: 60rpx; background-color: #2b3579; border-radius: 60rpx; line-height: 60rpx; text-align: center; margin-right: 20rpx; }
+.btn-submit { width: 200rpx; height: 60rpx; background-color: #2b3579; border-radius: 60rpx; line-height: 60rpx; text-align: center; margin-right: 20rpx; }
+.btn-submit-ing { width: 200rpx; height: 60rpx; background-color: #bbb; border-radius: 60rpx; line-height: 60rpx; text-align: center; margin-right: 20rpx; }

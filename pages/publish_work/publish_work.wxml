@@ -19,10 +19,8 @@
     </view>
 </view>
 <view class="footer-fixed box box-ac">
-    <!-- <view class="btn-smile box-img" style='background-image: url(image/icon_smile.png);'></view>
-    <view class="btn-img box-img" style='background-image: url(image/icon_img.png);'></view>
-    <view class="btn-video box-img" style='background-image: url(image/icon_video.png);'></view> -->
     <view class="box box-f1 box-pe">
-        <view class="btn-submit color-w fs-26" bindtap='publishWork'>提 交</view>
+        <view wx:if="{{sendTag == false}}" class="btn-submit color-w fs-26" bindtap='publishWork'>提 交</view>
+        <view wx:else class="btn-submit-ing color-w fs-26">提交中</view>
     </view>
 </view>

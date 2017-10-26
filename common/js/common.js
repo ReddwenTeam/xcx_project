@@ -53,7 +53,7 @@ function formatNumber(n) {
 /** 
  * 富文本解析
 */
-function formatHtml(bindName, type, content, self) {
+function formatHtml(bindName, type, content, self, imagePadding) {
   var infoFlg = "<!--SPINFO#0-->";
   if (content.indexOf(infoFlg) > 0) {
     content = content.replace(/<!--SPINFO#0-->/, "");
@@ -68,7 +68,8 @@ function formatHtml(bindName, type, content, self) {
       content = content.replace(imgStr, imgHTML);
     }
   }
-  WxParse.wxParse(bindName, type, content, self, imgCount);
+  console.log(imgCount)
+  WxParse.wxParse(bindName, type, content, self, imagePadding);
 }
 
 function showToast(msg,type){

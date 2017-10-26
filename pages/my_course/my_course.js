@@ -55,7 +55,10 @@ Page({
    */
   onReady: function () {
     this.player = wx.createVideoContext('myVideo');
-    
+    //quanbu
+    //https://xcx.51zhenkun.com/addons/star_school/app/index.php?p=course&ac=vcourse&d=getVcoursesParam&isNeedPager=false&pindex=1&psize=1&memberid=1
+    //goumaikecheng
+    //https://xcx.51zhenkun.com/addons/star_school/app/index.php?p=course&ac=vcourse&d=getBuycoursesParam&isNeedPager=false&pindex=1&psize=1&memberid=1
   },
   /**
    * 页面上拉触底事件的处理函数

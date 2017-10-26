@@ -3,6 +3,7 @@ var showImg = [];
 Page({
   data: {
     focus: false,
+    sendTag: false,
     info: "",
     bid: "",
     openId: "",
@@ -43,6 +44,9 @@ Page({
   },
   publishWork: function () {
     var that = this;
+    that.setData({
+      sendTag: true
+    })
     if (that.data.info.length > 0){
       common.requestServer("p=member&ac=exchange&d=savaExchangeParam",
         {
@@ -61,10 +65,16 @@ Page({
               data: true
             })
             setTimeout(function () {
+              that.setData({
+                sendTag: false
+              })
               wx.navigateBack()
             }, 2000);
           } else {
             common.showToast("朋友圈发布失败");
+            that.setData({
+              sendTag: false
+            })
           }
         })
     }else{

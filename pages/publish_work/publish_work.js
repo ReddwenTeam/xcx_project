@@ -6,6 +6,7 @@ Page({
     classindex: 0,
     subjectindex: 0,
     focus: false,
+    sendTag: false,
     title: "",
     info: "",
     bid: ""
@@ -41,6 +42,9 @@ Page({
   },
   publishWork: function () {
     var that = this;
+    that.setData({
+      sendTag: true
+    })
     common.requestServer("p=member&ac=task&d=addTaskInfo",
       {
         "tid": that.data.bid,
@@ -55,9 +59,15 @@ Page({
             data: true
           })
           setTimeout(function () {
+            that.setData({
+              sendTag: false
+            })
             wx.navigateBack()
           }, 2000);
         } else {
+          that.setData({
+            sendTag: false
+          })
           common.showToast("作业发布失败");
         }
       })

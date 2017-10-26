@@ -68,6 +68,7 @@ function wxParseImgTap(e) {
 function wxParseImgLoad(e) {
   var that = this;
   var tagFrom = e.target.dataset.from;
+  console.log(e.target.dataset);
   var idx = e.target.dataset.idx;
   if (typeof (tagFrom) != 'undefined' && tagFrom.length > 0) {
     calMoreImageInfo(e, idx, that, tagFrom)
@@ -106,6 +107,9 @@ function wxAutoImageCal(originalWidth, originalHeight,that,bindName) {
   var autoWidth = 0, autoHeight = 0;
   var results = {};
   var padding = that.data[bindName].view.imagePadding;
+  console.log(that.data[bindName])
+  console.log(padding)
+  console.log(realWindowWidth)
   windowWidth = realWindowWidth-2*padding;
   windowHeight = realWindowHeight;
   //判断按照那种方式进行缩放

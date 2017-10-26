@@ -32,7 +32,7 @@ Page({
     var that = this;
     if (info.length){
       var content = "<div style=\"word-break:normal;\" class='fs-26 color-0 p-paragraph'>" + info + "</div>";
-      common.formatHtml("article", "html", content, that);
+      common.formatHtml("article", "html", content, that, '20' );
     }else{
       wx.showToast({
         title: '暂无信息!',

@@ -1,4 +1,4 @@
-<image class="slider-img" mode="scaleToFill" src="image/friend_bg.jpg"></image>
+<image class="slider-img" mode="scaleToFill" src="https://xcx.51zhenkun.com/addons/star_school/data/static/myself.jpg"></image>
 <view class="box box-ver box-ae">
     <view class="img-width box box-ver box-ac">
         <image class="img-head" mode="scaleToFill" src="{{getUserInfo.avatarUrl}}"></image>

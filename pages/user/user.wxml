@@ -4,7 +4,7 @@
   <view class="info-content box box-ac">
       <view class="info-box color-0 fs-26">身份：游客</view>
       <view class="box box-f1 box-ver box-ac box-pe pos-head">
-          <image class="img-head" mode="scaleToFill" src="../../common/image/img_logo.png"></image>
+          <image class="img-head" mode="scaleToFill" src="https://xcx.51zhenkun.com/addons/star_school/data/static/icon.jpg"></image>
           <p class="fs-34 color-0 fs-bold head-name">{{nickName}}</p>
       </view>
       <view class="info-box color-0 fs-26" bindtap='ToUserBind'>去绑定</view>
@@ -129,7 +129,7 @@
     <view class="info-content box box-ac">
         <view class="info-box color-0 fs-26">身份：老师</view>
         <view class="box box-f1 box-ver box-ac box-pe pos-head">
-            <view class="img-head box-img" style="background-image: url(../../common/image/img_logo.png)"></view>
+            <view class="img-head box-img" style="background-image: url(https://xcx.51zhenkun.com/addons/star_school/data/static/icon.jpg)"></view>
             <p class="fs-34 color-0 fs-bold head-name">Miranda</p>
         </view>
         <view class="info-box color-0 fs-26">行政办公</view>
