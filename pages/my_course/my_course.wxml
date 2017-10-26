@@ -1,64 +1,97 @@
 <view class="pd-t7 pd-lr2 pd-bf">
     <view class="schedule-box box box-ac">
-        <view class="one-day box box-ac box-pc fs-30 on">全部</view>
-        <view class="one-day box box-ac box-pc fs-30">网校</view>
-        <view class="one-day box box-ac box-pc fs-30">限时观看</view>
+        <view class="one-day box box-ac box-pc fs-30 {{part == 'quanbu'?'on':''}}" bindtap='tapCheck' data-page-num='0'>全部</view>
+        <view class="one-day box box-ac box-pc fs-30 {{part == 'quanbu'?'':'on'}}" bindtap='tapCheck' data-page-num='1'>购买课程</view>
     </view>
-    <view class="video-content">
-        <view class="one-video">
-          <video id="myVideo" class=" mainVideo {{videoPlayer == 'show'?'active':''}} " src="{{_posterInfo.video_url}}" controls></video>
-        </view>
-        <view class="pop-box box box-ac  {{ videoPoster == 'show' ? '':'nodisplay'}}" bindtap='showVideo' data-poster-src="123456" >
-           <image class="img-poster box-img" src="{{_posterInfo.poster_url}}" ></image>
-            <view class="pop-info box box-ver box-ac">
-                <view class='play-btn'>
-                  <image src='../../common/image/btn_play.png'></image>
+    <!-- 全部 -->
+    <template name="quanbu">
+      <view class="video-content">
+          <view class="pop-box box box-ac show" bindtap='jumpToDetail'
+            data-video-id = "{{_posterInfo.id}}"
+            data-video-ischarge = "{{_posterInfo.ischarge}}"
+            data-video-uniacid = "{{_posterInfo.uniacid}}"
+            data-video-price = "{{_posterInfo.price}}"
+             >
+            <image class="img-poster box-img" src="{{_posterInfo.picarr}}" ></image>
+              <view class="pop-info box box-ver box-ac">
+                  <view class='play-btn'>
+                    <image src='../../common/image/btn_play.png'></image>
+                  </view>
+                  <view class="color-w fs-30 poster-title"> <text>{{_posterInfo.name}}</text> </view>
+                  <view class="color-w fs-22 info-time">价格： ￥{{_posterInfo.price}} </view>
+              </view>
+          </view>
+      </view>
+      <view class="class-box" wx:for="{{videoList}}" wx:key="{{index}}">
+      
+          <view class="one-class box" 
+            bindtap='jumpToDetail' 
+            data-video-id = "{{item.id}}"
+            data-video-ischarge = "{{item.ischarge}}"
+            data-video-uniacid = "{{item.uniacid}}"
+            data-video-price = "{{item.price}}"
+          >
+              <image class="img-msg box-img" src="{{item.picarr}}" ></image> 
+              <view class="box box-ver box-f1">
+                  <view class="fs-30 color-b">{{item.name}}</view>
+                  <view class="fs-26 color-9 mg-t1">价格：￥{{item.price}} </view>
+                  <!-- <view class="box box-f1 box-ae box-pe fs-26 color-9">主讲：{{item.teacher}}</view> -->
+              </view>
+          </view>
+          <!-- <view class="one-class box">
+              <image class="img-msg box-img" src="../../temp/course_2.png"></image> 
+              <view class="box box-ver box-f1">
+                  <view class="fs-30 color-b">English courses revolution</view>
+                  <view class="fs-26 color-9 mg-t1">| 创新 |  #35'00''共48节</view>
+                  <view class="box box-f1 box-ae box-pe fs-26 color-9">主讲：Jack</view>
+              </view>
+          </view> -->
+      </view>
+      </template>
+      <!-- 购买 -->
+      <template name="goumai">
+        <view class="video-content">
+            <view class="pop-box box box-ac " 
+              bindtap='jumpToDetail' 
+              data-video-tid = "{{_posterInfo.tid}}"
+              data-video-vcourseid = "{{_posterInfo.vcourseid}}"
+              data-video-uniacid = "{{_posterInfo.uniacid}}"
+              data-video-openid = "{{_posterInfo.openid}}" >
+              <image class="img-poster box-img" src="{{_posterInfo.vpicarr}}" ></image>
+                <view class="pop-info box box-ver box-ac">
+                    <view class='play-btn'>
+                      <image src='../../common/image/btn_play.png'></image>
+                    </view>
+                    <view class="color-w fs-30 poster-title"> <text>{{_posterInfo.vtitle}}</text> </view>
+                    <view class="color-w fs-22 info-time">{{_posterInfo.vbreif}} </view>
                 </view>
-                <view class="color-w fs-30 poster-title"> <text>{{_posterInfo.poster_title}}</text> </view>
-                <view class="color-w fs-22 info-time">| {{_posterInfo.poster_tag}} |  {{_posterInfo.poster_duration}}</view>
             </view>
         </view>
-    </view>
-    <view class="class-box" wx:for="{{videoList}}" wx:key="{{index}}">
-    
-        <view class="one-class box" 
-          bindtap='setVideoSrc' 
-          data-video-src="{{item.video_src}}" 
-          data-video-poster="{{item.img_src}}"
-          data-video-title = "{{item.title}}"
-          data-video-tag="{{item.tag}}"
-          data-video-duration="{{item.duration}}"
-        >
-            <image class="img-msg box-img" src="{{item.img_src}}" ></image> 
-            <view class="box box-ver box-f1">
-                <view class="fs-30 color-b">{{item.title}}</view>
-                <view class="fs-26 color-9 mg-t1">| {{item.tag}} |  {{item.duration}} 共{{item.coursesNumber}}节</view>
-                <view class="box box-f1 box-ae box-pe fs-26 color-9">主讲：{{item.teacher}}</view>
+        <view class="class-box" wx:for="{{videoList}}" wx:key="{{index}}">
+        
+            <view class="one-class box" 
+              bindtap='jumpToDetail' 
+              data-video-tid = "{{item.tid}}"
+              data-video-vcourseid = "{{item.vcourseid}}"
+              data-video-uniacid = "{{item.uniacid}}"
+              data-video-openid = "{{item.openid}}"
+            >
+                <image class="img-msg box-img" src="{{item.vpicarr}}" ></image> 
+                <view class="box box-ver box-f1">
+                    <view class="fs-30 color-b">{{item.vtitle}}</view>
+                    <view class="fs-26 color-9 mg-t1">{{item.vbreif}} </view>
+                    <!-- <view class="box box-f1 box-ae box-pe fs-26 color-9">主讲：{{item.teacher}}</view> -->
+                </view>
             </view>
+            <!-- <view class="one-class box">
+                <image class="img-msg box-img" src="../../temp/course_2.png"></image> 
+                <view class="box box-ver box-f1">
+                    <view class="fs-30 color-b">English courses revolution</view>
+                    <view class="fs-26 color-9 mg-t1">| 创新 |  #35'00''共48节</view>
+                    <view class="box box-f1 box-ae box-pe fs-26 color-9">主讲：Jack</view>
+                </view>
+            </view> -->
         </view>
-        <!-- <view class="one-class box">
-            <image class="img-msg box-img" src="../../temp/course_2.png"></image> 
-            <view class="box box-ver box-f1">
-                <view class="fs-30 color-b">English courses revolution</view>
-                <view class="fs-26 color-9 mg-t1">| 创新 |  #35'00''共48节</view>
-                <view class="box box-f1 box-ae box-pe fs-26 color-9">主讲：Jack</view>
-            </view>
-        </view>
-        <view class="one-class box">
-            <image class="img-msg box-img" src="../../temp/course_3.png"></image>
-            <view class="box box-ver box-f1">
-                <view class="fs-30 color-b">180天速成！快速学好口语！</view>
-                <view class="fs-26 color-9 mg-t1">| 唯一 |  #35'00''共48节</view>
-                <view class="box box-f1 box-ae box-pe fs-26 color-9">主讲：李样</view>
-            </view>
-        </view>
-        <view class="one-class box">
-            <image class="img-msg box-img" src="../../temp/course_3.png"></image>
-            <view class="box box-ver box-f1">
-                <view class="fs-30 color-b">180天速成！快速学好口语！</view>
-                <view class="fs-26 color-9 mg-t1">| 唯一 |  #35'00''共48节</view>
-                <view class="box box-f1 box-ae box-pe fs-26 color-9">主讲：李样</view>
-            </view>
-        </view> -->
-    </view>
+      </template>
+    <template is = "{{part}}" data="{{videoList,_posterInfo}}" />
 </view>

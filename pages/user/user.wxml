@@ -25,7 +25,7 @@
           <image class="img-head" mode="scaleToFill" src="{{avatarUrl}}"></image>
           <p class="fs-34 color-0 fs-bold head-name">{{nickName}}</p>
       </view>
-      <view class="info-box color-0 fs-26">学生切换</view>
+      <view class="info-box color-0 fs-26" bindtap='jump'>学生切换</view>
   </view>
   <view class="bg-blue box">
       <view class="width-5 box box-ac box-pc">
