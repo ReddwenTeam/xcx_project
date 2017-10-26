@@ -50,7 +50,7 @@
     <view class="box box-f1 fs-30 color-3">作业列表</view>
     <view class="icon-right box-img"></view>
   </view>
-  <view class='one-info box box-ac border-b'>
+  <view class='one-info box box-ac border-b' bindtap='ToCourseList'>
     <image class="info-img" mode="scaleToFill" src="image/icon5.png"></image>
     <view class="box box-f1 fs-30 color-3">课程列表</view>
     <view class="icon-right box-img"></view>
@@ -89,7 +89,7 @@
     <view class="box box-f1 fs-30 color-3">作业列表</view>
     <view class="icon-right box-img"></view>
   </view>
-  <view class='one-info box box-ac border-b'>
+  <view class='one-info box box-ac border-b' bindtap='ToCourseList'>
     <image class="info-img" mode="scaleToFill" src="image/icon5.png"></image>
     <view class="box box-f1 fs-30 color-3">课程列表</view>
     <view class="icon-right box-img"></view>

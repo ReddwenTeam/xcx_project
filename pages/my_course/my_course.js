@@ -1,83 +1,73 @@
-
 var common = require("../../common/js/common.js");
-var curCourseList = [], curPage = 1;
-
+var curVideoList = [], curPage = 1;
+var app = getApp();
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-    _posterInfo: "", 
-    videoList:"",
-    part:"quanbu"
+    videoList: [],
+    part: "quanbu"
   },
   onLoad: function (param) {
-    curCourseList = [];
+    curVideoList = [];
     curPage = 1;
     wx.setNavigationBarTitle({
-      title: param.BarTitle
+      title: "课程列表"
     });
+    this.queryVideoList(curPage);
   },
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-    this.queryList();
-    //quanbu
-    //https://xcx.51zhenkun.com/addons/star_school/app/index.php?p=course&ac=vcourse&d=getVcoursesParam&isNeedPager=false&pindex=1&psize=1&memberid=1
-    //goumaikecheng
-    //https://xcx.51zhenkun.com/addons/star_school/app/index.php?p=course&ac=vcourse&d=getBuycoursesParam&isNeedPager=false&pindex=1&psize=1&memberid=1
-  },
-  queryList:function(curPage){
+  queryVideoList: function (page) {
     var that = this;
-    wx.getStorage({
-      key: "bindingInfo",
-      success: function (res) {
-        that.memberid = res.data.memberid;
-        console.log(that.memberid);
-        var url = "";
-        switch (that.data.part){
-          case 'quanbu':
-            url = "p=course&ac=vcourse&d=getVcoursesParam&isNeedPager=false";
-            break;
-          case 'goumai':
-            url = "p=course&ac=vcourse&d=getBuycoursesParam&isNeedPager=false";
-            break;
-           default:break;
-        }
-        common.requestServer(url, { "pindex": curPage, "psize": 20, "memberid": that.memberid, }, function (data) {
-            console.log(data);
-            var arr = [],
-              firstItem =  [];
-              //这里要改一下哈，关于data的数据格式。
-            if(data.length > 1){
-              firstItem = data[0][0];
-              arr = data[0].slice(1);
-              that.setData({
-                videoList: arr
-              })
-
-              that.setData({
-                _posterInfo: firstItem
-              })
-            }else{
-              firstItem = data[0]||[];
-              console.log(firstItem);
-
-              that.setData({
-                _posterInfo: firstItem
-              })
-              that.setData({
-                videoList: []
-              })
-            }
-            
-          })
+    var url = "";
+    switch (that.data.part) {
+      case 'quanbu':
+        url = "p=course&ac=vcourse&d=getVcoursesParam&isNeedPager=false";
+        break;
+      case 'goumai':
+        url = "p=course&ac=vcourse&d=getBuycoursesParam&isNeedPager=false";
+        break;
+      default: break;
+    }
+    common.requestServer(url, { "pindex": curPage, "psize": 5, "memberid": app.memberid, }, function (data) {
+      switch (that.data.part) {
+        case 'quanbu':
+          var data = data[0];
+          break;
+        case 'goumai':
+          var data = data;
+          break;
+        default: break;
       }
-    });
+      console.log(data);
+      if (data.length == 0) {
+        if (page == 1) {
+          that.setData({
+            loading: {
+              status: true,
+              load: false,
+              text: "暂无数据"
+            }
+          });
+        } else {
+          that.setData({
+            loading: {
+              status: true,
+              load: false,
+              text: "没有更多数据"
+            }
+          });
+          curPage--;
+        }
+      } else {
+        data.forEach(function (item) {
+          item.formatTime = common.formatTime(item.createtime, 'Y-M-D');
+          curVideoList.push(item);
+        });
+        that.setData({
+          videoList: curVideoList
+        });
+      }
+    })
   },
-  tapCheck:function(event){
+  tapCheck: function (event) {
     var dataSet = event.currentTarget.dataset;
     this.setData({
       pageNum: dataSet.pageNum
@@ -86,19 +76,30 @@ Page({
       this.setData({
         part: "quanbu"
       });
-      this.queryList();
-      
     } else {
       this.setData({
         part: "goumai"
       })
-      this.queryList();
-      
     }
+    curVideoList = [];
+    curPage = 1;
+    this.queryVideoList(curPage);
   },
-  jumpToDetail:function(){
-
+  ToVideoDetail: function (event) {
+    var dataSet = event.currentTarget.dataset;
+    wx.navigateTo({
+      url: '../course_detail/course_detail?id=' + dataSet.videoId + '&BarTitle=' + dataSet.videoName + '&price=' + dataSet.videoPrice + '&ischarge=' + dataSet.videoIscharge + '&isbuy=' + dataSet.videoIsbuy
+    })
+  },
+  onReachBottom: function () {
+    this.setData({
+      loading: {
+        status: true,
+        load: true,
+        text: "加载中..."
+      }
+    });
+    curPage++;
+    this.queryVideoList(curPage);
   }
 })
-
-

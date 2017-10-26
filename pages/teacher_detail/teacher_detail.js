@@ -18,7 +18,7 @@ Page({
         info: data
       });
       var content = "<div style=\"word-break:normal;\" class='fs-28 color-6 p-paragraph'>" + data.info + "</div>";
-      common.formatHtml("article", "html", content, that);
+      common.formatHtml("article", "html", content, that, '10');
     });
   },
   ToVideoDetail: function (event) {

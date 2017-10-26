@@ -42,9 +42,8 @@
     </view>
     <view class="one-info box box-ver box-ac">
         <view class="color-0 fs-32">我的服务</view>
-        <view wx:if="{{info.vcourselist.length > 0}}" >
-          <view wx:key="{{index}}" wx:for="{{info.vcourselist}}">
-            <view class="one-class" bindtap="ToVideoDetail" 
+
+            <view wx:if="{{info.vcourselist.length > 0}}" wx:key="{{index}}" wx:for="{{info.vcourselist}}" class="one-class" bindtap="ToVideoDetail" 
             data-video-id="{{item.id}}" 
             data-video-price="{{item.price}}"    
             data-video-ischarge="{{item.ischarge}}"
@@ -57,7 +56,5 @@
               <view class="fs-30 color-3">{{item.name}}</view>
               <view class="fs-26 color-9 mg-t15">{{item.info}}</view>
             </view>
-          </view>
-        </view>
     </view>
 </view>

@@ -91,5 +91,10 @@ Page({
     wx.navigateTo({
       url: '../work_list/work_list?BarTitle=作业列表&workType=' + dataSet.workType
     })
+  },
+  ToCourseList: function () {
+    wx.navigateTo({
+      url: '../my_course/my_course'
+    })
   }
 })
