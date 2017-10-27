@@ -68,7 +68,12 @@ Page({
           curVideoList.push(temp);
         });
         that.setData({
-          video_list: curVideoList
+          video_list: curVideoList,
+          loading: {
+            status: false,
+            load: false,
+            text: ""
+          }
         });
       }
     })

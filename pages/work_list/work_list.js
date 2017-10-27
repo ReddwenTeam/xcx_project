@@ -95,13 +95,11 @@ Page({
             curWorksList.push(temp);
           });
           that.setData({
-            Works_list: curWorksList
-          });
-          that.setData({
+            Works_list: curWorksList,
             loading: {
               status: false,
-              load: true,
-              text: "加载中..."
+              load: false,
+              text: ""
             }
           });
         }

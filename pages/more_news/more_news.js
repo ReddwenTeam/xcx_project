@@ -47,7 +47,12 @@ Page({
           curArticleList.push(item);
         });
         that.setData({
-          ArticleList: curArticleList
+          ArticleList: curArticleList,
+          loading: {
+            status: false,
+            load: false,
+            text: ""
+          }
         });
       }
     });

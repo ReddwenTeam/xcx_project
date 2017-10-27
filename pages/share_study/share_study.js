@@ -68,7 +68,12 @@ Page({
           curShareList.push(item);
         });
         that.setData({
-          share_list: curShareList
+          share_list: curShareList,
+          loading: {
+            status: false,
+            load: false,
+            text: ""
+          }
         });
       }
     })

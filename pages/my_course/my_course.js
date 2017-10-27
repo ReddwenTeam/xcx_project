@@ -19,24 +19,14 @@ Page({
     var url = "";
     switch (that.data.part) {
       case 'quanbu':
-        url = "p=course&ac=vcourse&d=getVcoursesParam&isNeedPager=false";
+        url = "p=course&ac=vcourse&d=getVcoursesParam&isNeadPager=true";
         break;
       case 'goumai':
-        url = "p=course&ac=vcourse&d=getBuycoursesParam&isNeedPager=false";
+        url = "p=course&ac=vcourse&d=getBuycoursesParam&isNeedPager=true";
         break;
       default: break;
     }
     common.requestServer(url, { "pindex": curPage, "psize": 5, "memberid": app.memberid, }, function (data) {
-      switch (that.data.part) {
-        case 'quanbu':
-          var data = data[0];
-          break;
-        case 'goumai':
-          var data = data;
-          break;
-        default: break;
-      }
-      console.log(data);
       if (data.length == 0) {
         if (page == 1) {
           that.setData({
@@ -62,7 +52,12 @@ Page({
           curVideoList.push(item);
         });
         that.setData({
-          videoList: curVideoList
+          videoList: curVideoList,
+          loading: {
+            status: false,
+            load: false,
+            text: ""
+          }
         });
       }
     })
