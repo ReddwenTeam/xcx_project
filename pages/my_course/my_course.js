@@ -22,7 +22,7 @@ Page({
         url = "p=course&ac=vcourse&d=getVcoursesParam&isNeadPager=true";
         break;
       case 'goumai':
-        url = "p=course&ac=vcourse&d=getBuycoursesParam&isNeedPager=true";
+        url = "p=course&ac=vcourse&d=getBuycoursesParam&isNeadPager=true";
         break;
       default: break;
     }
