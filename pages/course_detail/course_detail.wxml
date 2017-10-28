@@ -28,21 +28,23 @@
   <template name="xiangqing">
     <view class="list-info">
         <view class="fs-32 color-0 ellipsis-1">{{items.videoList.name}}</view>
-        <view class="fs-26 color-7 mg-t2">{{audition == 0 ?'试听课程' : '非试听课程' }}</view>
+        <view class="fs-26 color-7 mg-t2">{{audition == 0 ?'试听课程' : '付费课程' }}</view>
         <view class="fs-26 color-6 mg-t2">{{items.videoList.breif}}</view>
         <view class="fs-40 color-money mg-t2">{{price}}</view>
     </view>
     <view class="one-info box box-ac color-7">
-        <text class="icon-word fs-24">保</text>
-        <text class="fs-26 pd-r4">支付保障</text>
-        <text class="icon-word fs-24">退</text>
-        <text class="fs-26">课前随时退</text>
-        <view class="box box-pe box-f1">
-            <view class="icon-right box-img"></view>
-        </view>
+        <image class="star-img box-img" src='image/star.png'></image>
+        <image class="star-img box-img" src='image/star.png'></image> 
+        <image class="star-img box-img" src='image/star.png'></image> 
+        <image class="star-img box-img" src='image/star.png'></image> 
+        <image class="star-img box-img" src='image/star.png'></image> 
+        <text class="fs-26 pd-l3">5分</text>
+        <text class="fs-26 pd-l3">{{xnumber}}人在学</text>
     </view>
-    <view class="one-info box box-ver color-7">
-        <p class="fs-30 color-0">老师介绍<text class="fs-26 color-7"></text></p>
+    <view class="one-info box box-ver color-7" bindtap='ToTeacherDetail'
+    data-teacher-id='{{items.videoList.teacherlist.tid}}' data-teacher-name='{{items.videoList.teacherlist.tname}}'
+    >
+        <p class="fs-30 color-0">老师介绍</p>
         <view class="info-box box box-pc">
             <view class="box info-detail">
                 <image class="img-teacher" mode="scaleToFill" src="{{items.videoList.teacherlist.tavatar}}"></image>
@@ -87,11 +89,11 @@
       </view>  
     </view>
   </template>
-  <template is="{{curPageName}}" data="{{items,price,audition}}"></template>
+  <template is="{{curPageName}}" data="{{items,price,audition,xnumber}}"></template>
 </view>
 <view class="footer-fixed box box-ac">
-    <image class="box btn-msg box-img" src='image/message.png'></image> 
-    <text class="fs-30 color-b">咨询</text>
+    <!-- <image class="box btn-msg box-img" src='image/message.png'></image> 
+    <text class="fs-30 color-b">咨询</text> -->
     <view class="box box-f1 box-pe">
         <view wx:if="{{isbuy == 'success' }}" class="btn-disable color-w fs-26">已购买</view>  
         <view wx:elif="{{isbuy == 'zanwu'}}" class="btn-disable color-w fs-26">暂无信息</view>

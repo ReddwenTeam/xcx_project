@@ -6,12 +6,9 @@ Page({
     video_list: [],
     isbuy: "error"
   },
-  onLoad: function (param) {
+  onLoad: function () {
     curVideoList = [];
     curPage = 1;
-    wx.setNavigationBarTitle({
-      title: param.BarTitle
-    });
   },
   onReady: function () {
     this.queryVideoList(curPage);

@@ -14,6 +14,7 @@
             data-video-ischarge="{{item.ischarge}}"
             data-video-name="{{item.name}}"
             data-video-isbuy="{{item.isbuy}}"
+            data-video-xnumber="{{item.xnumber}}"
               >
               <image class="img-poster box-img" src="{{item.picarr}}" ></image>
                 <view class="pop-info box box-ver box-ac">
@@ -34,6 +35,7 @@
               data-video-ischarge="{{item.ischarge}}"
               data-video-name="{{item.name}}"
               data-video-isbuy="{{item.isbuy}}"
+              data-video-xnumber="{{item.xnumber}}"
             >
                 <image class="img-msg box-img" src="{{item.picarr}}" ></image> 
                 <view class="box box-ver box-f1">
@@ -56,6 +58,7 @@
               data-video-ischarge="0"
               data-video-name="{{item.vtitle}}"
               data-video-isbuy="success"
+              data-video-xnumber="{{item.xnumber}}"
                 >
                 <image class="img-poster box-img" src="{{item.vpicarr}}" ></image>
                   <view class="pop-info box box-ver box-ac">
@@ -75,6 +78,7 @@
                   data-video-ischarge="0"
                   data-video-name="{{item.vtitle}}"
                   data-video-isbuy="success"
+                  data-video-xnumber="{{item.xnumber}}"
               >
                   <image class="img-msg box-img" src="{{item.vpicarr}}" ></image> 
                   <view class="box box-ver box-f1">

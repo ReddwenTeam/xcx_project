@@ -3,7 +3,7 @@
     <image class="slider-content" mode="scaleToFill" src="{{articleInfo.picarr}}"></image>
     <view class="pd-lr2">
         <view class="article-content">
-            <view class="fs-42 color-blue ellipsis-1">{{articleInfo.title}}</view>
+            <view class="fs-42 color-blue">{{articleInfo.title}}</view>
             <view class="fs-16 color-9 mg-t1">发布时间：{{articleInfo.formatTime}}</view>
             <view class="wxParse">
                 <template is="wxParse" data="{{wxParseData:article.nodes}}"/>

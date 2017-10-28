@@ -25,7 +25,8 @@ Page({
       price: param.price,
       ischarge: param.ischarge,
       isbuy: param.isbuy,
-      vcourseid: param.id
+      vcourseid: param.id,
+      xnumber: param.xnumber
     });
     that.queryDetail(param.id);
   },
@@ -81,7 +82,7 @@ Page({
           });
           break;
         case "kecheng":
-          common.requestServer("p=course&ac=vcourse&d=getSamesParam", {  }, function (data) {
+          common.requestServer("p=course&ac=vcourse&d=getSamesParam", {}, function (data) {
             if(data.length > 0){
               data.forEach(function (item) {
                 item.formatTime = common.formatTime(item.createtime, 'Y-M-D');
@@ -178,5 +179,11 @@ Page({
     });
     this.videoPause();
     this.showPanel("xiangqing", 0);
+  },
+  ToTeacherDetail: function (event) {
+    var dataSet = event.currentTarget.dataset;
+    wx.redirectTo({
+      url: '../teacher_detail/teacher_detail?id=' + dataSet.teacherId + '&BarTitle=' + dataSet.teacherName
+    })
   }
 })

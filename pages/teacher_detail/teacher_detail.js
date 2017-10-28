@@ -23,7 +23,7 @@ Page({
   },
   ToVideoDetail: function (event) {
     var dataSet = event.currentTarget.dataset;
-    wx.navigateTo({
+    wx.redirectTo({
       url: '../course_detail/course_detail?id=' + dataSet.videoId + '&BarTitle=' + dataSet.videoName + '&price=' + dataSet.videoPrice + '&ischarge=' + dataSet.videoIscharge + '&isbuy=' + dataSet.videoIsbuy
     })
   },

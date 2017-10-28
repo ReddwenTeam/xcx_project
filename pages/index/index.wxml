@@ -1,12 +1,7 @@
 <image class="index-bg" mode="scaleToFill" src="https://xcx.51zhenkun.com/addons/star_school/data/static/index.jpg"></image>
 <view class="pd-2">
   <view class='fs-40 title-pd'>Hello，亲爱的<text style='margin-left: 15rpx' class="fs-40 color-b">{{nickName}}</text></view>
-  <view class='fs-30 color-6'>欢迎来到武汉•光谷国际外国语学校</view>
-  <view class='fs-30 color-6'>国内外顶级专家精心设计，打造华中地区一流的教育基地！</view>
-  <view class='box mg-t2 color-9'>
-    <view class='fs-26 box box-f1'>通知</view>
-    <view class='fs-26'>恭喜杨老师获得五星好评</view>
-  </view>
+  <view class='fs-30 color-6'>{{indexDescribe}}</view>
 </view>
 <view class="pd-2">
   <view class='box'>
@@ -21,6 +16,7 @@
     data-video-ischarge="{{videoList.ischarge}}"
     data-video-name="{{videoList.name}}"
     data-video-isbuy="{{videoList.isbuy}}"
+    data-video-xnumber="{{videoList.xnumber}}"
     bindtap="ToVideoDetail"
     >
       <image class="btn-play" mode="scaleToFill" src="../../common/image/btn_play.png"></image>

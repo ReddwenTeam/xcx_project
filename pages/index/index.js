@@ -8,6 +8,7 @@ Page({
   },
   onReady: function () {
     var that = this;
+    that.queryProduct();  
     that.queryArticle();    
     that.queryVideo();
     that.querySchool();
@@ -28,6 +29,14 @@ Page({
           wx.removeStorage({ key: 'payReload' })
         }
       }
+    })
+  },
+  queryProduct:function(){
+    var that = this;
+    common.requestServer("p=basic&ac=sys&d=getBasicParam", {}, function (data) {
+      that.setData({
+        indexDescribe: data.indexDescribe
+      })
     })
   },
   queryArticle: function (){
@@ -68,7 +77,7 @@ Page({
   ToVideoDetail: function (event) {
     var dataSet = event.currentTarget.dataset;
     wx.navigateTo({
-      url: '../course_detail/course_detail?id=' + dataSet.videoId + '&BarTitle=' + dataSet.videoName + '&price=' + dataSet.videoPrice + '&ischarge=' + dataSet.videoIscharge + '&isbuy=' + dataSet.videoIsbuy
+      url: '../course_detail/course_detail?id=' + dataSet.videoId + '&BarTitle=' + dataSet.videoName + '&price=' + dataSet.videoPrice + '&ischarge=' + dataSet.videoIscharge + '&isbuy=' + dataSet.videoIsbuy + '&xnumber=' + dataSet.videoXnumber
     })
   },
   ToSchoolDetail: function (event) {
