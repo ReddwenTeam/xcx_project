@@ -5,3 +5,6 @@
 .p-paragraph { text-align: justify; margin-top: 30rpx }
 .mg-t1 { margin-top: 10rpx; }
 .wxParse { overflow-x: hidden!important; }
+.share-box { height: 50rpx; padding: 10rpx 0; }
+.share-img { width: 50rpx; height: 50rpx; padding: 0 20rpx; border-right: solid 1rpx #dedede; }
+.shenlve-img { width: 30rpx; height: 5rpx; margin-left:20rpx; background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB0AAAAFCAYAAAC5Fuf5AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAM1JREFUeNp80bELAWEYx/H3tUmKSZkpR0nZ+TuYZbJQymL0J5iY/Rkuo4FBkcVwyXETEuv5vnXD9eT11Ofunud+3dPdadd160qpOWo4Y4SFslcbY5TgYYLZn3wTU1SwRUezdMVFIxZ6RwHvxwMy2CMv5gWcfuST2MCJzXYJDmURTIVhWIQyRGWRlkNyOUveEQtNVc3StRhetdYHKEPUHS85JBdY8jd8xOxplvawjAZHtOBb/s+DtxlGOVMefdfyaU353B9wDqL+Qt//CjAA+YBF4am0IWYAAAAASUVORK5CYII=); }

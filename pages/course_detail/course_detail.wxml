@@ -30,7 +30,23 @@
         <view class="fs-32 color-0 ellipsis-1">{{items.videoList.name}}</view>
         <view class="fs-26 color-7 mg-t2">{{audition == 0 ?'试听课程' : '付费课程' }}</view>
         <view class="fs-26 color-6 mg-t2">{{items.videoList.breif}}</view>
-        <view class="fs-40 color-money mg-t2">{{price}}</view>
+        <view class='box box-ac share-box'>
+          <view class="box box-f1 fs-40 color-money">{{price}}</view>
+          <view class='box' 
+          data-video_brand="{{items.videoList.name}}"
+          data-video_icon="{{items.videoList.teacherlist.tavatar}}"
+          data-video_image="{{poster}}"
+          data-video_title="{{items.videoList.name}}"
+          data-video_play="{{xnumber}}人在学"
+          data-video_category="学习"
+          data-video_title_lower="分享自猿师说视频"
+          bindtap="aldShare"
+          data-template_key="384179a368a0a75183432ed8a91aebe1"
+          >
+            <image class="share-img border-r" mode="scaleToFill" src="../../common/image/wechat1.png"></image>
+            <image class="share-img" mode="scaleToFill" src="../../common/image/wechat2.png"></image>
+          </view>
+        </view>
     </view>
     <view class="one-info box box-ac color-7">
         <image class="star-img box-img" src='image/star.png'></image>
@@ -89,7 +105,7 @@
       </view>  
     </view>
   </template>
-  <template is="{{curPageName}}" data="{{items,price,audition,xnumber}}"></template>
+  <template is="{{curPageName}}" data="{{items,price,audition,xnumber,poster}}"></template>
 </view>
 <view class="footer-fixed box box-ac">
     <!-- <image class="box btn-msg box-img" src='image/message.png'></image> 
@@ -99,6 +115,5 @@
         <view wx:elif="{{isbuy == 'zanwu'}}" class="btn-disable color-w fs-26">暂无信息</view>
         <view wx:elif="{{isbuy == 'error' && ischarge == 0 }}" class="btn-disable color-w fs-26">免费</view>
         <view wx:else="{{isbuy == 'error' && ischarge == 1 }}" class="btn-submit color-w fs-26" bindtap='toPay'>立即购买</view>
-        
     </view> 
 </view>

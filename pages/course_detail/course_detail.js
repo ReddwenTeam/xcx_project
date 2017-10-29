@@ -185,5 +185,8 @@ Page({
     wx.redirectTo({
       url: '../teacher_detail/teacher_detail?id=' + dataSet.teacherId + '&BarTitle=' + dataSet.teacherName
     })
+  },
+  aldShare: function (e) {
+    common.aldShare(e, this);
   }
 })
