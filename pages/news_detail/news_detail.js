@@ -24,5 +24,8 @@ Page({
     var that = this;
     var content = "<div style=\"word-break:normal;\" class='fs-26 color-0 p-paragraph'>" + info + "</div>";
     common.formatHtml("article", "html", content, that, '20');
+  },
+  aldShare: function (e) {
+    common.aldShare(e,this);
   }
 })

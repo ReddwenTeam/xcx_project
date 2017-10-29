@@ -69,9 +69,41 @@ function showToast(msg,type){
   })
 }
 
+function aldShare(e,page){
+  var url = page['__route__'];
+  var data = {};
+  data = e.currentTarget.dataset
+  data['path'] = url;
+  wx.showToast({
+    title: '分享生成中...',
+    icon: 'loading',
+    duration: 999999
+  })
+  wx.request({
+    method: 'post',
+    url: 'https://shareapi.aldwx.com/Main/action/Template/Template/applet_htmlpng',
+    data: data,
+    success: function (data) {
+      if (data.data.code === 200) {
+        wx.previewImage({
+          urls: [data.data.data]
+        })
+      }
+      wx.hideLoading()
+    },
+    complete: function () {
+      wx.hideLoading()
+    },
+    fail: function () {
+      wx.hideLoading();
+    }
+  })
+}
+
 module.exports = {
   requestServer: requestServer,
   formatTime: formatTime,
   formatHtml: formatHtml,
-  showToast: showToast
+  showToast: showToast,
+  aldShare: aldShare
 }

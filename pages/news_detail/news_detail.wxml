@@ -8,6 +8,20 @@
             <view class="wxParse">
                 <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
             </view>
+            <view class="box box-ac share-box"
+            data-article_title="{{articleInfo.title}}"
+            data-article_time="{{articleInfo.formatTime}}"
+            data-article_brand="猿师说"
+            data-article_image="{{articleInfo.picarr}}"
+            data-article_content="{{articleInfo.breif}}"
+            bindtap="aldShare"
+            data-template_key="3dfc99cd1560797b6f228c8d899252ba"
+            >
+              <view class="fs-30 color-3 box box-f1">分享此文章到</view>
+              <image class="share-img" mode="scaleToFill" src="../../common/image/wechat1.png"></image>
+              <image class="share-img" mode="scaleToFill" src="../../common/image/wechat2.png"></image>
+              <view class='shenlve-img box-img'></view>
+            </view>
         </view>
     </view>
 </view>
