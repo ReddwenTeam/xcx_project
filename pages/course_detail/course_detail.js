@@ -62,9 +62,6 @@ Page({
   },
   showPanel: function (type,index){
     var that = this;
-    console.log(type);
-    console.log(allVideoList);
-    
     if (allVideoList.length>0){
       switch (type) {
         case "xiangqing":
@@ -184,20 +181,28 @@ Page({
     var that = this;
     that.videoPause();
     common.requestServer("p=course&ac=cvideo&d=getCvideosParam&isNeadPager=false", { "vcourseid": dataSet.videoId, "memberid": that.memberid }, function (data) {
-      if (data.length > 0) {
+      that.setData({
+        price: dataSet.videoPrice,
+        ischarge: dataSet.videoIscharge,
+        isbuy: dataSet.videoIsbuy,
+        vcourseid: dataSet.videoId,
+        curPageName: "xiangqing"
+      });
+      wx.setNavigationBarTitle({
+        title: dataSet.videoName
+      });
+      if (data.length == 0) {
+        common.showToast('暂无视频信息!');
+        that.setData({
+          isbuy: "zanwu",
+        });
+      } else {
         data.forEach(function (item) {
           item.formatTime = common.formatTime(item.createtime, 'Y-M-D');
         });
-        allVideoList = data;
-        console.log(allVideoList)
-        
-        that.showPanel("xiangqing", 0);
-      } else {
-        that.setData({
-          isbuy: "zanwu"
-        });
-        common.showToast('暂无视频信息!');
       }
+      allVideoList = data;
+      that.showPanel("xiangqing", 0);
     })
   },
   ToTeacherDetail: function (event) {

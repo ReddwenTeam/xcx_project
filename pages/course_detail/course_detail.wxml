@@ -75,6 +75,7 @@
   </template> 
   <template name="mulu">
   <view class="video-list-box fs-28 color-9 box box box-ac box-pc" wx:if="{{isbuy == 'zanwu'}}">暂无数据</view>
+  <view wx:else>
   <view class='box box-f1 box-ver bg-fff video-list-box'  wx:for="{{items.videoList}}" wx:key="{{index}}">
     <view class="one-class box" bindtap="ToPlay"
      data-video-index="{{index}}">
@@ -86,9 +87,11 @@
         </view>
     </view> 
   </view>  
+  </view>
   </template>
   <template name="kecheng">
    <view class="video-list-box fs-28 color-9 box box box-ac box-pc" wx:if="{{kecheng == 'zanwu'}}">暂无数据</view>
+   <view wx:else>
    <view class='box box-f1 box-ver bg-fff video-list-box' wx:for="{{items.videoList}}"  wx:key="{{index}}"
             bindtap="ToVideoDetail" 
             data-video-id="{{item.id}}" 
@@ -105,6 +108,7 @@
             <view class="box box-f1 box-ae box-pe fs-26 color-9">发布时间：{{item.formatTime}}</view>
         </view>
       </view>  
+    </view>
     </view>
   </template>
   <template is="{{curPageName}}" data="{{items,price,audition,xnumber,poster,isbuy,kecheng}}"></template>
