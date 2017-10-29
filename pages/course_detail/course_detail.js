@@ -62,6 +62,9 @@ Page({
   },
   showPanel: function (type,index){
     var that = this;
+    console.log(type);
+    console.log(allVideoList);
+    
     if (allVideoList.length>0){
       switch (type) {
         case "xiangqing":
@@ -82,21 +85,33 @@ Page({
           });
           break;
         case "kecheng":
-          common.requestServer("p=course&ac=vcourse&d=getSamesParam", {}, function (data) {
-            if(data.length > 0){
-              data.forEach(function (item) {
-                item.formatTime = common.formatTime(item.createtime, 'Y-M-D');
-              });
-              that.setData({
-                items: {
-                  videoList: data
-                }
-              });
-            }
-          })
+          showKC();
           break;
         default: break;
       }
+    } else if (allVideoList.length == 0){
+      if (type == "kecheng"){
+        showKC();
+      }
+    }
+
+    function showKC(){
+      common.requestServer("p=course&ac=vcourse&d=getSamesParam", {}, function (data) {
+        if (data.length > 0) {
+          data.forEach(function (item) {
+            item.formatTime = common.formatTime(item.createtime, 'Y-M-D');
+          });
+          that.setData({
+            items: {
+              videoList: data
+            }
+          });
+        } else {
+          that.setData({
+            kecheng: "zanwu"
+          });
+        }
+      })
     }
   },
   ToPlay: function(event){
@@ -166,19 +181,24 @@ Page({
   },
   ToVideoDetail: function (event) {
     var dataSet = event.currentTarget.dataset;
-    this.queryDetail(dataSet.videoId);
-    this.setData({
-      price: allVideoList[0].price,
-      ischarge: allVideoList[0].ischarge,
-      isbuy: allVideoList[0].isbuy,
-      vcourseid: allVideoList[0].id,
-      curPageName: "xiangqing"
-    });
-    wx.setNavigationBarTitle({
-      title: allVideoList[0].name
-    });
-    this.videoPause();
-    this.showPanel("xiangqing", 0);
+    var that = this;
+    that.videoPause();
+    common.requestServer("p=course&ac=cvideo&d=getCvideosParam&isNeadPager=false", { "vcourseid": dataSet.videoId, "memberid": that.memberid }, function (data) {
+      if (data.length > 0) {
+        data.forEach(function (item) {
+          item.formatTime = common.formatTime(item.createtime, 'Y-M-D');
+        });
+        allVideoList = data;
+        console.log(allVideoList)
+        
+        that.showPanel("xiangqing", 0);
+      } else {
+        that.setData({
+          isbuy: "zanwu"
+        });
+        common.showToast('暂无视频信息!');
+      }
+    })
   },
   ToTeacherDetail: function (event) {
     var dataSet = event.currentTarget.dataset;

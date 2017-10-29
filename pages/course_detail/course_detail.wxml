@@ -32,7 +32,7 @@
         <view class="fs-26 color-6 mg-t2">{{items.videoList.breif}}</view>
         <view class='box box-ac share-box'>
           <view class="box box-f1 fs-40 color-money">{{price}}</view>
-          <view class='box' 
+          <view class='box' wx:if="{{isbuy != 'zanwu'}}"
           data-video_brand="{{items.videoList.name}}"
           data-video_icon="{{items.videoList.teacherlist.tavatar}}"
           data-video_image="{{poster}}"
@@ -57,7 +57,7 @@
         <text class="fs-26 pd-l3">5分</text>
         <text class="fs-26 pd-l3">{{xnumber}}人在学</text>
     </view>
-    <view class="one-info box box-ver color-7" bindtap='ToTeacherDetail'
+    <view class="one-info box box-ver color-7" wx:if="{{isbuy != 'zanwu'}}" bindtap='ToTeacherDetail'
     data-teacher-id='{{items.videoList.teacherlist.tid}}' data-teacher-name='{{items.videoList.teacherlist.tname}}'
     >
         <p class="fs-30 color-0">老师介绍</p>
@@ -74,7 +74,8 @@
     </view>
   </template> 
   <template name="mulu">
-  <view class='box box-f1 box-ver bg-fff video-list-box' wx:for="{{items.videoList}}" wx:key="{{index}}">
+  <view class="video-list-box fs-28 color-9 box box box-ac box-pc" wx:if="{{isbuy == 'zanwu'}}">暂无数据</view>
+  <view class='box box-f1 box-ver bg-fff video-list-box'  wx:for="{{items.videoList}}" wx:key="{{index}}">
     <view class="one-class box" bindtap="ToPlay"
      data-video-index="{{index}}">
         <image class="img-msg" src="{{item.picarr}}" ></image> 
@@ -87,6 +88,7 @@
   </view>  
   </template>
   <template name="kecheng">
+   <view class="video-list-box fs-28 color-9 box box box-ac box-pc" wx:if="{{kecheng == 'zanwu'}}">暂无数据</view>
    <view class='box box-f1 box-ver bg-fff video-list-box' wx:for="{{items.videoList}}"  wx:key="{{index}}"
             bindtap="ToVideoDetail" 
             data-video-id="{{item.id}}" 
@@ -105,7 +107,7 @@
       </view>  
     </view>
   </template>
-  <template is="{{curPageName}}" data="{{items,price,audition,xnumber,poster}}"></template>
+  <template is="{{curPageName}}" data="{{items,price,audition,xnumber,poster,isbuy,kecheng}}"></template>
 </view>
 <view class="footer-fixed box box-ac">
     <!-- <image class="box btn-msg box-img" src='image/message.png'></image> 
