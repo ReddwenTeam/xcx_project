@@ -23,7 +23,7 @@ Page({
     wx.getStorage({
       key: "payReload",
       success: function (res) {
-        console.log(res)
+        // console.log(res)
         if (res.data) {
           that.queryVideo();
           wx.removeStorage({ key: 'payReload' })
@@ -101,5 +101,19 @@ Page({
     wx.navigateTo({
       url: '../video_list/video_list?BarTitle=更多在线课程'
     })
+  },
+  onShareAppMessage:function(){
+    return {
+      title: app.shareTitle,
+      path: '/pages/index/index',
+      success: function (res) {
+        // 转发成功
+        common.showToast("转发成功！", true);
+      },
+      fail: function (res) {
+        // 转发失败
+        common.showToast("转发失败");
+      }
+    }   
   }
 })

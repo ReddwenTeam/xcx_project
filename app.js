@@ -22,6 +22,7 @@ App({
         }
       }
     })
+    that.getShareTitle();
   },
   wxLogin:function(){
     var that = this;
@@ -118,5 +119,11 @@ App({
   },
   globalData: {
     userInfo:null
+  },
+  getShareTitle:function(){
+    var that = this;
+    common.requestServer("p=basic&ac=share&d=getShareParam", {}, function (data) {
+      that.shareTitle = data.shareTitle;
+    })
   }
 })

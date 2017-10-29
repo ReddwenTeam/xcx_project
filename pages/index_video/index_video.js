@@ -92,5 +92,19 @@ Page({
     });
     curPage++;
     this.queryVideoList(curPage);
+  },
+  onShareAppMessage: function () {
+    return {
+      title: app.shareTitle,
+      path: '/pages/index_video/index_video',
+      success: function (res) {
+        // 转发成功
+        common.showToast("转发成功！", true);
+      },
+      fail: function (res) {
+        // 转发失败
+        common.showToast("转发失败");
+      }
+    }
   }
 })
