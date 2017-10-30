@@ -1,4 +1,5 @@
 var common = require("../../common/js/common.js");
+var app = getApp();
 Page({
   data:{
     articleInfo:{}
@@ -27,5 +28,18 @@ Page({
   },
   aldShare: function (e) {
     common.aldShare(e,this);
+  },
+  onShareAppMessage: function () {
+    return {
+      title: app.shareTitle,
+      imageUrl: app.shareAvatar,
+      path: '/pages/index/index',
+      success: function (res) {
+        common.showToast("转发成功！", true);
+      },
+      fail: function (res) {
+        common.showToast("转发失败");
+      }
+    }
   }
 })

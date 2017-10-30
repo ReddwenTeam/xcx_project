@@ -124,6 +124,7 @@ App({
     var that = this;
     common.requestServer("p=basic&ac=share&d=getShareParam", {}, function (data) {
       that.shareTitle = data.shareTitle;
+      that.shareAvatar = data.shareAvatar;
     })
   }
 })

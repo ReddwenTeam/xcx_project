@@ -26,7 +26,8 @@ Page({
       ischarge: param.ischarge,
       isbuy: param.isbuy,
       vcourseid: param.id,
-      xnumber: param.xnumber
+      xnumber: param.xnumber,
+      allParam: param
     });
     that.queryDetail(param.id);
   },
@@ -213,5 +214,19 @@ Page({
   },
   aldShare: function (e) {
     common.aldShare(e, this);
+  },
+  onShareAppMessage: function () {
+    return {
+      title: app.shareTitle,
+      imageUrl: app.shareAvatar,
+      // path: '/pages/course_detail/course_detail?id=' + allParam.id + '&BarTitle=' + allParam.name + '&price=' + allParam.price + '&ischarge=' + allParam.ischarge + '&isbuy=' + allParam.isbuy + '&xnumber=' + allParam.xnumber,
+      path: '/pages/index/index',
+      success: function (res) {
+        common.showToast("转发成功！", true);
+      },
+      fail: function (res) {
+        common.showToast("转发失败");
+      }
+    }
   }
 })

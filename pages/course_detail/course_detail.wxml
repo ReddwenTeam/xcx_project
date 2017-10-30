@@ -32,19 +32,19 @@
         <view class="fs-26 color-6 mg-t2">{{items.videoList.breif}}</view>
         <view class='box box-ac share-box'>
           <view class="box box-f1 fs-40 color-money">{{price}}</view>
-          <view class='box' wx:if="{{isbuy != 'zanwu'}}"
-          data-video_brand="{{items.videoList.name}}"
-          data-video_icon="{{items.videoList.teacherlist.tavatar}}"
-          data-video_image="{{poster}}"
-          data-video_title="{{items.videoList.name}}"
-          data-video_play="{{xnumber}}人在学"
-          data-video_category="学习"
-          data-video_title_lower="分享自猿师说视频"
-          bindtap="aldShare"
-          data-template_key="384179a368a0a75183432ed8a91aebe1"
-          >
-            <image class="share-img border-r" mode="scaleToFill" src="../../common/image/wechat1.png"></image>
-            <image class="share-img" mode="scaleToFill" src="../../common/image/wechat2.png"></image>
+          <view class='box' wx:if="{{isbuy != 'zanwu'}}">
+            <button open-type="share" plain="true" hover-class="none" size='mini' class='box box-img share-btn'></button>
+            <image class="share-img border-l" 
+              data-video_brand="{{items.videoList.name}}"
+              data-video_icon="{{items.videoList.teacherlist.tavatar}}"
+              data-video_image="{{poster}}"
+              data-video_title="{{items.videoList.name}}"
+              data-video_play="{{xnumber}}人在学"
+              data-video_category="学习"
+              data-video_title_lower="分享自猿师说视频"
+              bindtap="aldShare"
+              data-template_key="384179a368a0a75183432ed8a91aebe1"
+            mode="scaleToFill" src="../../common/image/wechat2.png"></image>
           </view>
         </view>
     </view>

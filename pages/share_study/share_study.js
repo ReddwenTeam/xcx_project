@@ -124,13 +124,12 @@ Page({
   onShareAppMessage: function () {
     return {
       title: app.shareTitle,
-      path: '/pages/share_study/share_study',
+      imageUrl: app.shareAvatar,
+      path: '/pages/index/index',
       success: function (res) {
-        // 转发成功
         common.showToast("转发成功！", true);
       },
       fail: function (res) {
-        // 转发失败
         common.showToast("转发失败");
       }
     }
