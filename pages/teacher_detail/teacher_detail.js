@@ -14,6 +14,16 @@ Page({
     common.requestServer("p=teacher&ac=teacher&d=getTeacherParam", {
       'id': id
     }, function (data) {
+      if (data.mobile.length>0){
+        data.Tmobile = data.mobile.substring(0, 3) + "****" + data.mobile.substring(data.mobile.length - 4)
+      }else{
+        data.Tmobile = "暂无"
+      }
+      if (data.tel.length > 0) {
+        data.Ttel = data.tel.substring(0, 3) + "****" + data.tel.substring(data.tel.length - 4)
+      } else {
+        data.Ttel = "暂无"
+      }
       that.setData({
         info: data
       });

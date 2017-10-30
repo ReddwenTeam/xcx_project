@@ -12,15 +12,15 @@
         <view class="mg-t15 color-0 fs-32">身份认证</view>
         <view class="box box-f1 width-100 mg-t15">
           <view class="fs-28 color-3 box box-f1">手机</view>
-          <view class="fs-28 color-9">{{info.mobile.length > 0 ? info.mobile : "暂无"}}</view>
+          <view class="fs-28 color-9">{{info.Tmobile}}</view>
         </view>
           <view class="box box-f1 width-100 mg-t15">
           <view class="fs-28 color-3 box box-f1">电话</view>
-          <view class="fs-28 color-9">{{info.tel.length > 0 ? info.tel : "暂无"}}</view>
+          <view class="fs-28 color-9">{{info.Ttel}}</view>
         </view>
     </view>
      <view class="one-info box box-ver box-ac">
-        <view class="color-0 fs-32">语言水平</view>
+        <view class="color-0 fs-32">专属技能</view>
         <view wx:if="{{info.masterlist.length > 0 && info.masterlist[0]!=null}}"  style="width:100%">
           <view class="mg-t15 box" wx:for="{{info.masterlist}}" wx:key="{{index}}">
             <view class="fs-28 color-3 box box-f1">{{item}}</view>
@@ -42,7 +42,6 @@
     </view>
     <view class="one-info box box-ver box-ac">
         <view class="color-0 fs-32">我的服务</view>
-
             <view wx:if="{{info.vcourselist.length > 0}}" wx:key="{{index}}" wx:for="{{info.vcourselist}}" class="one-class" bindtap="ToVideoDetail" 
             data-video-id="{{item.id}}" 
             data-video-price="{{item.price}}"    
