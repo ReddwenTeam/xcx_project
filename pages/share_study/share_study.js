@@ -10,6 +10,9 @@ Page({
     var that = this;
     curShareList = [];
     curPage = 1;
+    that.setData({
+      friendAvatar: app.friendAvatar
+    });
     that.queryShareList(curPage);
     app.getUserInfo(function(data){
       that.setData({

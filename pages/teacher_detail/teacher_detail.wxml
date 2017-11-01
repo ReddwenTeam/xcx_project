@@ -10,14 +10,14 @@
         <view class="mg-t15 color-0 fs-28">{{info.concise}}</view>
         <image class="img-id" mode="scaleToFill" src="image/img_id.png"></image>
         <view class="mg-t15 color-0 fs-32">身份认证</view>
-        <view class="box box-f1 width-100 mg-t15">
+        <!-- <view class="box box-f1 width-100 mg-t15">
           <view class="fs-28 color-3 box box-f1">手机</view>
           <view class="fs-28 color-9">{{info.Tmobile}}</view>
         </view>
-          <view class="box box-f1 width-100 mg-t15">
+        <view class="box box-f1 width-100 mg-t15">
           <view class="fs-28 color-3 box box-f1">电话</view>
           <view class="fs-28 color-9">{{info.Ttel}}</view>
-        </view>
+        </view> -->
     </view>
      <view class="one-info box box-ver box-ac">
         <view class="color-0 fs-32">专属技能</view>
@@ -53,7 +53,6 @@
                 <image src='../../common/image/btn_play.png' class='box box-img play-btn'></image>
               </view>
               <view class="fs-30 color-3">{{item.name}}</view>
-              <view class="fs-26 color-9 mg-t15">{{item.info}}</view>
             </view>
     </view>
 </view>

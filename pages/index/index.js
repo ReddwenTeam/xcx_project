@@ -8,7 +8,6 @@ Page({
   },
   onReady: function () {
     var that = this;
-    that.queryProduct();  
     that.queryArticle();    
     that.queryVideo();
     that.querySchool();
@@ -23,20 +22,11 @@ Page({
     wx.getStorage({
       key: "payReload",
       success: function (res) {
-        // console.log(res)
         if (res.data) {
           that.queryVideo();
           wx.removeStorage({ key: 'payReload' })
         }
       }
-    })
-  },
-  queryProduct:function(){
-    var that = this;
-    common.requestServer("p=basic&ac=sys&d=getBasicParam", {}, function (data) {
-      that.setData({
-        indexDescribe: data.indexDescribe
-      })
     })
   },
   queryArticle: function (){
@@ -63,6 +53,7 @@ Page({
   querySchool: function () {
     var that = this;
     common.requestServer("p=basic&ac=sys&d=getParamByKey&keys=schoolSetting", {}, function (data) {
+      app.friendAvatar = data.friendAvatar;
       that.setData({
         schoolList: data
       })

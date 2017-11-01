@@ -1,7 +1,7 @@
-<image class="index-bg" mode="scaleToFill" src="https://xcx.51zhenkun.com/addons/star_school/data/static/index.jpg"></image>
+<image class="index-bg" mode="scaleToFill" src="{{schoolList.indexAvatar}}"></image>
 <view class="pd-2">
   <view class='fs-40 title-pd'>Hello，亲爱的<text style='margin-left: 15rpx' class="fs-40 color-b">{{nickName}}</text></view>
-  <view class='fs-30 color-6'>{{indexDescribe}}</view>
+  <view class='fs-30 color-6'>{{schoolList.indexDescribe}}</view>
 </view>
 <view class="pd-2">
   <view class='box'>
@@ -25,7 +25,7 @@
   <view class='box box-ac'>
     <view class='box box-f1 fs-28 color-6 ellipsis-2'>{{videoList.breif}}</view>
     <view class='box box-ver box-ac box-pc' style='padding: 24rpx 25rpx 0; position:relative'>
-      <image class="img-logo" mode="scaleToFill" src="https://xcx.51zhenkun.com/addons/star_school/data/static/icon.jpg"></image>
+      <image class="img-logo" mode="scaleToFill" src="{{schoolList.iconAvatar}}"></image>
       <view class='fs-28 color-4'>猿师说</view>
     </view>
   </view>
@@ -42,7 +42,7 @@
     <view class='box box-ac'>
       <view class='box box-f1 fs-28 color-6 ellipsis-2'>{{articleList.breif}}</view>
       <view class='box box-ver box-ac box-pc' style='padding: 24rpx 25rpx 0; position:relative;'>
-        <image class="img-logo" mode="scaleToFill" src="https://xcx.51zhenkun.com/addons/star_school/data/static/icon.jpg"></image>
+        <image class="img-logo" mode="scaleToFill" src="{{schoolList.iconAvatar}}"></image>
         <view class='fs-28 color-4'>猿师说</view>
       </view>
     </view>
@@ -55,28 +55,28 @@
   <view class='box'>
     <view class='width-3' bindtap="ToSchoolDetail" 
     data-school-info='1'
-     data-school-name="学校外招">
+     data-school-name="{{schoolList.schoolTitle}}">
       <image class="width-3-img" mode="scaleToFill" src="{{schoolList.shpicarr}}"></image>
       <view class='box box-ver box-ac box-pc img3-box'>
-        <image class="img-logo3" mode="scaleToFill" src="https://xcx.51zhenkun.com/addons/star_school/data/static/icon.jpg"></image>
-        <view class='fs-28 color-4'>学校外招</view>
+        <image class="img-logo3" mode="scaleToFill" src="{{schoolList.iconAvatar}}"></image>
+        <view class='fs-28 color-4'>{{schoolList.schoolTitle}}</view>
       </view>
     </view>
     <view class='width-3' bindtap="ToSchoolDetail"
      data-school-info='2'
-     data-school-name="招生简介">
+     data-school-name="{{schoolList.studentTitle}}">
       <image class="width-3-img" mode="scaleToFill" src="{{schoolList.stpicarr}}"></image>
       <view class='box box-ver box-ac box-pc img3-box'>
-        <image class="img-logo3" mode="scaleToFill" src="https://xcx.51zhenkun.com/addons/star_school/data/static/icon.jpg"></image>
-        <view class='fs-28 color-4'>招生简介</view>
+        <image class="img-logo3" mode="scaleToFill" src="{{schoolList.iconAvatar}}"></image>
+        <view class='fs-28 color-4'>{{schoolList.studentTitle}}</view>
       </view>
     </view>
     <view class='width-3' bindtap="ToTeacherDetail"
-     data-school-name="教师风采">
+     data-school-name="{{schoolList.teacherTitle}}">
       <image class="width-3-img" mode="scaleToFill" src="{{schoolList.thpicarr}}"></image>
       <view class='box box-ver box-ac box-pc img3-box'>
-        <image class="img-logo3" mode="scaleToFill" src="https://xcx.51zhenkun.com/addons/star_school/data/static/icon.jpg"></image>
-        <view class='fs-28 color-4'>教师风采</view>
+        <image class="img-logo3" mode="scaleToFill" src="{{schoolList.iconAvatar}}"></image>
+        <view class='fs-28 color-4'>{{schoolList.teacherTitle}}</view>
       </view>
     </view>
   </view>
