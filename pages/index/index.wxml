@@ -56,7 +56,7 @@
     <view class='width-3' bindtap="ToSchoolDetail" 
     data-school-info='1'
      data-school-name="{{schoolList.schoolTitle}}">
-      <image class="width-3-img" mode="scaleToFill" src="{{schoolList.shpicarr}}"></image>
+      <image class="width-3-img" mode="aspectFill" src="{{schoolList.shpicarr}}"></image>
       <view class='box box-ver box-ac box-pc img3-box'>
         <image class="img-logo3" mode="scaleToFill" src="{{schoolList.iconAvatar}}"></image>
         <view class='fs-28 color-4'>{{schoolList.schoolTitle}}</view>
@@ -65,7 +65,7 @@
     <view class='width-3' bindtap="ToSchoolDetail"
      data-school-info='2'
      data-school-name="{{schoolList.studentTitle}}">
-      <image class="width-3-img" mode="scaleToFill" src="{{schoolList.stpicarr}}"></image>
+      <image class="width-3-img" mode="aspectFill" src="{{schoolList.stpicarr}}"></image>
       <view class='box box-ver box-ac box-pc img3-box'>
         <image class="img-logo3" mode="scaleToFill" src="{{schoolList.iconAvatar}}"></image>
         <view class='fs-28 color-4'>{{schoolList.studentTitle}}</view>
@@ -73,7 +73,7 @@
     </view>
     <view class='width-3' bindtap="ToTeacherDetail"
      data-school-name="{{schoolList.teacherTitle}}">
-      <image class="width-3-img" mode="scaleToFill" src="{{schoolList.thpicarr}}"></image>
+      <image class="width-3-img" mode="aspectFill" src="{{schoolList.thpicarr}}"></image>
       <view class='box box-ver box-ac box-pc img3-box'>
         <image class="img-logo3" mode="scaleToFill" src="{{schoolList.iconAvatar}}"></image>
         <view class='fs-28 color-4'>{{schoolList.teacherTitle}}</view>

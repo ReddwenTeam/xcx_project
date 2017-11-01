@@ -66,6 +66,7 @@ Page({
         if (data.length == 0) {
           if (page == 1) {
             that.setData({
+              Works_list: [],
               loading: {
                 status: true,
                 load: false,

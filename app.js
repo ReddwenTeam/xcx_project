@@ -31,25 +31,9 @@ App({
         if (res.code) {
           //code 换取 session_key
           common.requestServer("p=member&ac=member&d=memberLogin", { "code": res.code }, function (data) {
-            console.log(data)
             if (data.openid) {
               CODE_INFO.openid = data.openid;
-              wx.getSetting({
-                success: function(res) {
-                  console.log(res);
-                  console.log(res.authSetting['scope.userInfo'])
-                  if (res.authSetting['scope.userInfo']){
-                    that.getMemberId();
-                  }else{
-                    wx.authorize({
-                      scope: 'scope.userInfo',
-                      success() {
-                        that.getMemberId();
-                      }
-                    })
-                  }
-                }
-              })       
+              that.getMemberId();
             } else {
               common.showToast('网络出错，请稍后再试！')
             }
@@ -111,7 +95,10 @@ App({
         })
       },
       fail: function () {
-        common.showToast('未授权，请退出进行小程序并进行授权！')
+        wx.showModal({
+          title: '警告',
+          content: '您点击了拒绝授权，将无法正常使用猿师说的所有功能体验。请删除小程序重新进入，并确认授权。',
+        })
       }
     })
   },

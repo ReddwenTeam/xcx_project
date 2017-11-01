@@ -25,6 +25,7 @@ Page({
       if (data.length == 0){
         if (page == 1){
           that.setData({
+            ArticleList: [],
             loading: {
               status: true,
               load: false,

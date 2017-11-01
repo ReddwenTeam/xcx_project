@@ -6,9 +6,12 @@ Page({
   },
   onShow: function () {
     this.getRole();
-    this.setData({
-      avatarUrl: app.globalData.userInfo.avatarUrl,
-      nickName: app.globalData.userInfo.nickName
+    var that = this;
+    app.getUserInfo(function (data) {
+      that.setData({
+        avatarUrl: data.avatarUrl,
+        nickName: data.nickName
+      });
     });
   },
   getRole: function () {

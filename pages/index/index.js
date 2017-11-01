@@ -18,11 +18,6 @@ var pageindex = Page({
     })
   },
   onShow: function () {
-    wx.getSetting({
-      success: function(res) {
-      
-      }
-    })
     var that = this;
     wx.getStorage({
       key: "payReload",
@@ -44,16 +39,11 @@ var pageindex = Page({
   },
   queryVideo: function () {
     var that = this;
-    wx.getStorage({
-      key: "bindingInfo",
-      success: function (res) {
-        common.requestServer("p=course&ac=vcourse&d=getVcoursesParam&isNeadPager=true", { "pindex": 1, "psize": 1, "memberid": res.data.memberid }, function (data) {
-          that.setData({
-            videoList: data[0]
-          })
-        })
-      }
-    });
+    common.requestServer("p=course&ac=vcourse&d=getVcoursesParam&isNeadPager=true", { "pindex": 1, "psize": 1 }, function (data) {
+      that.setData({
+        videoList: data[0]
+      })
+    })
   },
   querySchool: function () {
     var that = this;

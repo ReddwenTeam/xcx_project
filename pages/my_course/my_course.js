@@ -3,7 +3,6 @@ var curVideoList = [], curPage = 1;
 var app = getApp();
 Page({
   data: {
-    videoList: [],
     part: "quanbu"
   },
   onLoad: function (param) {
@@ -77,6 +76,9 @@ Page({
       })
     }
     curVideoList = [];
+    this.setData({
+      videoList: curVideoList
+    });
     curPage = 1;
     this.queryVideoList(curPage);
   },

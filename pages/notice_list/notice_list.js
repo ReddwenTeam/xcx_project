@@ -20,6 +20,7 @@ Page({
       if (data.length == 0) {
         if (page == 1) {
           that.setData({
+            notice_list:[],
             loading: {
               status: true,
               load: false,
