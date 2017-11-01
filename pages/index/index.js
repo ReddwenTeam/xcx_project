@@ -1,6 +1,6 @@
 var common = require("../../common/js/common.js");
 var app = getApp();
-Page({
+var pageindex = Page({
   data: {
     articleList: {},
     videoList: {},
@@ -18,6 +18,11 @@ Page({
     })
   },
   onShow: function () {
+    wx.getSetting({
+      success: function(res) {
+      
+      }
+    })
     var that = this;
     wx.getStorage({
       key: "payReload",

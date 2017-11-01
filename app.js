@@ -31,40 +31,25 @@ App({
         if (res.code) {
           //code 换取 session_key
           common.requestServer("p=member&ac=member&d=memberLogin", { "code": res.code }, function (data) {
+            console.log(data)
             if (data.openid) {
               CODE_INFO.openid = data.openid;
-              wx.getUserInfo({
-                success: function (res) {
-                  //获取登录用户昵称等信息
-                  var userInfo = res.userInfo;
-                  CODE_INFO.nickName = userInfo.nickName;
-                  CODE_INFO.avatarUrl = userInfo.avatarUrl;
-                  CODE_INFO.province = userInfo.province;
-                  CODE_INFO.city = userInfo.city;
-                  CODE_INFO.country = userInfo.country;
-                  CODE_INFO.gender = userInfo.gender;
-                  //第三方服务器登录
-                  common.requestServer("p=member&ac=member&d=gainMembersInfo", CODE_INFO, function (data) {
-                    if (data.status == "success") {
-                      that.memberid = data.memberid;
-                      that.isMemberBinded(data.memberid);
-                      wx.setStorage({
-                        key: "openInfo",
-                        data: {
-                          openId: CODE_INFO.openid,
-                          memberId: data.memberid,
-                          nickName: CODE_INFO.nickName
-                        }
-                      })
-                    } else {
-                      common.showToast('网络出错，请稍后再试！')
-                    }
-                  })
-                },
-                fail: function () {
-                  common.showToast('网络出错，请稍后再试！')
+              wx.getSetting({
+                success: function(res) {
+                  console.log(res);
+                  console.log(res.authSetting['scope.userInfo'])
+                  if (res.authSetting['scope.userInfo']){
+                    that.getMemberId();
+                  }else{
+                    wx.authorize({
+                      scope: 'scope.userInfo',
+                      success() {
+                        that.getMemberId();
+                      }
+                    })
+                  }
                 }
-              })
+              })       
             } else {
               common.showToast('网络出错，请稍后再试！')
             }
@@ -94,6 +79,41 @@ App({
         }
       })
     }
+  },
+  getMemberId : function(){
+    var that = this;
+    wx.getUserInfo({
+      success: function (res) {
+        //获取登录用户昵称等信息
+        var userInfo = res.userInfo;
+        CODE_INFO.nickName = userInfo.nickName;
+        CODE_INFO.avatarUrl = userInfo.avatarUrl;
+        CODE_INFO.province = userInfo.province;
+        CODE_INFO.city = userInfo.city;
+        CODE_INFO.country = userInfo.country;
+        CODE_INFO.gender = userInfo.gender;
+        //第三方服务器登录
+        common.requestServer("p=member&ac=member&d=gainMembersInfo", CODE_INFO, function (data) {
+          if (data.status == "success") {
+            that.memberid = data.memberid;
+            that.isMemberBinded(data.memberid);
+            wx.setStorage({
+              key: "openInfo",
+              data: {
+                openId: CODE_INFO.openid,
+                memberId: data.memberid,
+                nickName: CODE_INFO.nickName
+              }
+            })
+          } else {
+            common.showToast('未授权，请退出进行小程序并进行授权！')
+          }
+        })
+      },
+      fail: function () {
+        common.showToast('未授权，请退出进行小程序并进行授权！')
+      }
+    })
   },
   isMemberBinded(member){
     common.requestServer("p=member&ac=binding&d=getIsBinding" , { "memberid": member}, function (data) {
