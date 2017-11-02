@@ -6,7 +6,6 @@
             data-video-price="{{item.price}}"    
             data-video-ischarge="{{item.ischarge}}"
             data-video-name="{{item.title}}"
-            data-video-isbuy="{{item.isbuy}}"
             data-video-xnumber="{{item.xnumber}}"
             >
           <image class='box box-img course-img' mode="aspectFill"  src="{{item.poster_src}}"></image>

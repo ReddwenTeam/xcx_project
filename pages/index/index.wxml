@@ -15,7 +15,6 @@
     data-video-price="{{videoList.price}}"
     data-video-ischarge="{{videoList.ischarge}}"
     data-video-name="{{videoList.name}}"
-    data-video-isbuy="{{videoList.isbuy}}"
     data-video-xnumber="{{videoList.xnumber}}"
     bindtap="ToVideoDetail"
     >

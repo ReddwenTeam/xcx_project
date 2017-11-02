@@ -85,7 +85,7 @@ Page({
   ToVideoDetail: function (event) {
     var dataSet = event.currentTarget.dataset;
     wx.navigateTo({
-      url: '../course_detail/course_detail?id=' + dataSet.videoId + '&BarTitle=' + dataSet.videoName + '&price=' + dataSet.videoPrice + '&ischarge=' + dataSet.videoIscharge + '&isbuy=' + dataSet.videoIsbuy + '&xnumber=' + dataSet.videoXnumber
+      url: '../course_detail/course_detail?id=' + dataSet.videoId + '&BarTitle=' + dataSet.videoName + '&price=' + dataSet.videoPrice + '&ischarge=' + dataSet.videoIscharge + '&xnumber=' + dataSet.videoXnumber
     })
   },
   onReachBottom: function () {

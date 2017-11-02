@@ -17,18 +17,18 @@ var pageindex = Page({
       })
     })
   },
-  onShow: function () {
-    var that = this;
-    wx.getStorage({
-      key: "payReload",
-      success: function (res) {
-        if (res.data) {
-          that.queryVideo();
-          wx.removeStorage({ key: 'payReload' })
-        }
-      }
-    })
-  },
+  // onShow: function () {
+  //   var that = this;
+  //   wx.getStorage({
+  //     key: "payReload",
+  //     success: function (res) {
+  //       if (res.data) {
+  //         that.queryVideo();
+  //         wx.removeStorage({ key: 'payReload' })
+  //       }
+  //     }
+  //   })
+  // },
   queryArticle: function (){
     var that = this;
     common.requestServer("p=news&ac=artic&d=getArticsParam&isNeadPager=true&f=ajax", { "pindex": 1,"psize": 1 }, function(data){
@@ -63,7 +63,7 @@ var pageindex = Page({
   ToVideoDetail: function (event) {
     var dataSet = event.currentTarget.dataset;
     wx.navigateTo({
-      url: '../course_detail/course_detail?id=' + dataSet.videoId + '&BarTitle=' + dataSet.videoName + '&price=' + dataSet.videoPrice + '&ischarge=' + dataSet.videoIscharge + '&isbuy=' + dataSet.videoIsbuy + '&xnumber=' + dataSet.videoXnumber
+      url: '../course_detail/course_detail?id=' + dataSet.videoId + '&BarTitle=' + dataSet.videoName + '&price=' + dataSet.videoPrice + '&ischarge=' + dataSet.videoIscharge + '&xnumber=' + dataSet.videoXnumber
     })
   },
   ToSchoolDetail: function (event) {

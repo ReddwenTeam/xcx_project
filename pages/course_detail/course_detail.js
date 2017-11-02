@@ -24,7 +24,6 @@ Page({
     that.setData({
       price: param.price,
       ischarge: param.ischarge,
-      isbuy: param.isbuy,
       vcourseid: param.id,
       xnumber: param.xnumber,
       allParam: param
@@ -70,6 +69,7 @@ Page({
             poster: allVideoList[index].picarr,
             video_src: allVideoList[index].videourl,
             audition: allVideoList[index].audition,
+            isbuy: allVideoList[index].isbuy,
             items: {
               videoList: allVideoList[index]
             }
@@ -140,38 +140,25 @@ Page({
       key: "bindingInfo",
       success: function (res) {
         var data = res.data;
-        wx.request({
-          url: 'https://xcx.51zhenkun.com/addons/star_school/payment/example/jsapi.php',
-          data: {
-            "memberid": data.memberid,
-            "vcourseid": that.data.vcourseid
-          },
-          header: {
-            'content-type': 'application/json'
-          },
-          success: function (res) {
-            var data = res.data;
-            if (data.status == "error"){
-              common.showToast(data.msg);
-            }else{
-              wx.requestPayment({
-                'timeStamp': data.timeStamp,
-                'nonceStr': data.nonceStr,
-                'package': data.package,
-                'signType': data.signType,
-                'paySign': data.paySign,
-                'success': function (res) {
-                  that.setData({
-                    isbuy: "success"
-                  });
-                  wx.setStorage({
-                    key: "payReload",
-                    data: true
-                  })
-                  common.showToast("支付成功！", true);
-                }
-              })
-            }
+
+
+        common.requestServer('payUrl', { "memberid": data.memberid, "vcourseid": that.data.vcourseid }, function (data) {
+          if (data.status == "error") {
+            common.showToast(data.msg);
+          } else {
+            wx.requestPayment({
+              'timeStamp': data.timeStamp,
+              'nonceStr': data.nonceStr,
+              'package': data.package,
+              'signType': data.signType,
+              'paySign': data.paySign,
+              'success': function (res) {
+                that.setData({
+                  isbuy: "success"
+                });
+                common.showToast("支付成功！", true);
+              }
+            })
           }
         })
       }
@@ -219,7 +206,6 @@ Page({
     return {
       title: app.shareTitle,
       imageUrl: app.shareAvatar,
-      // path: '/pages/course_detail/course_detail?id=' + allParam.id + '&BarTitle=' + allParam.name + '&price=' + allParam.price + '&ischarge=' + allParam.ischarge + '&isbuy=' + allParam.isbuy + '&xnumber=' + allParam.xnumber,
       path: '/pages/index/index',
       success: function (res) {
         common.showToast("转发成功！", true);

@@ -95,7 +95,7 @@ Page({
         sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
         success: function (res) {
           wx.uploadFile({
-            url: 'https://xcx.51zhenkun.com/addons/star_school/app/index.php?p=comm&ac=upload&d=uploadIMG',
+            url: common.uploadUrl,
             filePath: res.tempFilePaths[0],
             name: 'file',
             formData: {

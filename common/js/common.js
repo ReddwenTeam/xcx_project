@@ -2,12 +2,19 @@ var WxParse = require('../wxParse/wxParse.js');
 /** 
  * 请求服务
 */
-//var baseUrl = "https://weiqing.zqkj.site/addons/star_school/app/index.php?";
-var baseUrl = "https://xcx.51zhenkun.com/addons/star_school/app/index.php?";
-//course_detail publish_share
+//var baseUrl = "https://weiqing.zqkj.site";
+var baseUrl = "https://xcx.51zhenkun.com"; // 不同域名
+var defaultUrl = "/addons/star_school/app/index.php?";
+var uploadUrl = "/addons/star_school/app/index.php?p=comm&ac=upload&d=uploadIMG";
+var payUrl = "/addons/star_school/payment/example/jsapi.php";
 function requestServer(url,param,callback){
+  if (url == "payUrl") {
+    var curUrl = payUrl;
+  }else{
+    var curUrl = defaultUrl + url;
+  }
   wx.request({
-    url: baseUrl+url,
+    url: baseUrl + curUrl,
     data: param,
     header: {
       'content-type': 'application/json'
@@ -18,6 +25,10 @@ function requestServer(url,param,callback){
       }
     }
   })
+}
+
+function getUploadUrl(){
+
 }
 
 /** 
@@ -105,5 +116,6 @@ module.exports = {
   formatTime: formatTime,
   formatHtml: formatHtml,
   showToast: showToast,
-  aldShare: aldShare
+  aldShare: aldShare,
+  uploadUrl: baseUrl + uploadUrl
 }

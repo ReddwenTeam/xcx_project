@@ -13,7 +13,6 @@
             data-video-price="{{item.price}}"    
             data-video-ischarge="{{item.ischarge}}"
             data-video-name="{{item.name}}"
-            data-video-isbuy="{{item.isbuy}}"
             data-video-xnumber="{{item.xnumber}}"
               >
               <image class="img-poster box-img" mode="aspectFill" src="{{item.picarr}}" ></image>
@@ -34,7 +33,6 @@
               data-video-price="{{item.price}}"    
               data-video-ischarge="{{item.ischarge}}"
               data-video-name="{{item.name}}"
-              data-video-isbuy="{{item.isbuy}}"
               data-video-xnumber="{{item.xnumber}}"
             >
                 <image class="img-msg box-img" mode="aspectFill" src="{{item.picarr}}" ></image> 
@@ -53,11 +51,10 @@
           <view class="video-content" wx:if="{{index == 0}}">
               <view class="pop-box box box-ac show"
               bindtap="ToVideoDetail" 
-              data-video-id="{{item.id}}" 
+              data-video-id="{{item.vcourseid}}" 
               data-video-price="已购买"    
               data-video-ischarge="0"
               data-video-name="{{item.vtitle}}"
-              data-video-isbuy="success"
               data-video-xnumber="{{item.xnumber}}"
                 >
                 <image class="img-poster box-img" mode="aspectFill"  src="{{item.vpicarr}}" ></image>
@@ -73,11 +70,10 @@
           <view class="class-box" wx:else>
               <view class="one-class box"
                    bindtap="ToVideoDetail" 
-                  data-video-id="{{item.id}}" 
+                  data-video-id="{{item.vcourseid}}" 
                   data-video-price="已购买"    
                   data-video-ischarge="0"
                   data-video-name="{{item.vtitle}}"
-                  data-video-isbuy="success"
                   data-video-xnumber="{{item.xnumber}}"
               >
                   <image class="img-msg box-img" src="{{item.vpicarr}}" mode="aspectFill" ></image> 

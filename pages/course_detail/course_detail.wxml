@@ -98,7 +98,6 @@
             data-video-price="{{item.price}}"    
             data-video-ischarge="{{item.ischarge}}"
             data-video-name="{{item.name}}"
-            data-video-isbuy="{{item.isbuy}}"
             >
       <view class="one-class box">
         <image class="img-msg" src="{{item.picarr}}" ></image> 
