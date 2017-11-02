@@ -17,18 +17,6 @@ var pageindex = Page({
       })
     })
   },
-  // onShow: function () {
-  //   var that = this;
-  //   wx.getStorage({
-  //     key: "payReload",
-  //     success: function (res) {
-  //       if (res.data) {
-  //         that.queryVideo();
-  //         wx.removeStorage({ key: 'payReload' })
-  //       }
-  //     }
-  //   })
-  // },
   queryArticle: function (){
     var that = this;
     common.requestServer("p=news&ac=artic&d=getArticsParam&isNeadPager=true&f=ajax", { "pindex": 1,"psize": 1 }, function(data){

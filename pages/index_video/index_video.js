@@ -12,20 +12,6 @@ Page({
   onReady: function () {
     this.queryVideoList(curPage);
   },
-  // onShow: function () {
-  //   var that = this;
-  //   wx.getStorage({
-  //     key: "payReload",
-  //     success: function (res) {
-  //       if (res.data){
-  //         curVideoList = [];
-  //         curPage = 1;
-  //         that.queryVideoList(curPage);
-  //         wx.removeStorage({ key: 'payReload' })
-  //       }
-  //     }
-  //   })
-  // },
   queryVideoList: function (page) {
     var that = this;
     common.requestServer("p=course&ac=vcourse&d=getVcoursesParam&isNeadPager=true", { "pindex": page, "psize": 3 }, function (data) {
