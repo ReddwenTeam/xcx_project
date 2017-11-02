@@ -1,4 +1,4 @@
-<image class="index-bg" mode="scaleToFill" src="{{schoolList.indexAvatar}}"></image>
+<image class="index-bg" mode="aspectFill" src="{{schoolList.indexAvatar}}"></image>
 <view class="pd-2">
   <view class='fs-40 title-pd'>Hello，亲爱的<text style='margin-left: 15rpx' class="fs-40 color-b">{{nickName}}</text></view>
   <view class='fs-30 color-6'>{{schoolList.indexDescribe}}</view>
@@ -9,7 +9,7 @@
     <view class='fs-26 color-6' bindtap="ToMoreVideo">查看更多</view>
   </view>
   <image class="video-bg" 
-    mode="scaleToFill" 
+    mode="aspectFill" 
     src="{{videoList.picarr}}" 
     data-video-id="{{videoList.id}}"
     data-video-price="{{videoList.price}}"
@@ -36,7 +36,7 @@
     <view class='fs-26 color-6' bindtap="ToMoreArticle">查看更多</view>
   </view>
   <view bindtap="ToArticleDetail" data-article-id="{{articleList.id}}"  data-article-name="{{articleList.title}}">
-    <image class="video-bg" mode="scaleToFill" src="{{articleList.picarr}}">
+    <image class="video-bg" mode="aspectFill" src="{{articleList.picarr}}">
       <view class='fs-26 color-w video-name ellipsis-1'>{{articleList.title}}</view>
     </image>
     <view class='box box-ac'>

@@ -16,10 +16,10 @@
             data-video-isbuy="{{item.isbuy}}"
             data-video-xnumber="{{item.xnumber}}"
               >
-              <image class="img-poster box-img" src="{{item.picarr}}" ></image>
+              <image class="img-poster box-img" mode="aspectFill" src="{{item.picarr}}" ></image>
                 <view class="pop-info box box-ver box-ac">
                     <view class='play-btn'>
-                      <image src='../../common/image/btn_play.png'></image>
+                      <image mode="scaleToFill" src='../../common/image/btn_play.png'></image>
                     </view>
                     <view class="color-w fs-30 poster-title ellipsis-1">{{item.name}}</view>
                     <view class="color-w fs-22 info-time ellipsis-1">{{item.breif}} </view>
@@ -37,7 +37,7 @@
               data-video-isbuy="{{item.isbuy}}"
               data-video-xnumber="{{item.xnumber}}"
             >
-                <image class="img-msg box-img" src="{{item.picarr}}" ></image> 
+                <image class="img-msg box-img" mode="aspectFill" src="{{item.picarr}}" ></image> 
                 <view class="box box-ver box-f1">
                     <view class="fs-30 color-b ellipsis-1">{{item.name}}</view>
                     <view class="fs-26 color-9 mg-t1 ellipsis-1">{{item.breif}} </view>
@@ -60,10 +60,10 @@
               data-video-isbuy="success"
               data-video-xnumber="{{item.xnumber}}"
                 >
-                <image class="img-poster box-img" src="{{item.vpicarr}}" ></image>
+                <image class="img-poster box-img" mode="aspectFill"  src="{{item.vpicarr}}" ></image>
                   <view class="pop-info box box-ver box-ac">
                       <view class='play-btn'>
-                        <image src='../../common/image/btn_play.png'></image>
+                        <image src='../../common/image/btn_play.png' mode="scaleToFill" ></image>
                       </view>
                       <view class="color-w fs-30 poster-title ellipsis-1">{{item.vtitle}}</view>
                       <view class="color-w fs-22 info-time ellipsis-1">{{item.vbreif}} </view>
@@ -80,7 +80,7 @@
                   data-video-isbuy="success"
                   data-video-xnumber="{{item.xnumber}}"
               >
-                  <image class="img-msg box-img" src="{{item.vpicarr}}" ></image> 
+                  <image class="img-msg box-img" src="{{item.vpicarr}}" mode="aspectFill" ></image> 
                   <view class="box box-ver box-f1">
                       <view class="fs-30 color-b ellipsis-1">{{item.vtitle}}</view>
                       <view class="fs-26 color-9 mg-t1 ellipsis-1">{{item.vbreif}} </view>

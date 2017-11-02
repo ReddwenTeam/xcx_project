@@ -7,7 +7,7 @@
       <!-- 试听 -->
       <video wx:if="{{audition == 0 }}" id="myVideo" poster='{{poster}}'  src="{{video_src}}" controls></video>
       <!-- 非试听 -->
-      <image mode="scaleToFill" class="audition-img" wx:else src='{{poster}}' bindtap='toastInfo'><image class="btn-play" mode="scaleToFill" src="../../common/image/btn_play.png"></image></image>
+      <image mode="aspectFill" class="audition-img" wx:else src='{{poster}}' bindtap='toastInfo'><image class="btn-play" mode="scaleToFill" src="../../common/image/btn_play.png"></image></image>
     </view>
   </view>
   <view class="box list-content">

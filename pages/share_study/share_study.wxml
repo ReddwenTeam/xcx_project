@@ -1,4 +1,4 @@
-<image class="slider-img" mode="scaleToFill" src="{{friendAvatar}}"></image>
+<image class="slider-img" mode="aspectFill" src="{{friendAvatar}}"></image>
 <view class="box box-ver box-ae">
     <view class="img-width box box-ver box-ac">
         <image class="img-head" mode="scaleToFill" src="{{getUserInfo.avatarUrl}}"></image>
@@ -14,16 +14,16 @@
                 <view class="color-0 fs-28 ta-justify mg-t12 mg-b25">{{item.info}}</view>
                 <view wx:if="{{item.thumbs.length > 0 && item.thumbs[0].length > 0}}">
                   <view wx:if="{{item.thumbs.length == 1}}">
-                    <image class="msg-img" mode="scaleToFill" wx:for="{{item.thumbs}}" wx:for-index="imgindex" wx:for-item="imgitem" wx:key="imgindex" src="{{imgitem}}" bindtap="previewImage" data-img-item="{{item.thumbs}}"></image> 
+                    <image class="msg-img" mode="aspectFill" wx:for="{{item.thumbs}}" wx:for-index="imgindex" wx:for-item="imgitem" wx:key="imgindex" src="{{imgitem}}" bindtap="previewImage" data-img-item="{{item.thumbs}}"></image> 
                   </view>
                   <view wx:elif="{{item.thumbs.length == 2}}" class="div-after">
-                    <image class="more-msg-img2" mode="scaleToFill" wx:for="{{item.thumbs}}"  wx:for-index="imgindex" wx:for-item="imgitem" wx:key="imgindex" src="{{imgitem}}" bindtap="previewImage" data-img-item="{{item.thumbs}}" data-img-index="{{imgindex}}"></image> 
+                    <image class="more-msg-img2" mode="aspectFill" wx:for="{{item.thumbs}}"  wx:for-index="imgindex" wx:for-item="imgitem" wx:key="imgindex" src="{{imgitem}}" bindtap="previewImage" data-img-item="{{item.thumbs}}" data-img-index="{{imgindex}}"></image> 
                   </view>
                   <view wx:elif="{{item.thumbs.length == 4}}" class="div-after">
-                    <image class="more-msg-img2" mode="scaleToFill" wx:for="{{item.thumbs}}"  wx:for-index="imgindex" wx:for-item="imgitem" wx:key="imgindex" src="{{imgitem}}" bindtap="previewImage" data-img-item="{{item.thumbs}}" data-img-index="{{imgindex}}"></image> 
+                    <image class="more-msg-img2" mode="aspectFill" wx:for="{{item.thumbs}}"  wx:for-index="imgindex" wx:for-item="imgitem" wx:key="imgindex" src="{{imgitem}}" bindtap="previewImage" data-img-item="{{item.thumbs}}" data-img-index="{{imgindex}}"></image> 
                   </view>
                   <view wx:else class="div-after">
-                    <image class="more-msg-img" mode="scaleToFill" wx:for="{{item.thumbs}}"  wx:for-index="imgindex" wx:for-item="imgitem" wx:key="imgindex" src="{{imgitem}}" bindtap="previewImage" data-img-item="{{item.thumbs}}" data-img-index="{{imgindex}}"></image> 
+                    <image class="more-msg-img" mode="aspectFill" wx:for="{{item.thumbs}}"  wx:for-index="imgindex" wx:for-item="imgitem" wx:key="imgindex" src="{{imgitem}}" bindtap="previewImage" data-img-item="{{item.thumbs}}" data-img-index="{{imgindex}}"></image> 
                   </view>
                 </view>
                 <view class="box box-ac mg-t2">
@@ -33,53 +33,6 @@
             </view>
         </view>
     </view>
-    <!-- <view class="one-msg">
-        <view class="box">
-            <image class="friend-img" mode="scaleToFill" src="../../temp/head.png"></image>
-            <view class="box box-f1 box-ver">
-                <view class="color-blue fs-34">Selina哈哈哈</view>
-                <view class="color-0 fs-28 ta-justify mg-t12 mg-b25">想来一场说走就走的旅行</view>
-                <view class="div-after">
-                    <image class="more-msg-img" mode="scaleToFill" src="../../temp/friend_2.png"></image>
-                    <image class="more-msg-img" mode="scaleToFill" src="../../temp/friend_3.png"></image>
-                    <image class="more-msg-img" mode="scaleToFill" src="../../temp/friend_4.png"></image>
-                    <image class="more-msg-img" mode="scaleToFill" src="../../temp/friend_5.png"></image>
-                    <image class="more-msg-img" mode="scaleToFill" src="../../temp/friend_6.png"></image>
-                    <image class="more-msg-img" mode="scaleToFill" src="../../temp/friend_7.png"></image>
-                    <image class="more-msg-img" mode="scaleToFill" src="../../temp/friend_4.png"></image>
-                    <image class="more-msg-img" mode="scaleToFill" src="../../temp/friend_2.png"></image>
-                    <image class="more-msg-img" mode="scaleToFill" src="../../temp/friend_5.png"></image>
-                </view>
-                <view class="box box-ac mg-t2">
-                    <view class="fs-24 color-9 box box-f1">1小时前</view>
-                    <view class="btn-chat box-img"></view>
-                </view>
-            </view>
-        </view>
-    </view>
-    <view class="one-msg">
-        <view class="box">
-            <image class="friend-img" mode="scaleToFill" src="../../temp/head.png"></image>
-            <view class="box box-f1 box-ver">
-                <view class="color-blue fs-34">Selina</view>
-                <view class="color-0 fs-28 ta-justify mg-t12 mg-b25">
-                    <view>家人带我出来吃大餐！！！</view>
-                    <view>高兴！！</view>
-                    <view>有人来的不!!!!!!!!!</view>
-                </view>
-                <view class="div-after">
-                    <image class="more-msg-img" mode="scaleToFill" src="../../temp/friend_1.png"></image>
-                    <image class="more-msg-img" mode="scaleToFill" src="../../temp/friend_2.png"></image>
-                    <image class="more-msg-img" mode="scaleToFill" src="../../temp/friend_3.png"></image>
-                    <image class="more-msg-img" mode="scaleToFill" src="../../temp/friend_4.png"></image>
-                </view>
-                <view class="box box-ac mg-t2">
-                    <view class="fs-24 color-9 box box-f1">1小时前</view>
-                    <view class="btn-chat box-img"></view>
-                </view>
-            </view>
-        </view>
-    </view> -->
 </view>
 <image class='btn-add' mode="scaleToFill" src="../../common/image/header/icon_add.png" bindtap="ToPublishShare"></image>
 

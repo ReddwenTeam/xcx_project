@@ -1,6 +1,6 @@
 <import src="../../common/wxParse/wxParse.wxml"/> 
 <view class="pd-t7">
-    <image class="slider-content" mode="scaleToFill" src="{{articleInfo.picarr}}"></image>
+    <image class="slider-content" mode="aspectFill" src="{{articleInfo.picarr}}"></image>
     <view class="pd-lr2">
         <view class="article-content">
             <view class="fs-42 color-blue">{{articleInfo.title}}</view>

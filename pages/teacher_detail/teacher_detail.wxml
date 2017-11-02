@@ -1,5 +1,5 @@
 <import src="../../common/wxParse/wxParse.wxml"/> 
-<view class="teacher-img box-img2" style="background-image: url({{info.avatar}})"></view>
+<view class="teacher-img box-img1" style="background-image: url({{info.avatar}})"></view>
 <view class="info-box">
     <view class="one-info box box-ver box-ac">
         <p class="color-0 fs-40">{{info.name}}</p>

@@ -9,7 +9,7 @@
             data-video-isbuy="{{item.isbuy}}"
             data-video-xnumber="{{item.xnumber}}"
             >
-          <image class='box box-img course-img' src="{{item.poster_src}}"></image>
+          <image class='box box-img course-img' mode="aspectFill" src="{{item.poster_src}}"></image>
           <view class="pop-box box box-ac">
               <view class="pop-info box box-ver box-ac">
                   <image src='../../common/image/btn_play.png' class='box box-img play-btn'></image>

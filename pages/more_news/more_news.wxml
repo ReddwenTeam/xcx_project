@@ -1,7 +1,7 @@
 <view class="pd-b4">
   <view wx:for="{{ArticleList}}" wx:key="id">
     <view wx:if="{{index == 0}}"> 
-      <image class="slider-content" mode="scaleToFill" src="{{item.picarr}}" bindtap="ToArticleDetail" data-article-id="{{item.id}}" data-article-name="{{item.title}}">
+      <image class="slider-content" mode="aspectFill" src="{{item.picarr}}" bindtap="ToArticleDetail" data-article-id="{{item.id}}" data-article-name="{{item.title}}">
           <view class="slider-info box box-ac">
               <text class="fs-30 color-w pd-l4 box box-f1 ellipsis-1">{{item.title}}</text>
               <text class="fs-16 color-w pd-r4">发布时间：{{item.formatTime}}</text>

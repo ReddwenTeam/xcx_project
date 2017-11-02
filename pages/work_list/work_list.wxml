@@ -4,7 +4,7 @@
     data-work-name="{{item.title}}" 
     >
       <view wx:if="{{item.tavatar}}">
-        <image class="class-teacher" mode="scaleToFill" src="{{item.tavatar}}"></image>
+        <image class="class-teacher" mode="aspectFill" src="{{item.tavatar}}"></image>
       </view>
       <view wx:else>
         <image class="class-math" mode="scaleToFill" src="image/zuoye.png"></image>
