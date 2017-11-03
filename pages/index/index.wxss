@@ -9,6 +9,6 @@
 .img-logo { width: 90rpx; height: 90rpx; border-radius: 50%; margin-left: -45rpx; position: absolute; top: -70rpx; left: 50%; }
 .width-3 { width: 222rpx; margin-top: 15rpx; margin-right: 22rpx;  }
 .width-3:last-child { margin-right: 0; }
-.width-3-img { width: 100%; height: 296rpx }
+.width-3-img { width: 100%; height: 333rpx }
 .img-logo3 { width: 60rpx; height: 60rpx; border-radius: 50%; position: absolute; top: 0rpx; left: 50%; margin: -40rpx 0 0 -30rpx; }
 .img3-box { position:relative; padding-top: 40rpx; }
