@@ -28,15 +28,58 @@
                 </view>
                 <view class="box box-ac mg-t2">
                     <view class="fs-24 color-9 box box-f1">{{item.formatTime}}<text class='fs-24 color-b' style='margin-left: 40rpx' bindtap='deleteOne' data-delete-id="{{item.id}}">{{ appMemberid == item.memberid ? '删除' : ''}}</text></view>
-                    <view class="btn-chat box-img"></view>
+                    <view class="btn-chat">
+                      <image mode="aspectFill" class='comment-img' src='image/comment.png' bindtap='comment'
+                       data-comment-id="{{item.id}}"></image>
+                      <view class='box box-ac comment-box' wx:if="{{item.id == commentId && showCbtn == true}}">
+                        <view class='t-btn box box-ac box-pc first-child'>
+                          <image mode="aspectFill" class='heart-img' src='image/like.png'></image>
+                          <view class='fs-26 color-w'>赞</view>
+                        </view>
+                        <view class='t-btn box box-ac box-pc' bindtap='commentinput'
+                        data-comment-id="{{item.id}}"
+                        data-comment-memberid="{{item.memberid}}"
+                        data-comment-bdid="{{item.bdid}}"
+                        data-comment-bdtype="{{item.bdtype}}"
+                        >
+                          <image mode="aspectFill" class='heart-img' src='image/comment_btn.png'></image>
+                          <view class='fs-26 color-w'>评论</view>
+                        </view>
+                      </view>
+                    </view>
                 </view>
+                <!-- 评论，点赞消息区域 -->
+                  <view class='box box-ac color-6 fs-24' style='padding: 20rpx 0;' data-query-id='{{item.id}}' bindtap='queryComment'>{{queryId == item.id ? '收起评论' : '查看评论'}}</view>
+                  <view class="c_l-area" wx:if='{{queryId == item.id}}'>
+                    <!-- <view class='like-area box'>
+                      <image  mode="aspectFill" class='liked-img' src='image/liked.png'></image>
+                      <view class='fs-24 color-b box box-f1'>觉得很赞</view>
+                    </view> -->
+                    <view class='comment-area'>
+                      <view class='fs-26 box box-ac'>
+                        <text class='color-b'>Selina：</text>
+                        <text class='color-3'>很好很好哈哈哈哈哈哈！很好很好哈哈哈哈哈哈！很好很好哈哈哈哈哈哈！很好很好哈哈哈哈哈哈！</text>
+                      </view>
+                      <view class='fs-26 box box-ac'>
+                        <text class='color-b'>Selina：</text>
+                        <text>很好很好哈哈哈哈哈哈！</text>
+                      </view>
+                    </view>
+                  </view>
+                <!-- 评论，点赞消息区域 end--> 
             </view>
         </view>
     </view>
 </view>
-<image class='btn-add' mode="scaleToFill" src="../../common/image/header/icon_add.png" bindtap="ToPublishShare"></image>
-
+<image class='btn-add' wx:if="{{fixedcomment == false}}" mode="scaleToFill" src="../../common/image/header/icon_add.png" bindtap="ToPublishShare"></image>
 <view class='box box-pc box-ac' style='padding: 20rpx 0;' wx:if="{{loading.status}}">
   <image class="loading-img" mode="scaleToFill" src="../../common/image/loading.png" wx:if="{{loading.load}}"></image>
   <view class='fs-26 color-9'>{{loading.text}}</view>
+</view>
+<view class='fiex-input box box-ac' wx:if="{{fixedcomment == true}}">
+  <textarea class='fs-30 color-3 textarea-style' maxlength='128' fixed='true' cursor-spacing='10' auto-height placeholder="评论"
+  auto-focus="{{setAuto}}" bindblur='fixedbindblur'
+  />
+  <view wx:if="{{sendTag == false}}" class="btn-submit color-w fs-26" bindtap='sendMsg'>发送</view>
+  <view wx:else class="btn-submit-ing color-w fs-26">发送中</view>
 </view>

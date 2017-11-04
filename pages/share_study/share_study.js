@@ -4,7 +4,9 @@ var app = getApp();
 Page({
   data: {
     share_list: [],
-    appMemberid:""
+    appMemberid:"",
+    sendTag:false,
+    fixedcomment: false
   },
   onLoad: function () {
     var that = this;
@@ -136,5 +138,57 @@ Page({
         common.showToast("转发失败");
       }
     }
+  },
+  comment: function (event) {
+    var dataSet = event.currentTarget.dataset, that = this;
+    that.setData({
+      commentId: dataSet.commentId,
+      showCbtn: true
+    });
+  },
+  commentinput: function (event) {
+    var dataSet = event.currentTarget.dataset, that = this;
+    that.setData({
+      fixedcomment: true,
+      setAuto:true,
+      showCbtn : false
+    });
+  },
+  queryComment: function (event) {
+    var dataSet = event.currentTarget.dataset, that = this;
+    that.setData({
+      queryId: dataSet.queryId
+    });
+    common.requestServer("p=member&ac=evaluate&d=getEvaluateParamByEid", { "exchangeid": dataSet.queryId}, function (data) {
+      console.log(data)
+      if (data.status == "success") {
+        console.log(data.data)
+        that.setData({
+          commentList: data.data
+        });
+      }
+    });
+  },
+  fixedbindblur:function(){
+    this.setData({
+      fixedcomment: false,
+      showCbtn: false
+    });
+  },
+  sendMsg:function(){
+    // common.requestServer("p=member&ac=evaluate&d=saveEvaluateParam", {
+    //   "exchangeid": dataSet.commentId,
+    //   "memberid": dataSet.commentMemberid,
+    //   "bdid": dataSet.commentBdid,
+    //   "bdtype": dataSet.commentBdtype,
+    //   "info": "测试内容",
+    //   "parentid": "0",
+    //   // "tomemberid": 0,
+    // }, function (data) {
+    //   console.log(data)
+    //   if (data.status == "success") {
+
+    //   }
+    // });
   }
 })
