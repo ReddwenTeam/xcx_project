@@ -2,8 +2,8 @@ var WxParse = require('../wxParse/wxParse.js');
 /** 
  * 请求服务
 */
-//var baseUrl = "https://weiqing.zqkj.site";
-var baseUrl = "https://xcx.51zhenkun.com"; // 不同域名
+var baseUrl = "https://weiqing.zqkj.site";
+//var baseUrl = "https://xcx.51zhenkun.com"; // 不同域名
 var defaultUrl = "/addons/star_school/app/index.php?";
 var uploadUrl = "/addons/star_school/app/index.php?p=comm&ac=upload&d=uploadIMG";
 var payUrl = "/addons/star_school/payment/example/jsapi.php";

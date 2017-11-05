@@ -32,7 +32,10 @@
                       <image mode="aspectFill" class='comment-img' src='image/comment.png' bindtap='comment'
                        data-comment-id="{{item.id}}"></image>
                       <view class='box box-ac comment-box' wx:if="{{item.id == commentId && showCbtn == true}}">
-                        <view class='t-btn box box-ac box-pc first-child'>
+                        <view class='t-btn box box-ac box-pc first-child' bindtap='addPraise'
+                        data-praise-id="{{item.id}}"
+                        data-praise-memberid="{{item.memberid}}"
+                        >
                           <image mode="aspectFill" class='heart-img' src='image/like.png'></image>
                           <view class='fs-26 color-w'>赞</view>
                         </view>
@@ -51,10 +54,10 @@
                 <!-- 评论，点赞消息区域 -->
                   <view class='box box-ac color-6 fs-24' style='padding: 20rpx 0;' data-query-id='{{item.id}}' bindtap='queryComment'>{{queryId == item.id ? '收起评论' : '查看评论'}}</view>
                   <view class="c_l-area" wx:if='{{queryId == item.id}}'>
-                    <!-- <view class='like-area box'>
+                    <view class='like-area box'>
                       <image  mode="aspectFill" class='liked-img' src='image/liked.png'></image>
                       <view class='fs-24 color-b box box-f1'>觉得很赞</view>
-                    </view> -->
+                    </view>
                     <view class='comment-area'>
                       <view class='fs-26 box box-ac'>
                         <text class='color-b'>Selina：</text>

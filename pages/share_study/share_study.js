@@ -71,6 +71,7 @@ Page({
         data.forEach(function (item) {
           item.formatTime = common.formatTime(item.createtime, 'Y-M-D  h:m:s');
           curShareList.push(item);
+          that.getPraise(item.id, item.memberid);
         });
         that.setData({
           share_list: curShareList,
@@ -190,5 +191,30 @@ Page({
 
     //   }
     // });
+  },
+  getPraise: function (exchangeid, memberid) {
+    common.requestServer("p=member&ac=praise&d=getPraiseParam", { "exchangeid": exchangeid, "memberid": memberid }, function (data) {
+      console.log(data)
+      if (data.status == "success") {
+        console.log(data.data)
+        // that.setData({
+        //   commentList: data.data
+        // });
+      }
+    });
+
+  },
+  addPraise: function (event) {
+    var dataSet = event.currentTarget.dataset, that = this;
+    common.requestServer("p=member&ac=praise&d=addPraiseParam", { "exchangeid": dataSet.praiseId, "memberid": dataSet.praiseMemberid }, function (data) {
+      console.log(data)
+      if (data.status == "success") {
+        console.log(data.data)
+        // that.setData({
+        //   commentList: data.data
+        // });
+      }
+    });
+
   }
 })
