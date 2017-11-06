@@ -1,7 +1,7 @@
 <view class="pd-2" style="padding-top: 20rpx">
   <view class="bind-content">
       <view class="box">
-          <view class="check-tab fs-34 {{pageNum == '0'?'active':'' }}" bindtap='tapCheck' data-page-num='0'>绑定会员</view>
+          <view class="check-tab fs-34 {{pageNum == '0'?'active':'' }}" bindtap='tapCheck' data-page-num='0'>领取会员</view>
           <view class="check-tab fs-34 {{pageNum == '0'?'':'active' }}" bindtap='tapCheck' data-page-num='1'>绑定老师</view>
       </view>
   </view>
@@ -20,7 +20,8 @@
         <view class='fs-34 color-3'>会员</view>
       </view>
     </view>
-    <view class="btn-bind color-w fs-30" bindtap='bindInfo'>绑 定</view>
+    <view class="btn-bind color-w fs-30" bindtap='bindInfo'>领 取</view>
+    <view class="box box-ac box-pc color-9 fs-26" style='width: 70%; margin:0 auto; padding-top:20rpx;'>会员须知</view>
     </view>
   </view>
 </template>

@@ -1,6 +1,7 @@
 {
   "pages":[
     "pages/index/index",
+    "pages/user_bind/user_bind",
     "pages/video_list/video_list",
     "pages/index_video/index_video",
     "pages/course_detail/course_detail",
@@ -13,7 +14,6 @@
     "pages/publish_work/publish_work",
     "pages/work_list/work_list",
     "pages/work_detail/work_detail",
-    "pages/user_bind/user_bind",
     "pages/publish_share/publish_share",
     "pages/share_study/share_study",
     "pages/my_course/my_course",

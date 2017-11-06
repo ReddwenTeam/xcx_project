@@ -140,8 +140,6 @@ Page({
       key: "bindingInfo",
       success: function (res) {
         var data = res.data;
-
-
         common.requestServer('payUrl', { "memberid": data.memberid, "vcourseid": that.data.vcourseid }, function (data) {
           if (data.status == "error") {
             common.showToast(data.msg);

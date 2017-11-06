@@ -76,6 +76,17 @@ var pageindex = Page({
       url: '../video_list/video_list?BarTitle=更多在线课程'
     })
   },
+  ToIndexVideo:function(){
+    var that = this;
+    common.requestServer("p=course&ac=vcourse&d=getVcourseParam", { "id": that.data.schoolList.indexUrl}, function (data) {
+      console.log(data)
+      if(data){
+        wx.navigateTo({
+          url: '../course_detail/course_detail?id=' + data.id + '&BarTitle=' + data.name + '&price=' + data.price + '&ischarge=' + data.ischarge + '&xnumber=' + data.xnumber
+        })
+      }
+    })
+  },
   onShareAppMessage:function(){
     return {
       title: app.shareTitle,

@@ -27,10 +27,6 @@ function requestServer(url,param,callback){
   })
 }
 
-function getUploadUrl(){
-
-}
-
 /** 
  * 时间戳转化为年 月 日 时 分 秒 
  * number: 传入时间戳 
@@ -91,7 +87,6 @@ function aldShare(e,page){
     duration: 999999
   })
   console.log("-----------")
-
   wx.request({
     method: 'post',
     url: 'https://shareapi.aldwx.com/Main/action/Template/Template/applet_htmlpng',
@@ -106,7 +101,6 @@ function aldShare(e,page){
       wx.hideLoading()
     },
     complete: function (data) {
-      console.log(data)
       wx.hideLoading()
     },
     fail: function (data) {
