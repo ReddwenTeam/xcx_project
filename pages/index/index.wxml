@@ -5,7 +5,7 @@
 </view>
 <view class="pd-2">
   <view class='box'>
-    <view class='fs-30 box box-f1'>在线课程</view>
+    <view class='fs-30 box box-f1' bindtap="ToMoreVideo">在线课程</view>
     <view class='fs-26 color-6' bindtap="ToMoreVideo">查看更多</view>
   </view>
   <image class="video-bg" 
@@ -31,7 +31,7 @@
 </view>
 <view class="pd-2">
   <view class='box'>
-    <view class='fs-30 box box-f1'>文章推荐</view>
+    <view class='fs-30 box box-f1' bindtap="ToMoreArticle">佳作选登</view>
     <view class='fs-26 color-6' bindtap="ToMoreArticle">查看更多</view>
   </view>
   <view bindtap="ToArticleDetail" data-article-id="{{articleList.id}}"  data-article-name="{{articleList.title}}">
