@@ -2,8 +2,8 @@ var WxParse = require('../wxParse/wxParse.js');
 /** 
  * 请求服务
 */
-var baseUrl = "https://weiqing.zqkj.site";
-//var baseUrl = "https://xcx.51zhenkun.com"; // 不同域名
+//var baseUrl = "https://weiqing.zqkj.site";
+var baseUrl = "https://xcx.51zhenkun.com"; // 不同域名
 var defaultUrl = "/addons/star_school/app/index.php?";
 var uploadUrl = "/addons/star_school/app/index.php?p=comm&ac=upload&d=uploadIMG";
 var payUrl = "/addons/star_school/payment/example/jsapi.php";
@@ -90,11 +90,14 @@ function aldShare(e,page){
     icon: 'loading',
     duration: 999999
   })
+  console.log("-----------")
+
   wx.request({
     method: 'post',
     url: 'https://shareapi.aldwx.com/Main/action/Template/Template/applet_htmlpng',
     data: data,
     success: function (data) {
+      console.log(data)
       if (data.data.code === 200) {
         wx.previewImage({
           urls: [data.data.data]
@@ -102,10 +105,12 @@ function aldShare(e,page){
       }
       wx.hideLoading()
     },
-    complete: function () {
+    complete: function (data) {
+      console.log(data)
       wx.hideLoading()
     },
-    fail: function () {
+    fail: function (data) {
+      console.log(data)
       wx.hideLoading();
     }
   })

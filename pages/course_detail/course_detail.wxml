@@ -67,7 +67,7 @@
                 <view>
                     <view class="color-0 fs-32">{{items.videoList.teacherlist.tname}}老师</view>
                     <view class="color-7 fs-26">课程数： {{items.videoList.teacherlist.cnumber}}</view>
-                    <view class="color-7 fs-26">学生数： {{items.videoList.teacherlist.snumber}}</view>
+                    <!-- <view class="color-7 fs-26">学生数： {{items.videoList.teacherlist.snumber}}</view> -->
                 </view>
             </view>
         </view>

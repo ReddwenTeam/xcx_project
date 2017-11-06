@@ -26,7 +26,9 @@ Page({
       success: function (res) {
         that.setData({
           memberid: res.data.memberid,
-          appMemberid: res.data.memberid
+          appMemberid: res.data.memberid,
+          comBdtype: res.data.bdtype,
+          comBid: res.data.bid
         })
       }
     })
@@ -71,7 +73,6 @@ Page({
         data.forEach(function (item) {
           item.formatTime = common.formatTime(item.createtime, 'Y-M-D  h:m:s');
           curShareList.push(item);
-          that.getPraise(item.id, item.memberid);
         });
         that.setData({
           share_list: curShareList,
@@ -149,24 +150,45 @@ Page({
   },
   commentinput: function (event) {
     var dataSet = event.currentTarget.dataset, that = this;
+    dataSet.parentid = 0;
     that.setData({
       fixedcomment: true,
       setAuto:true,
-      showCbtn : false
+      showCbtn : false,
+      commentOneInfo: dataSet,
+      commentid: dataSet.commentId,
+      parentid: dataSet.parentId,
+      MTtomemberid: dataSet.toMemberid
     });
   },
   queryComment: function (event) {
     var dataSet = event.currentTarget.dataset, that = this;
     that.setData({
-      queryId: dataSet.queryId
+      queryId: dataSet.queryId,
+      commentList: [],
+      isopen: true
     });
-    common.requestServer("p=member&ac=evaluate&d=getEvaluateParamByEid", { "exchangeid": dataSet.queryId}, function (data) {
-      console.log(data)
+    that.queryCommentEvent(dataSet.queryId);
+  },
+  closeComment:function(){
+    this.setData({
+      isopen: false
+    });
+  },
+  queryCommentEvent: function (queryId){
+    var that = this;
+    common.requestServer("p=member&ac=evaluate&d=getEvaluateParamByEid", { "exchangeid": queryId }, function (data) {
       if (data.status == "success") {
-        console.log(data.data)
-        that.setData({
-          commentList: data.data
-        });
+        if (data.data.length == 0) {
+          that.setData({
+            commenttype: true
+          });
+        } else {
+          that.setData({
+            commenttype: false,
+            commentList: data.data
+          });
+        }
       }
     });
   },
@@ -176,43 +198,72 @@ Page({
       showCbtn: false
     });
   },
-  sendMsg:function(){
-    // common.requestServer("p=member&ac=evaluate&d=saveEvaluateParam", {
-    //   "exchangeid": dataSet.commentId,
-    //   "memberid": dataSet.commentMemberid,
-    //   "bdid": dataSet.commentBdid,
-    //   "bdtype": dataSet.commentBdtype,
-    //   "info": "测试内容",
-    //   "parentid": "0",
-    //   // "tomemberid": 0,
-    // }, function (data) {
-    //   console.log(data)
-    //   if (data.status == "success") {
-
-    //   }
-    // });
+  getMsg: function (e) {
+    this.setData({
+      msgInput: e.detail.value
+    })
   },
-  getPraise: function (exchangeid, memberid) {
-    common.requestServer("p=member&ac=praise&d=getPraiseParam", { "exchangeid": exchangeid, "memberid": memberid }, function (data) {
-      console.log(data)
-      if (data.status == "success") {
-        console.log(data.data)
-        // that.setData({
-        //   commentList: data.data
-        // });
+  sendMsg: function (event) {
+    var dataSet = event.currentTarget.dataset, that = this;
+    if (that.data.msgInput.length == 0){
+      common.showToast("请输入评论！");
+    }else{
+      if (dataSet.commentType){
+        //回复
+        var tomemberid = that.data.MTtomemberid;
+        var memberid = that.data.appMemberid;
+        var parentid = that.data.parentid;
+      }else{
+        //评论
+        var tomemberid = that.data.MTtomemberid;
+        var memberid = that.data.appMemberid;
+        var parentid = that.data.parentid;
       }
-    });
+      saveEvaluateParam(memberid, tomemberid, parentid)
+    }
 
+    function saveEvaluateParam(memberid, tomemberid,parentid){
+      common.requestServer("p=member&ac=evaluate&d=saveEvaluateParam", {
+        "exchangeid": that.data.commentid,
+        "bdid": that.data.comBid,
+        "bdtype": that.data.comBdtype,
+        "info": that.data.msgInput,
+        "memberid": memberid,
+        "parentid": parentid,
+        "tomemberid": tomemberid,
+      }, function (data) {
+        if (data.status == "success") {
+          common.showToast("评论成功", true);
+          that.queryCommentEvent(that.data.queryId);
+        }
+      });
+    }
+  },
+  reComment: function (event) {
+    var dataSet = event.currentTarget.dataset;
+    this.setData({
+      fixedcomment: true,
+      setAuto: true,
+      showCbtn: false,
+      reComment:true,
+      commentid: dataSet.commentId,
+      parentid: dataSet.parentId,
+      MTtomemberid: dataSet.toMemberid
+    })
   },
   addPraise: function (event) {
     var dataSet = event.currentTarget.dataset, that = this;
-    common.requestServer("p=member&ac=praise&d=addPraiseParam", { "exchangeid": dataSet.praiseId, "memberid": dataSet.praiseMemberid }, function (data) {
-      console.log(data)
+    that.setData({
+      showCbtn: false
+    });
+    common.requestServer("p=member&ac=praise&d=addPraiseParam", { "exchangeid": dataSet.praiseId, "memberid": that.data.appMemberid }, function (data) {
       if (data.status == "success") {
-        console.log(data.data)
-        // that.setData({
-        //   commentList: data.data
-        // });
+        common.showToast("点赞成功", true);
+        curShareList = [];
+        curPage = 1;
+        that.queryShareList(curPage);
+      }else{
+        common.showToast(data.msg);
       }
     });
 
