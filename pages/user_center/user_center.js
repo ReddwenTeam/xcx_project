@@ -84,13 +84,17 @@ Page({
       url: '../user_bind/user_bind'
     })
   },
-  ToNoticeList: function () {
+  ToNoticeList: function (event) {
+    var formId = event.detail.formId;
     wx.navigateTo({
       url: '../notice_list/notice_list?BarTitle=活动通知'
     })
+    common.requestServer("p=member&ac=formid&d=saveFormidParam", { "memberid": app.memberid, "formid": formId });
   },
   ToWorkList: function (event) {
-    var dataSet = event.currentTarget.dataset;
+    var formId = event.detail.formId;
+    var dataSet = event.detail.target.dataset;
+    common.requestServer("p=member&ac=formid&d=saveFormidParam", { "memberid": app.memberid, "formid": formId });
     wx.navigateTo({
       url: '../work_list/work_list?BarTitle=作业列表&workType=' + dataSet.workType
     })

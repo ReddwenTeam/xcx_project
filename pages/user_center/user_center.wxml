@@ -40,16 +40,24 @@
     <view class="box box-f1 fs-30 color-3">我的在读课程</view>
     <view class="icon-right box-img"></view>
   </view>
-  <view class='one-info box box-ac' bindtap='ToNoticeList'>
+  <form bindsubmit="ToNoticeList" report-submit='true'>
+  <button formType="submit"  plain="true" hover-class="none">
+  <view class='one-info box box-ac'>
     <image class="info-img" mode="scaleToFill" src="image/icon3.png"></image>
     <view class="box box-f1 fs-30 color-3">活动通知</view>
     <view class="icon-right box-img"></view>
   </view>
-  <view class='one-info box box-ac border-b' bindtap='ToWorkList' data-work-type="2">
+  </button>
+  </form>
+  <form bindsubmit="ToWorkList" report-submit='true'>
+  <button formType="submit"  plain="true" hover-class="none" data-work-type="2">
+  <view class='one-info box box-ac border-b'>
     <image class="info-img" mode="scaleToFill" src="image/icon4.png"></image>
     <view class="box box-f1 fs-30 color-3">作业列表</view>
     <view class="icon-right box-img"></view>
   </view>
+  </button>
+  </form>
 </template>
 <!-- 老师 -->
 <template name="laoshi">
@@ -74,15 +82,23 @@
     <view class="box box-f1 fs-30 color-3">我的在读课程</view>
     <view class="icon-right box-img"></view>
   </view>
-  <view class='one-info box box-ac' bindtap='ToNoticeList'>
+  <form bindsubmit="ToNoticeList" report-submit='true'>
+  <button formType="submit"  plain="true" hover-class="none">
+  <view class='one-info box box-ac'>
     <image class="info-img" mode="scaleToFill" src="image/icon3.png"></image>
     <view class="box box-f1 fs-30 color-3">活动通知</view>
     <view class="icon-right box-img"></view>
   </view>
-  <view class='one-info box box-ac border-b' bindtap='ToWorkList' data-work-type="1">
+  </button>
+  </form>
+  <form bindsubmit="ToWorkList" report-submit='true'>
+  <button formType="submit"  plain="true" hover-class="none" data-work-type="1">
+  <view class='one-info box box-ac border-b'>
     <image class="info-img" mode="scaleToFill" src="image/icon4.png"></image>
     <view class="box box-f1 fs-30 color-3">作业列表</view>
     <view class="icon-right box-img"></view>
   </view>
+  </button>
+  </form>
 </template>
 <template is = "{{role}}" data="{{avatarUrl, nickName}}" />
