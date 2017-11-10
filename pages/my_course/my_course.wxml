@@ -6,9 +6,17 @@
     <!-- 全部 -->
     <template name="quanbu">
       <view wx:if="{{videoList.length>0}}" wx:for="{{videoList}}" wx:key="{{index}}">
+        
         <view class="video-content" wx:if="{{index == 0}}">
+            <form bindsubmit="formSubmit" report-submit='true'>
+            <button formType="submit"  plain="true" hover-class="none"
+                data-video-id="{{item.id}}" 
+                data-video-price="{{item.price}}"    
+                data-video-ischarge="{{item.ischarge}}"
+                data-video-name="{{item.name}}"
+                data-video-xnumber="{{item.xnumber}}"
+            >
             <view class="pop-box box box-ac show"
-            bindtap="ToVideoDetail" 
             data-video-id="{{item.id}}" 
             data-video-price="{{item.price}}"    
             data-video-ischarge="{{item.ischarge}}"
@@ -25,10 +33,19 @@
                     <view class="color-w fs-22 info-time">价格： ￥{{item.price}} </view>
                 </view>
             </view>
+            </button>
+            </form>
         </view>
         <view class="class-box" wx:else>
+            <form bindsubmit="formSubmit" report-submit='true'>
+            <button formType="submit"  plain="true" hover-class="none"
+              data-video-id="{{item.id}}" 
+              data-video-price="{{item.price}}"    
+              data-video-ischarge="{{item.ischarge}}"
+              data-video-name="{{item.name}}"
+              data-video-xnumber="{{item.xnumber}}"
+            >
             <view class="one-class box"
-              bindtap="ToVideoDetail" 
               data-video-id="{{item.id}}" 
               data-video-price="{{item.price}}"    
               data-video-ischarge="{{item.ischarge}}"
@@ -42,6 +59,8 @@
                     <view class="fs-26 color-9 mg-t1">价格：￥{{item.price}} </view>
                 </view>
             </view>
+            </button>
+            </form>
         </view>
       </view>
     </template>
@@ -49,8 +68,15 @@
       <template name="goumai">
         <view wx:if="{{videoList.length>0}}" wx:for="{{videoList}}" wx:key="{{index}}">
           <view class="video-content" wx:if="{{index == 0}}">
+              <form bindsubmit="formSubmit" report-submit='true'>
+              <button formType="submit"  plain="true" hover-class="none"
+                data-video-id="{{item.vcourseid}}" 
+                data-video-price="已购买"    
+                data-video-ischarge="0"
+                data-video-name="{{item.vtitle}}"
+                data-video-xnumber="{{item.xnumber}}"
+              >
               <view class="pop-box box box-ac show"
-              bindtap="ToVideoDetail" 
               data-video-id="{{item.vcourseid}}" 
               data-video-price="已购买"    
               data-video-ischarge="0"
@@ -66,10 +92,19 @@
                       <view class="color-w fs-22 info-time ellipsis-1">{{item.vbreif}} </view>
                   </view>
               </view>
+              </button>
+              </form>
           </view>
           <view class="class-box" wx:else>
+              <form bindsubmit="formSubmit" report-submit='true'>
+              <button formType="submit"  plain="true" hover-class="none"
+                  data-video-id="{{item.vcourseid}}" 
+                  data-video-price="已购买"    
+                  data-video-ischarge="0"
+                  data-video-name="{{item.vtitle}}"
+                  data-video-xnumber="{{item.xnumber}}"
+              >
               <view class="one-class box"
-                   bindtap="ToVideoDetail" 
                   data-video-id="{{item.vcourseid}}" 
                   data-video-price="已购买"    
                   data-video-ischarge="0"
@@ -82,6 +117,8 @@
                       <view class="fs-26 color-9 mg-t1 ellipsis-1">{{item.vbreif}} </view>
                   </view>
               </view>
+              </button>
+              </form>
           </view>
         </view>
       </template>

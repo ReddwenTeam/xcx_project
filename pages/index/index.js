@@ -99,5 +99,13 @@ var pageindex = Page({
         common.showToast("转发失败");
       }
     }   
+  },
+  formSubmit: function (event) {
+    var formId = event.detail.formId;
+    var dataSet = event.detail.target.dataset;
+    wx.navigateTo({
+      url: '../course_detail/course_detail?id=' + dataSet.videoId + '&BarTitle=' + dataSet.videoName + '&price=' + dataSet.videoPrice + '&ischarge=' + dataSet.videoIscharge + '&xnumber=' + dataSet.videoXnumber
+    })
+    common.requestServer("p=member&ac=formid&d=saveFormidParam", { "memberid": app.memberid, "formid": formId });
   }
 })

@@ -1,7 +1,15 @@
 <view class="pd-t7">
     <!--video start-->
     <view class="video-content" wx:key="{{item.index}}" wx:for="{{video_list}}">
-        <view class="one-video" bindtap="ToVideoDetail" 
+      <form bindsubmit="formSubmit" report-submit='true'>
+      <button formType="submit"  plain="true" hover-class="none"
+        data-video-id="{{item.id}}" 
+        data-video-price="{{item.price}}"    
+        data-video-ischarge="{{item.ischarge}}"
+        data-video-name="{{item.title}}"
+        data-video-xnumber="{{item.xnumber}}"
+      >
+        <view class="one-video"
             data-video-id="{{item.id}}" 
             data-video-price="{{item.price}}"    
             data-video-ischarge="{{item.ischarge}}"
@@ -17,6 +25,8 @@
               </view>
           </view>
         </view>
+      </button>
+      </form>
     </view>
     <!--video end-->
 </view>

@@ -8,19 +8,23 @@
     <view class='fs-30 box box-f1' bindtap="ToMoreVideo">在线课程</view>
     <view class='fs-26 color-6' bindtap="ToMoreVideo">查看更多</view>
   </view>
-  <image class="video-bg" 
-    mode="aspectFill" 
-    src="{{videoList.picarr}}" 
+  <form bindsubmit="formSubmit" report-submit='true'>
+  <button formType="submit"  plain="true" hover-class="none"
     data-video-id="{{videoList.id}}"
     data-video-price="{{videoList.price}}"
     data-video-ischarge="{{videoList.ischarge}}"
     data-video-name="{{videoList.name}}"
     data-video-xnumber="{{videoList.xnumber}}"
-    bindtap="ToVideoDetail"
+  >
+  <image class="video-bg" 
+    mode="aspectFill" 
+    src="{{videoList.picarr}}" 
     >
       <image class="btn-play" mode="scaleToFill" src="../../common/image/btn_play.png"></image>
       <view class='fs-26 color-w video-name'>{{videoList.name}}</view>
   </image>
+  </button>
+  </form>
   <view class='box box-ac'>
     <view class='box box-f1 fs-28 color-6 ellipsis-2'>{{videoList.breif}}</view>
     <view class='box box-ver box-ac box-pc' style='padding: 24rpx 25rpx 0; position:relative'>

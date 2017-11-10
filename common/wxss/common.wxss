@@ -63,3 +63,6 @@ div { outline: 0 !important; -webkit-text-size-adjust: none; -webkit-tap-highlig
 .ta-center { text-align: center }
 .ta-right { text-align: right }
 .ta-justify { text-align: justify; }
+button::after { border: 0; }
+button[plain] { border: 0; }
+button { padding-left: 0px; padding-right: 0px; }
