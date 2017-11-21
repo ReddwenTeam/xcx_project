@@ -1,9 +1,3 @@
 # xcx_project
-## this is a test for XCX！！！
-Test in here！！！！
-#SELINA CHANGE！！
-test fetch
-merge test!
-Selina test!!!
-Selina test again
-#reddwen test in here！！！！
+
+学无止境
