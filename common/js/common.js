@@ -86,13 +86,11 @@ function aldShare(e,page){
     icon: 'loading',
     duration: 999999
   })
-  console.log("-----------")
   wx.request({
     method: 'post',
     url: 'https://shareapi.aldwx.com/Main/action/Template/Template/applet_htmlpng',
     data: data,
     success: function (data) {
-      console.log(data)
       if (data.data.code === 200) {
         wx.previewImage({
           urls: [data.data.data]
@@ -100,11 +98,10 @@ function aldShare(e,page){
       }
       wx.hideLoading()
     },
-    complete: function (data) {
+    complete: function () {
       wx.hideLoading()
     },
-    fail: function (data) {
-      console.log(data)
+    fail: function () {
       wx.hideLoading();
     }
   })
