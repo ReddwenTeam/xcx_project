@@ -7,7 +7,7 @@
       <view class="fs-26 color-3">游客</view>
     </view>
     <view class='box box-ac'>
-      <view class="fs-30 color-3" bindtap='ToUserBind'>去绑定</view>
+      <view class="fs-30 color-3" bindtap='ToUserBind'>点击领取会员</view>
       <view class="icon-right box-img"></view>
     </view>
   </view>

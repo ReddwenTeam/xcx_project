@@ -1,54 +1,30 @@
-<view class="pd-2" style="padding-top: 20rpx">
-  <view class="bind-content">
-      <view class="box">
-          <view class="check-tab fs-34 {{pageNum == '0'?'active':'' }}" bindtap='tapCheck' data-page-num='0'>领取会员</view>
-          <view class="check-tab fs-34 {{pageNum == '0'?'':'active' }}" bindtap='tapCheck' data-page-num='1'>绑定老师</view>
-      </view>
-  </view>
+<image class="bind-bg" mode="aspectFill" src="image/bg_img.jpg">
+    <view class="bind-head-box box box-ver box-ac">
+        <view class="user-img box-img" style="background-image: url({{avatarUrl}})"></view>
+        <view class='fs-34 color-w'>{{nickName}}</view>
+    </view>
+</image>
+<view class="box bind-content">
+    <view class="check-tab fs-30 {{pageNum == '0'?'active':'' }}" bindtap='tapCheck' data-page-num='0'>领取会员</view>
+    <view class="check-tab fs-30 {{pageNum == '0'?'':'active' }}" bindtap='tapCheck' data-page-num='1'>绑定老师</view>
 </view>
 <template name="jiazhang">
-  <view class='pd-2'>
-    <view class='template'>
-    <view class="box box-ac box-pc img-box">
-      <view class='box box-ver box-ac box-bc'>
-        <view class="user-img box-img" style="background-image: url({{avatarUrl}})"></view>
-        <view class='fs-34 color-3'>{{nickName}}</view>
-      </view>
-      <image class="bind-img" mode="scaleToFill" src="image/bind.png"></image>
-      <view class='box box-ver box-ac box-bc'>
-        <image class="user-img" mode="scaleToFill" src="image/head_default.png"></image>
-        <view class='fs-34 color-3'>会员</view>
-      </view>
+    <view class='pd-jiazhang'>
+        <view class="btn-bind color-w fs-30" bindtap='bindInfo'>领 取</view>
+        <view class="box box-ac box-pc color-9 fs-26" style='width: 70%; margin:0 auto; padding-top:20rpx;'>会员须知</view>
     </view>
-    <view class="btn-bind color-w fs-30" bindtap='bindInfo'>领 取</view>
-    <view class="box box-ac box-pc color-9 fs-26" style='width: 70%; margin:0 auto; padding-top:20rpx;'>会员须知</view>
-    </view>
-  </view>
 </template>
 <template name="laoshi">
-  <view class='pd-2'>
-    <view class='template'>
-    <view class="box box-ac box-pc img-box">
-      <view class='box box-ver box-ac box-bc'>
-        <view class="user-img box-img" style="background-image: url({{avatarUrl}})"></view>
-        <view class='fs-34 color-3'>{{nickName}}</view>
-      </view>
-      <image class="bind-img" mode="scaleToFill" src="image/bind.png"></image>
-      <view class='box box-ver box-ac box-bc'>
-        <image class="user-img" mode="scaleToFill" src="image/head_default.png"></image>
-        <view class='fs-34 color-3'>老师</view>
-      </view>
-    </view>
+  <view class='pd-laoshi'>
     <view class='box pd-5'>
       <view class='fs-30 user-name'>老师姓名：</view>
       <input class='input-style fs-30 color-3 box box-f1' bindinput='bindInput1' />
     </view>
-        <view class='box pd-5'>
+    <view class='box pd-5'>
       <view class='fs-30 user-name'>绑定码：</view>
       <input class='input-style fs-30 color-3 box box-f1' bindinput='bindInput2'/>
     </view>
     <view class="btn-bind color-w fs-30" bindtap='bindTeacherInfo'>绑 定</view>
-    </view>
   </view>
 </template>
 <template is="{{tempName}}" data="{{avatarUrl, nickName}}" />
